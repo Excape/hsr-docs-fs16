@@ -56,7 +56,7 @@
     Vererbung wird zu Compile-Time festgelegt, bei der Komposition wird erst zur Runtime das objekt erstellt, es ist also flexibler
 
 ---
-# Vorlesug 5 - Rekursion II
+# Vorlesung 5 - Rekursion II
 * Folie 41:
     Mit diesem Algorithmus gibt es weniger multiplikationen, da nicht von 1 bis n eine Multiplikation gemacht werden muss, sondern n wird jeweils halbiert:
     $$3^9 = 3^6 * 3^6$$
