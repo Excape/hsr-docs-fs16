@@ -17,6 +17,7 @@ pages:
     - 'InfSi1': 'fs16/infsi1.md'
     - 'RKI': 'fs16/rki.md'
     - 'TecBEC': 'fs16/tecbec.md'
+  - Playground: 'playground.md'
 
 
 
