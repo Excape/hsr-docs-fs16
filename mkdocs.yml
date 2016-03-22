@@ -4,8 +4,28 @@ repo_url: https://github.com/Excape/hsr-docs
 site_description: HSR Study Documentation
 site_author: Robin Suter
 
-markdown-extensions:
+theme: readthedocs
+
+pages:
+  - Home: 'index.md'
+  - FS16:
+    - 'AD1': 'fs16/ad1.md'
+    - 'An2': 'fs16/an2.md'
+    - 'AutoSpr': 'fs16/autospr.md'
+    - 'Bsys2': 'fs16/bsys2.md'
+    - 'ExEv': 'fs16/exev.md'
+    - 'InfSi1': 'fs16/infsi1.md'
+    - 'RKI': 'fs16/rki.md'
+    - 'TecBEC': 'fs16/tecbec.md'
+
+
+
+markdown_extensions:
   - toc
   - sane_lists
-  
+  - admonition
+  - mdx_math
+
+extra_javascript: ['https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML']
+
 site_dir: /var/www/hsr-docs
