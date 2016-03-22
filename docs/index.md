@@ -59,3 +59,4 @@ $$\lim_{x\to \infty} \sin x$$
 
 * Slack: <https://hsr-students.slack.com>
 * [MathJax Syntax](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)
+* [MkDocs User-Guide](http://www.mkdocs.org/user-guide/writing-your-docs/)
