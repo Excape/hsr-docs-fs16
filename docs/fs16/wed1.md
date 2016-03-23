@@ -1,5 +1,111 @@
 # Web Engineering + Design
 ## Allgemein
+---
+## Vorlesung 1 - HTML p. 1
+* **Folie 12** - Encoding
+    * UTF-8 ist gleich wie ISO 8859-1, ausser es werden Sonderzeichen, z.B. Umlaute verwendet
+    * Erstes Zeichen im UTF-8 File ist meist für Bytereihenfolge
+
+---
+## Vorlesung 2 - HTML p.2
+
+"Fav-Icon" verlinken: 
+```html
+<link rel="icon" href="/icon.png" type="image/png" />
+```
+mit 32px x 32px
+
+```html
+<base href="http://www.my­page.tld" />
+```
+Relative Links werden an die Base angehängt
+
+Empfohlene Metadaten: Autor, Beschreibung, Keywords
+
+```html
+<meta name="robots" content="noindex, nofollow" />
+```
+Crawler indexieren die Seite nicht (noindex) und folgen keinen Links (nofollow)
+
+`http-equiv` Meta-Tags: header, die als HTTP-header ausgeliefert werden (zb. refresh, redirect, ...)  
+Nicht geeignet für Produktion
+
+Neue HTML5-Tags:  
+`header`, `section`, `article`, `footer`  
+Für Suchmaschinen / Accessibility Tools / ... zur besseren Auszeichnung
+
+* **Folie 17:**
+    * `aside`: Zusatzinformationen zur Seite (nichts mit dem Inhalt zu tun)
+    * Eine Section braucht nicht zwingend ein header (validator gibt Warnung aus)
+    * Header und Footer werden als header und footer der Seite gebraucht, aber auch pro Section 
+
+* **Folie 20:**
+    * Beispiel Time:  
+        `<time datetime="2008-02-14 20:00">Valentines day</time>`
+    * Beispiel abbr:  
+        `<abbr title="World Health Organization">WHO</abbr>`
+
+* **Folie 21:**  
+    `<b>` und `<i>` wurden in html5 umdefiniert, damit es nicht mehr ein Aussehen beschreibt
+
+* **Folie 22:**  
+    Navigation nicht im Footer verwenden (stattdessen <aside> verwenden)
+
+Mime-Types: <https://wiki.selfhtml.org/wiki/Referenz:MIME-Typen>
+
+---
+## Vorlesung 3 - HTML p. 3
+
+Repetition Content model:
+
+Table ist Flow-Content, p ebenfalls -> Table nicht in p verschachteln!
+
+Prüfungsstoff: W3C-Spezifikation interpretieren können, welche Elemente verschachtelt werden können
+
+HSR-WED1-HTML-4-Advanced.pdf
+
+* **TABLE**
+    * thead und tbody
+    * caption für Beschriftung
+    * colgroup: Spalten als klasse ansprechen (zb. für CSS)
+
+* **IMG**
+    * width, height als Original grössen angeben!
+    * srcset für mehrere Bilder (zb. für Mobile), zusammen mit "sizes"
+
+* **figure**
+    * Beliebige Elemente verschachteln
+    * mit `<figcaption>` eine Beschriftung darunter setzen
+
+* **video**  
+    mit "poster" ein Bild anzeigen lassen als Vorschaubild
+
+* **form**  
+    input in label verschachteln oder `<label for="id">` mit ID des input-fields
+
+* **button**  
+    statt input type=submit verwenden, damit kein Wert für den Button mitgeschickt wird (unnötig)
+
+* **datalist:**  
+    Werte als Autocomplete vorschlagen
+
+* **pattern-Atrribut:**  
+    Nach pattern der Wert des input-fields validieren
+    
+---
+## Vorlesung 4 - Web Design / Usability
+
+* **Folie 7:**  
+    "Zufriedenheit" aufgeteilt in:
+    * Fehlertolerant (u.a sinnvolle Fehlermeldung)
+    * Ansprechend: Heisst auch vertrauensfördernd, hängt auch mit Effizienz zusammen
+    * Lernfördernd
+
+**"Effektiv"**: Kann ich mein Ziel erreichen? (egal wie)  
+**"Effizienz"**: Ziel mit angemessenem Aufwand erreichen
+
+* **Folie 9:**  
+    Consistency: Heisst auch, die grossen Sites anzuschauen, damit die eigene Website "konsistent" ist mit anderen
 
 ---
 ## Vorlesung 5 - CSS (1)

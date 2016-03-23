@@ -1,1 +1,129 @@
-#Informationssicherheit 1
+# Informationssicherheit 1
+## Allgemein
+### Unterlagen
+* Ebooks
+    * Wolfgang Ertel, Angewandte Kryptographie, Hanser, 2012
+    * Jörg Schwenk, Sicherheit und Kryptographie im Internet, Springer Fachmedien Wiesbaden, 2014
+
+(eins von beiden)
+
+* [Kahn Academy Computer Science, Journey into cryptography](https://www.khanacademy.org/computing/computerscience/cryptography)
+
+---
+
+## Vorlesung 1 - Begriffe / Risk-Management
+
+* **Folie 6**
+    * Confidentiality (auch Privacy)
+    * Integrity (Echtheit)
+    * Availability
+    * Kurz: CIA
+
+* **Chat:** Management - Welches sind die wichtigsten Aufgaben eines Managers
+    - Planung
+    - Unterstützung der Realisierung
+    - Kontrolle
+    - Korrektur
+
+---
+
+## Vorlesung 2 - Standards
+
+* **Folie 2**
+    De-facto Standards beispiele: ASCII (später ANSI standard), Ethernet (später IEEE-Standard), SQL
+
+* **Chat**: Wozu nutzen wir Standards?
+    - Kompatibilität gewährleisten
+    - Markterweiterung
+        - Differenzieren gegenüber Mitbewerber (z.B.Autoindustrie)
+    - Kundenanforderung
+    - Unabhängige Prüfung (Zertifizierung)
+    - Bessere Qualität
+    - Auszeichnung (Gütesiegel)
+
+* **Folie 5**
+JTC: Joint Technical Committee
+
+* **Folie 25**
+    * 27001 gibt an, wie das ISMS aussehen soll
+    * 27002 gibt best practises für die Umsetzung an
+    * 27006: Diese Anforderungen müssen von Auditors erfüllt werden, damit sie andere mit 27001 zertifizieren können
+
+* **Folie 27:**
+    * iso 27001 gilt nicht nur für IT-Systeme, sondern für Firmeninformation allgemein
+    * definiert auch Prozesse (zb. Changemanagement)
+
+* **Folie 36:** Unterschied 27001 vs. 27002
+    * 27001: Sagt was zu tun ist und was die Norm ist
+    * 27002: Sagt was wie zu tun ist mit Umsetzungshinweisen
+
+---
+## Vorlesung 3 - Gefährdungen
+
+### Notizen Referat Hyppönen
+
+* Job war früher "Computer sichern"
+* Ist zu einem sichern "der Gesellschaft" geworden, da alles af Computern läuft
+* Mit einem Netzwerk, das gross genug ist, ist es fast umöglich, es komplett zu beschützen
+* Viren und co. werden von kriminellen Organisationen gschrieben
+* Angreifer verschieben Server ständig in der Welt, was ausnutzt, dass überall andere Rechte gelten
+* Angriffe von staatlichen Organisationen
+* Hacktivismus: Angriffe aus politischer Motivation
+    * Z.b. Attacke auf Sony von Nordkorea aus wegen Film
+
+---
+## Vorlesung 4 - Massnahmen / Informationsquellen
+
+* **Folie 8:**  
+    Personal Firewall hat Kopplung zu den Applikationen (kann auch Applikationen unterscheiden)
+
+* **Folie 12:**  
+    Same origin policy: zb. nur Anfragen von einem bestimmten Server erlauben
+
+* **Folie 19:**  
+    Bei biologischen Merkmalen gibt es immer Fehlerraten: Wie viel Toleranz hat die Software?
+
+* **JUST-Culture**  
+    * Heisst auch, Regeln u.U zu brechen (eigene Entscheidungen treffen)
+    * Fehler / Misstände melden
+
+---
+## Vorlesung 5 - Cryptobasics
+
+* **Folie 9:**  
+    Ansatz: LSB des Host-Images mit MSB des Covert-Images ersetzen.
+
+* **Folie 17:**  
+    Chat: Überprüfen, ob man den richtigen Schlüssel hat: Zb. mit Dictionary abgleichen, Meta-Informationen prüfen, Ethernet-Checksums (grundsätzl.: Ist der Test "sinnvoll"?)
+
+!!! note
+    Siehe auch:
+     <https://www.khanacademy.org/computing/computer-science/cryptography/crypt/v/intro-to-cryptography>
+
+* **Folie 23: Chat:**  
+Kein "e" im Text
+
+* **Folie 28: Chat**
+    * Würfelzeichen: \( H(X) = 2.58 \)
+    * Buchstaben \( ABCD = 1.75 Bit \)
+
+* **Folie 32:**  
+    "Welcome to all Workshop Participants"
+
+* **Folie 47:**  
+    \(26!\) mögliche Schlüssel = \(4 * {10}^{26}\)
+
+* **Folie 51:**  
+    zb. häufigstes Zeichen suchen und annehmen, dass es "e" ist
+
+* **Folie 55: Vigenere**  
+    Jeder Buchstabe wird mit einer anderen Anzahl verschoben
+
+* **Folie 60:**  
+    Geheimcode wird immer wiederholt. Wenn man die länge kennt, ist zb. jedes 6te Zeichen gleich weit verschoben, kann man jedes 6te Zeichen analysieren (wieder mit verteilung)
+
+* **Folie 63:**  
+    Lösung: WOPK...
+
+* **Folie 67:**  
+    XOR-Verknüpfungen

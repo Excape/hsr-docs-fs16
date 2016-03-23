@@ -31,8 +31,10 @@
 
 **Grundgesamtheit**: zb. alle Maschinen in einer Produktionskette
 
-**Merkmal**: Information  
-Merkmalsträger: zb. Maschine mit diesem Merkmal  
+**Merkmal**: Information
+  
+**Merkmalsträger:** zb. Maschine mit diesem Merkmal  
+
 **Merkmalswert**: Wert der Messung
 
 **Nominalskala**: Werte, die gleichbedeutend sind (zb. Geschlecht)
