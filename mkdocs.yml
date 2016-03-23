@@ -17,6 +17,7 @@ pages:
     - 'InfSi1': 'fs16/infsi1.md'
     - 'RKI': 'fs16/rki.md'
     - 'TecBEC': 'fs16/tecbec.md'
+    - 'WED1': 'fs16/wed1.md'
   - Playground: 'playground.md'
 
 
@@ -28,5 +29,5 @@ markdown_extensions:
   - mdx_math
 
 extra_javascript: ['https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML']
-
+extra_css: [extra.css]
 site_dir: /var/www/hsr-docs
