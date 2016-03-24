@@ -5,13 +5,13 @@
 ### Definition / Eigenschaften
 **Definition:** Die Menge aller Stammfunktionen des Integranden
 $$f(x) = \frac d{dx} F(x)$$
-$$\int f(x) dx = F(x) + const$$
+$$\int f(x)\,dx = F(x) + const$$
 
 Die Ableitung macht die Integration rückgängig:
-$$f(x) = \frac d{dx} \left(\int f(x) dx\right)$$
+$$f(x) = \frac d{dx} \left(\int\,f(x) dx\right)$$
 
 Das Integral macht die Ableitung rückgängig, **bis auf die Konstante**
-$$f(x) + const = \int f'(x) dx$$
+$$f(x) + const = \int f'(x)\,dx$$
 
 ### Wichtigste Integrale
 
@@ -64,18 +64,18 @@ $$\int (g(x))^q\cdot g'(x)\,dx = \begin{cases} \frac 1{q+1}g^{q+1} (x) + const &
 * Ein Integrand als Bruch kann umgeschrieben werden
     $$\int\frac{g'(x)}{(g(x))^q}\,dx = \int (g(x))^{-q}\cdot g'(x)\,dx$$
 * "Ableitung durch Funktion" kann ohne integrieren gelöst werden:
-    $$\int\frac{g'(x)}{g(x)}\,dx = \ln(|f(x)|) + const$$
+    $$\int\frac{g'(x)}{g(x)}\,dx = \ln(|g(x)|) + const$$
     
 #### Partielle Integration
 **Voraussetzung:** Der Integrand ist ein Produkt.  
-Ist nur nützlich, wenn das verbleibende Integral einfacher zu berechnen ist, als das ursprüngliche. Dies z.B. wenn \(g(x)\) ein Polynom ist und \(f(x)\) einer der Funktionen \(e^x, \sin(x) \cos(x)\).
+Ist nur nützlich, wenn das verbleibende Integral einfacher zu berechnen ist, als das ursprüngliche. Dies z.B. wenn \(g(x)\) ein Polynom ist und \(f(x)\) einer der Funktionen \(e^x, \sin(x), \cos(x)\).
 
 $$\int f(x)\,g(x)\, = F(x)\,g(x) - \int F(x)\,g'(x)\, dx$$
 
 Vorgehen am Beispiel:
 
-\(\int \underbrace{e^x}_{\int\cdot}\cdot\underbrace{x^2+3x}_{\frac d{dx}\left(\cdot\right) }\, dx = e^x \cdot (x^2+3x) - \int \underbrace{e^x}_{\int\cdot}\cdot\underbrace{(2x+3)}_{\frac d{dx}\cdot}\,dx\)  
+\(\int \underbrace{e^x}_{\int\cdot}\cdot\underbrace{x^2+3x}_{\frac d{dx}\left(\cdot\right) }\, dx = e^x \cdot (x^2+3x) - \int \underbrace{e^x}_{\int\cdot}\cdot\underbrace{(2x+3)}_{\frac d{dx}(\cdot)}\,dx\)  
 \(\quad e^x\;\cdot\;(2x+3)\qquad\qquad\qquad\qquad\quad \underbrace{e^x\quad\cdot\quad 2}_{\text{Verbleibendes Integral}}\)  
 \(=e^x\cdot (x^2+3x) - \left(e^x\cdot(2x+3)-\int e^x \cdot 2\, dx\right)\)  
 \(=e^x\cdot (x^2+3x) - e^x\cdot(2x+3)+2e^x + const\)  
-\(\underline{= e^x(x^2+x - 1) + const}\)
+\(\underline{\underline{= e^x(x^2+x - 1) + const}}\)
