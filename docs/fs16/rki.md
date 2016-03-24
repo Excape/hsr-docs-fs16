@@ -27,6 +27,7 @@
     - Bsp.: "Müller stellt fest ... [x]", schöner als einfach am Schluss eines Abschnitts ein Zitat zu kennzeichnen
     - X ist fortlaufende Nr. über den ganzen Text
 
+---
 ## Links
 
 Allgemein:
@@ -151,6 +152,7 @@ Der Aufwand zur Bestimmung der Personen ist im Rahmen von Big Data Analytics in 
 S. 51/52  
 Problem: Bearbeitung anonymisierter Daten ist nicht datenschutzreleveant, aber je mehr anonymisierte Daten vorhanden sind, desto höher ist die Wahrscheinlichkeit, dass die Daten wieder einer Person zugeordnet werden können.
 
+---
 # Übung Abstract
 /home/robin/ownCloud/HSR/RKI/3_Sewo 3
 
