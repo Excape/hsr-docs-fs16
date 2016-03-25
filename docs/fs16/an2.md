@@ -1,4 +1,22 @@
 #Analysis 2 Formelsammlung
+[TOC]
+## Taylor-Reihen
+
+### Taylor-Polynom
+Ein Taylor-Polynom approximiert eine Funktion \(f(x)\) um einen Entwicklungspunkt \(x_0\). Je höher die Ordnung des Polynoms, desto "ähnlicher" ist es zu \(f(x)\) um den Punkt \(x=x_0\):
+
+Ein Taylor-Polynom \(p_N\) mit \(N\)-ter Ordnung der Funktion \(f(x)\) um den Punkt \(x_0\)  
+$$p_N (x) = \sum_{i=0}^N \frac{f^{(i)}(x_0)}{i!} {(x-x_0)}^i$$
+
+### Taylor-Reihe
+Eine Taylor-Reihe ist ein Taylor-Polynom mit "unendlich hohem Grad"
+
+$$t(x) = \sum_{i=0}^\infty\frac{f^{(i)}(x_0)}{i!} {(x-x_0)}^i$$
+
+### Fehlerrechnung
+folgt noch...
+
+
 
 ## Unbestimmte Integrale
 
