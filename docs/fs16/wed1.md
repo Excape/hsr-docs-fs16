@@ -177,3 +177,29 @@ Variante mit externem File:
 
 * **Folie 51**
     * Mit normalen Selektoren kann man keine Teile eines Elements selektieren, nicht z.B. nur den ersten Buchstaben
+
+---
+## Vorlesung 6 - CSS (2)
+
+* **Folie 65**
+    * Box-Sizing: Padding und Border wird vom Content abgezogen. z.B. verwendet, um Elemente nebeneinander zu platzieren
+* **Folie 66**
+    * Outline verwenden, weil sie keine "Grösse" des Elements braucht
+    * Oder wenn ein Element Border nicht unterstützt
+    * Bsp: Outline bei mouse-hover hinzufügen, ohne die Grösse des Elements zu vergrössern
+    * Border kann mit Bild erstellt werden mit `border-image`
+* **Folie 67**
+    * Reihenfolge: **top - right - left - bottom**
+* **Folie 81**
+    * Opacity = 0 ist noch erkennbar für zb. `hover`, bei visibility = hidden nicht
+* **Folie 84**
+    * `position: absolute` heisst absolute Werte relativ zum Parent, das ebenfalls `position: relative` oder `absolute` hat!
+    * `relative`: Neuer "Nullpunkt", an dem es positioniert wird
+* **Folie 92/93**
+    * Styles mit höherer Spezifität werden bevorzugt
+    * A ist spezifischer als B ist spezifischer als C
+    * Inline-Style ist spezifischer als alles andere
+* **Folie 97**
+    * `1em`: Gleich gross wie Parent-Schriftgrösse
+    * `1 rem`: Gleich gross wie Body-Schriftgrösse
+    * `100 vh`: 100% der Viewport-Höhe
