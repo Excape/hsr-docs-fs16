@@ -127,3 +127,33 @@ Kein "e" im Text
 
 * **Folie 67:**  
     XOR-Verknüpfungen
+    
+    
+## Vorlesung 6 - Encryption
+* **Folie 6**
+    * A5/1 hat geheimen Algorithmus (security by obscurity), wurde aber schnell geknackt
+* **Folie 9**
+    * Plaintext XOR Cipher Stream = Ciphertext
+    * Ciphertext XOR Cipher Stream = Plaintext
+    * Problem: Takt muss exakt stimmen
+    * PRNG generiert aus kurzer Zeichenfolge einen pseudo-zufälligen Cipher-Stream
+* **Folie 11**
+    * \(2^k\) mögliche Zustände, d.h spätestens dann wiederholt es sich
+    * Problem mit 0-Folge
+* **Chat Folie 12**
+    * Immer 1., 2. und letztes Bit XOR
+    * Max. \(2^n - 1\) Länge
+* **Folie 14**
+    * Reihe X korreliert mit Output -> Attacke möglich
+* **Folie 18**
+    * IV: Initalisierungsvektor (beiden bekannt)
+    * Braucht mit Brute-force nur noch \(2^{40}\) Möglichkeiten
+* **Chat Folie 20**
+    * Hex: 4 bit
+    * Base64: 6 bit
+    * Ziffern: 3.3 bit
+    * Alphabet: \(\log_2{(26)} = 4.7\;\text{bit}\)
+    * Alphabet & Ziffern: \(\log_2{(26)} = 5.1\;\text{bit}\)
+    * In der Praxis sind die Zeichen aber nicht zufällig gewählt, der Informationsgehalt ist also wesentlich geringer
+* **Folie **
+    * 
