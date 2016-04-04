@@ -157,3 +157,21 @@ $$h = \frac {19 * 5 kb}{20 * 5 kb} = 0.95$$
 
 * **Folie 108:**  
     Pro Prozess ein Schlüssel (Zahl) in ein Register geladen. Ein schlüssel wurde einer Partition zugeteilt, dann bei jedem Zugriff auf Speicherschutz überprüft
+    
+## Vorlesung 6 - Unix-Shell-Skripts (1)
+
+Feedback: <http://tinyurl.com/Shell-FS16>
+
+* Bash-Login-Skripte
+    * `~/.bash_profile` für normales Login
+    * `~/.bash_rc` für remote-login (ssh)
+* Shell-Befehle
+    * `k1 || k2`: k2 wird **nur** ausgeführt, falls k1 nicht erfolgreich ist
+    * `(k)`: k wird in Subshell ausgeführt
+* Variablen
+    * `$SHELL` ist eine Umgebungsvariable, zeigt also zb. nicht, in welcher Shell ein Skript gerade ausgeführt wird!
+    * Einlesen von Variablen: `read <variable>`
+    * Einlesen aus File: `read w1 w2 w3 < wordfile.txt`, wobei die einzelnen w1, w2, w3 im file mit einem leerzeichen getrennt sind
+    * Spezialvariablen:
+        ![Spezialvariablen](img/spezial-shell-variablen.png)
+    * Array: `arr=(11 23 55)`, lesen: `${arr[0]}`
