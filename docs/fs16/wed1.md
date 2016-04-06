@@ -203,3 +203,57 @@ Variante mit externem File:
     * `1em`: Gleich gross wie Parent-Schriftgrösse
     * `1 rem`: Gleich gross wie Body-Schriftgrösse
     * `100 vh`: 100% der Viewport-Höhe
+---
+## Vorlesung 7 - Javascript (1)
+
+* **Folie 11**
+    * "Compiler" übersetzt ES6-Code in ES5
+* **Folie 15**
+    * Ausgabe: "Small"
+* **Folie 18**
+    * V8-Engine "kompiliert" Javascript, ansonsten wird grundsätzlich nur ein Interpreter benötigt
+* **Folie 20**
+    * Javascript ist "dynamic typed": Der Typ wird dynamisch festgelegt und kann verändert werden (kein guter Code!)
+* **Folie 21**
+    * Immutable: Primitve Typen können nicht verändert werden
+* **Booleans**
+    * Jeder Wert kann in ein boolean gewandelt werden
+    * 0, false, "", null, undefined, NaN geben `false`
+    * Alle anderen Werte ergeben `true`
+    * Umwandlung mit `Boolean(value)` oder `!!(value)`
+    * Rätsel: 
+        * `1 && 2 && 3` = `3` 
+        * `1 && false && 0` = `false`
+        * `"Hallo" || 1 || false || xyz` = `"Hallo"`
+        * Es gibt das erste Element aus, das nicht zutrifft
+* **Number**
+    * Mit `Number.isSafeInteger()` prüfen, ob die Zahl richtig interpretiert wird
+    * NaN hat den Typ number
+    * isNaN() zum überprüfen, NaN == NaN ist immer false!
+    * `+()` schaut auf den ganzen Wert bei der Umwandlung, `parseInt()` parsed bis zum ersten Fehler
+    * Rechenfehler: `0.1 + 0.2 != 3`, Rundungsfehler, ausser sie runden auf einen Integer auf (z.B. `0.1 + 0.9 == 1`)
+    * Rätsel:
+        * `3 > 2 > 1` = `false`
+        * `3 > 2 >= 1` = `true`
+        * Weil `3 > 2` wird auf `true` ausgewertet und `+(true)` ist 1
+* **String**
+    * Alles innerhalb `${}` wird interpretiert und als String ausgegeben
+    * Ein String, der `${}` beinhaltet, muss mit Backticks eingeschlossen sein
+* **Folie 31 Quiz**
+    * 2
+    * 2
+    * 8
+    * "42"
+    * "30px"
+    * NaN (Versucht von "px1" 2 zu subtrahieren)
+    * Infinity
+    * "3px63px"
+    * "fooNaN" (+"abc" wird zur Zahl)
+    * 3
+* **Folie 37**
+    * Testen auf undefined: `typeof variable == 'undefined'`
+    * Testen eines Klassenattributs: `typoeof(class != 'undefined' && class.variable != undefined)`
+* **Arrays**
+    * `for (var x in arr)` iteriert nicht über die Werte, sondern nur über die Properties (bei einem "primitiven Array" der Index ab 0)
+    * Wie erwwartet bei `for (z of arr)`
+    * Diese Varianten sind erst ab ES6 unterstützt, arr.forEach(function) aber schon früher

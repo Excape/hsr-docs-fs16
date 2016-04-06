@@ -56,7 +56,7 @@
     Vererbung wird zu Compile-Time festgelegt, bei der Komposition wird erst zur Runtime das objekt erstellt, es ist also flexibler
 
 ---
-# Vorlesung 5 - Rekursion II
+## Vorlesung 5 - Rekursion II
 * Folie 41:
     Mit diesem Algorithmus gibt es weniger multiplikationen, da nicht von 1 bis n eine Multiplikation gemacht werden muss, sondern n wird jeweils halbiert:
     $$3^9 = 3^6 * 3^6$$
@@ -78,3 +78,20 @@ Dies ist **keine** Endrekursion!
     Alternative mit Integer:
     $$floor: \frac n2$$
     $$ceil: \frac n2 + n % 2$$
+
+## Vorlesung 6 - Stacks
+* **Folie 5**
+    * In diesem Beispiel gibt pop() bei leerem Stack *null* zurück
+* **Folie 6**
+    * *java.util.Stack<E>.push()* gibt das Item gleich wieder zurück
+    * Gibt *EmptyStackException*, falls Stack leer ist (bei pop() und peek())
+* **Folie 8**
+    * EmptyStackException ist RuntimeException, also **unchecked** (Designfrage)
+* **Folie 11**
+    * PC (Programmzähler) zeigt auf Position nach dem Funktionsaufruf (Rücksprungadresse). Hier zb. zeigt PC = 1 auf die Zeile nach `bar (k);`
+* **Folie 17**
+    * Das gepopte Element wird auf *null* gesetzt, damit die Referenz entfernt wird und der GC aufräumen kann.
+* **Folie 18**
+    * list.addFirst() ist \(O(1)\), da einfach ein neues Element an den Anfang "gehängt" wird.
+    * Würde das oberste Element als letztes angehängt, wäre es \(O(n)\), da die ganze Liste durchiteriert werden müsste
+    * 
