@@ -159,3 +159,30 @@ Problem: Bearbeitung anonymisierter Daten ist nicht datenschutzreleveant, aber j
 Vor Ende des Semesters abgeben!
 
 Abgabe als Word oder ausgedruckt!!
+
+
+---
+# Leistungsnachweis
+## Ausgangslage
+* Gespräch erarbeiten, das schlecht ausgeht
+* Konstruktive Variante entwickeln
+    * Situation muss gleich bleiben
+    * Personen bleiben gleich eingestellt, aber zb. jemand ändert seine Strategie
+    * Anzahl Äusserungen egal
+    * Am Schluss kommt es zu einer Lösung
+* Kap. 15 - 19, eins auswählen (für optimierte Version)
+* Am besten 2 beteiligte Personen (max. 3)
+* **21** Äusserungen (21 mal hin und her)
+* Handout
+    * Max. 2 Seiten + Anhang
+    * Zusammenfassung
+    * Gespräch in den Anhang
+* Analyse:
+    * Fragen
+    * Gesprächshaltung / Stil
+    * Gesprächsstörer
+    * Vier Ebenen
+    * Transaktionen
+* Benotung (zählt 20% zur Abschlussnote)
+    * 75% inhalt (Gruppennnote)
+    * 25% Individuell
