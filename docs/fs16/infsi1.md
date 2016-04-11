@@ -128,7 +128,7 @@ Kein "e" im Text
 * **Folie 67:**  
     XOR-Verknüpfungen
     
-    
+---    
 ## Vorlesung 6 - Encryption
 * **Folie 6**
     * A5/1 hat geheimen Algorithmus (security by obscurity), wurde aber schnell geknackt
@@ -155,5 +155,21 @@ Kein "e" im Text
     * Alphabet: \(\log_2{(26)} = 4.7\;\text{bit}\)
     * Alphabet & Ziffern: \(\log_2{(26)} = 5.1\;\text{bit}\)
     * In der Praxis sind die Zeichen aber nicht zufällig gewählt, der Informationsgehalt ist also wesentlich geringer
-* **Folie **
-    * 
+---
+## Vorlesung 7
+* **Folie 3**
+    * Public-Key Verfahren ist grundsätzlich Block-Cipher
+    * RSA oder ECC (Eliptic-Curve-Cryptography)
+    * RSA: Large Key-Size: 2048bit (Symmetrisch: zb. AES256)
+    * ECC: Small Key Size (224bit)
+* **Folie 4**
+    * Key-Exchange (Public Key Distribution): Public-Key-Verfahren, um symmetrischen Key auszutauschen (Diffie-Hellmann, ECC)
+* **Folie 7 Chat**
+    * \(A_s = \frac{n(n-1)}{2} = 4950 \)
+    * \(A_p = 100\)
+* Animation Faktorisieren vs. Multiplizieren: <https://www.khanacademy.org/computing/computer-science/cryptography/modern-crypt/p/time-complexity-exploration>
+* **Folie 17**
+    * Generieren einer Zufallszahl zb. mit Mausbewegungen
+    * Primzahl wählen: <http://crypto.stackexchange.com/questions/1970/how-are-primes-generated-for-rsa>
+* **Folie 19**
+    * GCHQ hat schon 1970 das gleiche Verfahren wie bei RSA entwickelt

@@ -157,7 +157,8 @@ $$h = \frac {19 * 5 kb}{20 * 5 kb} = 0.95$$
 
 * **Folie 108:**  
     Pro Prozess ein Schlüssel (Zahl) in ein Register geladen. Ein schlüssel wurde einer Partition zugeteilt, dann bei jedem Zugriff auf Speicherschutz überprüft
-    
+
+---    
 ## Vorlesung 6 - Unix-Shell-Skripts (1)
 
 Feedback: <http://tinyurl.com/Shell-FS16>
@@ -175,3 +176,9 @@ Feedback: <http://tinyurl.com/Shell-FS16>
     * Spezialvariablen:
         ![Spezialvariablen](img/spezial-shell-variablen.png)
     * Array: `arr=(11 23 55)`, lesen: `${arr[0]}`
+
+---
+## Vorlesung 7 - Unix-Shell-Skripts (2)
+Feedback: <http://tinyurl.com/Shell-FS16>
+
+Funktionsweise $OPTIND: <http://stackoverflow.com/questions/14249931/how-does-the-optind-variable-work-in-the-shell-builtin-getopts>
