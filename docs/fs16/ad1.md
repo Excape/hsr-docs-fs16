@@ -79,6 +79,7 @@ Dies ist **keine** Endrekursion!
     $$floor: \frac n2$$
     $$ceil: \frac n2 + n % 2$$
 
+---
 ## Vorlesung 6 - Stacks
 * **Folie 5**
     * In diesem Beispiel gibt pop() bei leerem Stack *null* zurück
@@ -94,4 +95,14 @@ Dies ist **keine** Endrekursion!
 * **Folie 18**
     * list.addFirst() ist \(O(1)\), da einfach ein neues Element an den Anfang "gehängt" wird.
     * Würde das oberste Element als letztes angehängt, wäre es \(O(n)\), da die ganze Liste durchiteriert werden müsste
-    * 
+* **Folie 31**
+    * Im Java Doc steht, dass statt java.util.Stack besser *Deque* benutzt werden soll
+    * Problem: Der Stack erbt alle Methoden von *Vector* und kann somit auch zb. "SetElementAt", also mehr als ein Stack eigentlich können sollte
+    * **Merksatz** Design: Wenn B von A erbt, fragen: Ist B auch ein A?
+    * Hier: Ist Stack auch ein Vektor? <- Nein
+
+---
+## Vorlesung 7 - Queues
+
+* "DeQueue", "Deque (sprich Decked)": Double ended Queue
+* Nicht zu verwechseln mit der Operation "Dequeue"!
