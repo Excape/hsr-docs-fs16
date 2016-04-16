@@ -7,6 +7,10 @@
 * What makes you you? <http://waitbutwhy.com/2014/12/what-makes-you-you.html> 
 
 ## Book notes
+Book Summary:
+
+<https://github.com/nikolastankovic/E-mc-2>
+
 ### Chapter 2
 * Energy
 * Faraday
@@ -14,4 +18,3 @@
 * Electricity / magnetism
 * ETH
 * Star Wars
-
