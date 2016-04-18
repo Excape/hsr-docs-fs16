@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Robin Suter">
+  
+  <title>WED1 - HSR Notizen</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../extra.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "WED1";
+    var mkdocs_page_input_path = "fs16/wed1.md";
+    var mkdocs_page_url = "/fs16/wed1/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> HSR Notizen</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>FS16</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ad1/">AD1</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../an2/">An2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../autospr/">AutoSpr</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../bsys2/">Bsys2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../exev/">ExEv</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../infsi1/">InfSi1</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../rki/">RKI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tecbec/">TecBEC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">WED1</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#web-engineering-design">Web Engineering + Design</a></li>
+                
+                    <li><a class="toctree-l4" href="#allgemein">Allgemein</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-1-html-p-1">Vorlesung 1 - HTML p. 1</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-2-html-p2">Vorlesung 2 - HTML p.2</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-3-html-p-3">Vorlesung 3 - HTML p. 3</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-4-web-design-usability">Vorlesung 4 - Web Design / Usability</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-5-css-1">Vorlesung 5 - CSS (1)</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-6-css-2">Vorlesung 6 - CSS (2)</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-7-javascript-1">Vorlesung 7 - Javascript (1)</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../playground/">Playground</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">HSR Notizen</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>FS16 &raquo;</li>
+        
+      
+    
+    <li>WED1</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/Excape/hsr-docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="web-engineering-design">Web Engineering + Design</h1>
+<h2 id="allgemein">Allgemein</h2>
+<hr />
+<h2 id="vorlesung-1-html-p-1">Vorlesung 1 - HTML p. 1</h2>
+<ul>
+<li><strong>Folie 12</strong> - Encoding<ul>
+<li>UTF-8 ist gleich wie ISO 8859-1, ausser es werden Sonderzeichen, z.B. Umlaute verwendet</li>
+<li>Erstes Zeichen im UTF-8 File ist meist für Bytereihenfolge</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-2-html-p2">Vorlesung 2 - HTML p.2</h2>
+<p>"Fav-Icon" verlinken: </p>
+<pre><code class="html">&lt;link rel=&quot;icon&quot; href=&quot;/icon.png&quot; type=&quot;image/png&quot; /&gt;
+</code></pre>
+
+<p>mit 32px x 32px</p>
+<pre><code class="html">&lt;base href=&quot;http://www.my­page.tld&quot; /&gt;
+</code></pre>
+
+<p>Relative Links werden an die Base angehängt</p>
+<p>Empfohlene Metadaten: Autor, Beschreibung, Keywords</p>
+<pre><code class="html">&lt;meta name=&quot;robots&quot; content=&quot;noindex, nofollow&quot; /&gt;
+</code></pre>
+
+<p>Crawler indexieren die Seite nicht (noindex) und folgen keinen Links (nofollow)</p>
+<p><code>http-equiv</code> Meta-Tags: header, die als HTTP-header ausgeliefert werden (zb. refresh, redirect, ...)<br />
+Nicht geeignet für Produktion</p>
+<p>Neue HTML5-Tags:<br />
+<code>header</code>, <code>section</code>, <code>article</code>, <code>footer</code><br />
+Für Suchmaschinen / Accessibility Tools / ... zur besseren Auszeichnung</p>
+<ul>
+<li>
+<p><strong>Folie 17:</strong></p>
+<ul>
+<li><code>aside</code>: Zusatzinformationen zur Seite (nichts mit dem Inhalt zu tun)</li>
+<li>Eine Section braucht nicht zwingend ein header (validator gibt Warnung aus)</li>
+<li>Header und Footer werden als header und footer der Seite gebraucht, aber auch pro Section </li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 20:</strong></p>
+<ul>
+<li>Beispiel Time:<br />
+<code>&lt;time datetime="2008-02-14 20:00"&gt;Valentines day&lt;/time&gt;</code></li>
+<li>Beispiel abbr:<br />
+<code>&lt;abbr title="World Health Organization"&gt;WHO&lt;/abbr&gt;</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 21:</strong><br />
+<code>&lt;b&gt;</code> und <code>&lt;i&gt;</code> wurden in html5 umdefiniert, damit es nicht mehr ein Aussehen beschreibt</p>
+</li>
+<li>
+<p><strong>Folie 22:</strong><br />
+    Navigation nicht im Footer verwenden (stattdessen <aside> verwenden)</p>
+</li>
+</ul>
+<p>Mime-Types: <a href="https://wiki.selfhtml.org/wiki/Referenz:MIME-Typen">https://wiki.selfhtml.org/wiki/Referenz:MIME-Typen</a></p>
+<hr />
+<h2 id="vorlesung-3-html-p-3">Vorlesung 3 - HTML p. 3</h2>
+<p>Repetition Content model:</p>
+<p>Table ist Flow-Content, p ebenfalls -&gt; Table nicht in p verschachteln!</p>
+<p>Prüfungsstoff: W3C-Spezifikation interpretieren können, welche Elemente verschachtelt werden können</p>
+<p>HSR-WED1-HTML-4-Advanced.pdf</p>
+<ul>
+<li>
+<p><strong>TABLE</strong></p>
+<ul>
+<li>thead und tbody</li>
+<li>caption für Beschriftung</li>
+<li>colgroup: Spalten als klasse ansprechen (zb. für CSS)</li>
+</ul>
+</li>
+<li>
+<p><strong>IMG</strong></p>
+<ul>
+<li>width, height als Original grössen angeben!</li>
+<li>srcset für mehrere Bilder (zb. für Mobile), zusammen mit "sizes"</li>
+</ul>
+</li>
+<li>
+<p><strong>figure</strong></p>
+<ul>
+<li>Beliebige Elemente verschachteln</li>
+<li>mit <code>&lt;figcaption&gt;</code> eine Beschriftung darunter setzen</li>
+</ul>
+</li>
+<li>
+<p><strong>video</strong><br />
+    mit "poster" ein Bild anzeigen lassen als Vorschaubild</p>
+</li>
+<li>
+<p><strong>form</strong><br />
+    input in label verschachteln oder <code>&lt;label for="id"&gt;</code> mit ID des input-fields</p>
+</li>
+<li>
+<p><strong>button</strong><br />
+    statt input type=submit verwenden, damit kein Wert für den Button mitgeschickt wird (unnötig)</p>
+</li>
+<li>
+<p><strong>datalist:</strong><br />
+    Werte als Autocomplete vorschlagen</p>
+</li>
+<li>
+<p><strong>pattern-Atrribut:</strong><br />
+    Nach pattern der Wert des input-fields validieren</p>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-4-web-design-usability">Vorlesung 4 - Web Design / Usability</h2>
+<ul>
+<li><strong>Folie 7:</strong><br />
+    "Zufriedenheit" aufgeteilt in:<ul>
+<li>Fehlertolerant (u.a sinnvolle Fehlermeldung)</li>
+<li>Ansprechend: Heisst auch vertrauensfördernd, hängt auch mit Effizienz zusammen</li>
+<li>Lernfördernd</li>
+</ul>
+</li>
+</ul>
+<p><strong>"Effektiv"</strong>: Kann ich mein Ziel erreichen? (egal wie)<br />
+<strong>"Effizienz"</strong>: Ziel mit angemessenem Aufwand erreichen</p>
+<ul>
+<li><strong>Folie 9:</strong><br />
+    Consistency: Heisst auch, die grossen Sites anzuschauen, damit die eigene Website "konsistent" ist mit anderen</li>
+</ul>
+<hr />
+<h2 id="vorlesung-5-css-1">Vorlesung 5 - CSS (1)</h2>
+<ul>
+<li>
+<p><strong>Folie 8:</strong><br />
+<a href="../info.cern.ch">Erste Website von Cern</a><br />
+    HTML ist nicht entworfen, um Aussehen festzulegen, sondern nur, um Informationen zu <strong>strukturieren</strong><br />
+    Die Struktur wird von Styling getrennt</p>
+</li>
+<li>
+<p><strong>Folie 15</strong>  </p>
+<ul>
+<li>Cascading: Verhalten, wenn mehrere Styles auf das gleiche Element angewendet werden  </li>
+<li>Seit CSS3 mit Modulen aufgebaut für Weiterentwicklungen, so können auch einzelne Module weiterentwickelt werden</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 18-27 - CSS anwenden</strong></p>
+<ul>
+<li>Mit Attribut <code>style</code> (z.B. <code>style="color: red"</code>)</li>
+<li>Zum ausprobieren: CSS-Styles in den Developer Tools ändern</li>
+<li>Mit style-Tag im <code>&lt;head&gt;</code>:  </li>
+</ul>
+</li>
+</ul>
+<pre><code class="html">&lt;style&gt;
+    p {
+        color: red;
+    }
+&lt;/style&gt;
+</code></pre>
+
+<p>Variante mit externem File:</p>
+<pre><code class="html">&lt;head&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;file.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;file.css&quot; media=&quot;screen&quot;&gt; /* Für Unterscheidung Bildschirm / Ausdruck */
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;file-print.css&quot; media=&quot;print&quot;&gt;
+&lt;/head&gt;
+</code></pre>
+
+<ul>
+<li>
+<p><strong>Folie 33</strong><br />
+    Eine <code>id</code> sollte im HTML-Dokument nur einmal vorkommen</p>
+</li>
+<li>
+<p><strong>Folie 35 - Kombinatoren</strong></p>
+<ul>
+<li>Kindselektor: z.B. <code>body &gt; ul</code> - Wird auf Kind von body angewendet</li>
+<li>Nachfahrenselektor: <code>body ul</code> - Wird nur angewendet, wenn  oberhalb von ul ein Body steht.</li>
+<li><a href="https://wiki.selfhtml.org/wiki/CSS/Selektoren/Kombinator">Wiki</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 37</strong>  </p>
+<ol>
+<li>Regel 1 und 2</li>
+<li>Regel 2 (weil <code>li</code> nicht direktes Kind von <code>ol</code> ist)</li>
+<li>Regel 1 und 2</li>
+</ol>
+</li>
+<li>
+<p><strong>Folie 38</strong></p>
+<ol>
+<li>Regel .1 &amp; 3</li>
+<li>Regel 3</li>
+<li>Regeln 2 &amp; 3</li>
+<li>Regeln 2 &amp; 3</li>
+</ol>
+</li>
+<li>
+<p><strong>Folie 41</strong>  </p>
+<ul>
+<li><code>li &gt; *</code> selektiert alle Kinder von <code>li</code></li>
+<li><code>body * span</code> selektiert <code>span</code>, denen <code>body</code> bevorsteht aber mind. 1 Tag dazwischen ist</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 46 - 47</strong>  </p>
+<ul>
+<li><code>a[Attribute]</code> selektiert alle <code>a</code> Tags, die das Attribut <code>Attribute</code> gesetzt haben</li>
+<li>Mit z.B. <code>a[href=v]</code> überprüft ob der Wert des Attributs = <code>v</code> ist</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 48</strong></p>
+<ul>
+<li>Regel 1 gilt für "Absenden"-Button</li>
+<li>Regel 2 gilt für alle <code>li</code> in der ersten Liste ausser das erste, da "Berlin" dort nich allein steht</li>
+<li>Regel 3 gilt für die ersten beiden <code>li</code>, da <code>hreflang</code> mit <code>de</code> startet</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 49</strong></p>
+<ul>
+<li>Regel 1 gilt für alle http-Links</li>
+<li>Regel 2 gilt für alle link 2 (nicht 4, da es mit / anfängt)</li>
+<li>Regel 3 gilt für Link 3 (<code>wiki.selfhtml.org</code>), aber nicht für link 4, da <code>wiki</code> case-sensitive ist</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 51</strong></p>
+<ul>
+<li>Mit normalen Selektoren kann man keine Teile eines Elements selektieren, nicht z.B. nur den ersten Buchstaben</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-6-css-2">Vorlesung 6 - CSS (2)</h2>
+<ul>
+<li><strong>Folie 65</strong><ul>
+<li>Box-Sizing: Padding und Border wird vom Content abgezogen. z.B. verwendet, um Elemente nebeneinander zu platzieren</li>
+</ul>
+</li>
+<li><strong>Folie 66</strong><ul>
+<li>Outline verwenden, weil sie keine "Grösse" des Elements braucht</li>
+<li>Oder wenn ein Element Border nicht unterstützt</li>
+<li>Bsp: Outline bei mouse-hover hinzufügen, ohne die Grösse des Elements zu vergrössern</li>
+<li>Border kann mit Bild erstellt werden mit <code>border-image</code></li>
+</ul>
+</li>
+<li><strong>Folie 67</strong><ul>
+<li>Reihenfolge: <strong>top - right - left - bottom</strong></li>
+</ul>
+</li>
+<li><strong>Folie 81</strong><ul>
+<li>Opacity = 0 ist noch erkennbar für zb. <code>hover</code>, bei visibility = hidden nicht</li>
+</ul>
+</li>
+<li><strong>Folie 84</strong><ul>
+<li><code>position: absolute</code> heisst absolute Werte relativ zum Parent, das ebenfalls <code>position: relative</code> oder <code>absolute</code> hat!</li>
+<li><code>relative</code>: Neuer "Nullpunkt", an dem es positioniert wird</li>
+</ul>
+</li>
+<li><strong>Folie 92/93</strong><ul>
+<li>Styles mit höherer Spezifität werden bevorzugt</li>
+<li>A ist spezifischer als B ist spezifischer als C</li>
+<li>Inline-Style ist spezifischer als alles andere</li>
+</ul>
+</li>
+<li><strong>Folie 97</strong><ul>
+<li><code>1em</code>: Gleich gross wie Parent-Schriftgrösse</li>
+<li><code>1 rem</code>: Gleich gross wie Body-Schriftgrösse</li>
+<li><code>100 vh</code>: 100% der Viewport-Höhe</li>
+</ul>
+<hr />
+</li>
+</ul>
+<h2 id="vorlesung-7-javascript-1">Vorlesung 7 - Javascript (1)</h2>
+<ul>
+<li><strong>Folie 11</strong><ul>
+<li>"Compiler" übersetzt ES6-Code in ES5</li>
+</ul>
+</li>
+<li><strong>Folie 15</strong><ul>
+<li>Ausgabe: "Small"</li>
+</ul>
+</li>
+<li><strong>Folie 18</strong><ul>
+<li>V8-Engine "kompiliert" Javascript, ansonsten wird grundsätzlich nur ein Interpreter benötigt</li>
+</ul>
+</li>
+<li><strong>Folie 20</strong><ul>
+<li>Javascript ist "dynamic typed": Der Typ wird dynamisch festgelegt und kann verändert werden (kein guter Code!)</li>
+</ul>
+</li>
+<li><strong>Folie 21</strong><ul>
+<li>Immutable: Primitve Typen können nicht verändert werden</li>
+</ul>
+</li>
+<li><strong>Booleans</strong><ul>
+<li>Jeder Wert kann in ein boolean gewandelt werden</li>
+<li>0, false, "", null, undefined, NaN geben <code>false</code></li>
+<li>Alle anderen Werte ergeben <code>true</code></li>
+<li>Umwandlung mit <code>Boolean(value)</code> oder <code>!!(value)</code></li>
+<li>Rätsel: <ul>
+<li><code>1 &amp;&amp; 2 &amp;&amp; 3</code> = <code>3</code> </li>
+<li><code>1 &amp;&amp; false &amp;&amp; 0</code> = <code>false</code></li>
+<li><code>"Hallo" || 1 || false || xyz</code> = <code>"Hallo"</code></li>
+<li>Es gibt das erste Element aus, das nicht zutrifft</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Number</strong><ul>
+<li>Mit <code>Number.isSafeInteger()</code> prüfen, ob die Zahl richtig interpretiert wird</li>
+<li>NaN hat den Typ number</li>
+<li>isNaN() zum überprüfen, NaN == NaN ist immer false!</li>
+<li><code>+()</code> schaut auf den ganzen Wert bei der Umwandlung, <code>parseInt()</code> parsed bis zum ersten Fehler</li>
+<li>Rechenfehler: <code>0.1 + 0.2 != 3</code>, Rundungsfehler, ausser sie runden auf einen Integer auf (z.B. <code>0.1 + 0.9 == 1</code>)</li>
+<li>Rätsel:<ul>
+<li><code>3 &gt; 2 &gt; 1</code> = <code>false</code></li>
+<li><code>3 &gt; 2 &gt;= 1</code> = <code>true</code></li>
+<li>Weil <code>3 &gt; 2</code> wird auf <code>true</code> ausgewertet und <code>+(true)</code> ist 1</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>String</strong><ul>
+<li>Alles innerhalb <code>${}</code> wird interpretiert und als String ausgegeben</li>
+<li>Ein String, der <code>${}</code> beinhaltet, muss mit Backticks eingeschlossen sein</li>
+</ul>
+</li>
+<li><strong>Folie 31 Quiz</strong><ul>
+<li>2</li>
+<li>2</li>
+<li>8</li>
+<li>"42"</li>
+<li>"30px"</li>
+<li>NaN (Versucht von "px1" 2 zu subtrahieren)</li>
+<li>Infinity</li>
+<li>"3px63px"</li>
+<li>"fooNaN" (+"abc" wird zur Zahl)</li>
+<li>3</li>
+</ul>
+</li>
+<li><strong>Folie 37</strong><ul>
+<li>Testen auf undefined: <code>typeof variable == 'undefined'</code></li>
+<li>Testen eines Klassenattributs: <code>typoeof(class != 'undefined' &amp;&amp; class.variable != undefined)</code></li>
+</ul>
+</li>
+<li><strong>Arrays</strong><ul>
+<li><code>for (var x in arr)</code> iteriert nicht über die Werte, sondern nur über die Properties (bei einem "primitiven Array" der Index ab 0)</li>
+<li>Wie erwwartet bei <code>for (z of arr)</code></li>
+<li>Diese Varianten sind erst ab ES6 unterstützt, arr.forEach(function) aber schon früher</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../playground/" class="btn btn-neutral float-right" title="Playground">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../tecbec/" class="btn btn-neutral" title="TecBEC"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/Excape/hsr-docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../tecbec/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../playground/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

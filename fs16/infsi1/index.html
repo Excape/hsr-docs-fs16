@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Robin Suter">
+  
+  <title>InfSi1 - HSR Notizen</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../extra.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "InfSi1";
+    var mkdocs_page_input_path = "fs16/infsi1.md";
+    var mkdocs_page_url = "/fs16/infsi1/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> HSR Notizen</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>FS16</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ad1/">AD1</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../an2/">An2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../autospr/">AutoSpr</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../bsys2/">Bsys2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../exev/">ExEv</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">InfSi1</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#informationssicherheit-1">Informationssicherheit 1</a></li>
+                
+                    <li><a class="toctree-l4" href="#allgemein">Allgemein</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-1-begriffe-risk-management">Vorlesung 1 - Begriffe / Risk-Management</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-2-standards">Vorlesung 2 - Standards</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-3-gefahrdungen">Vorlesung 3 - Gefährdungen</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-4-massnahmen-informationsquellen">Vorlesung 4 - Massnahmen / Informationsquellen</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-5-cryptobasics">Vorlesung 5 - Cryptobasics</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-6-encryption">Vorlesung 6 - Encryption</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-7-asymmetric-encryption">Vorlesung 7 - Asymmetric Encryption</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-8-digital-signatures">Vorlesung 8 - Digital Signatures</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../rki/">RKI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tecbec/">TecBEC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../wed1/">WED1</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../playground/">Playground</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">HSR Notizen</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>FS16 &raquo;</li>
+        
+      
+    
+    <li>InfSi1</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/Excape/hsr-docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="informationssicherheit-1">Informationssicherheit 1</h1>
+<h2 id="allgemein">Allgemein</h2>
+<h3 id="unterlagen">Unterlagen</h3>
+<ul>
+<li>Ebooks<ul>
+<li>Wolfgang Ertel, Angewandte Kryptographie, Hanser, 2012</li>
+<li>Jörg Schwenk, Sicherheit und Kryptographie im Internet, Springer Fachmedien Wiesbaden, 2014</li>
+</ul>
+</li>
+</ul>
+<p>(eins von beiden)</p>
+<ul>
+<li><a href="https://www.khanacademy.org/computing/computerscience/cryptography">Kahn Academy Computer Science, Journey into cryptography</a></li>
+</ul>
+<hr />
+<h2 id="vorlesung-1-begriffe-risk-management">Vorlesung 1 - Begriffe / Risk-Management</h2>
+<ul>
+<li>
+<p><strong>Folie 6</strong></p>
+<ul>
+<li>Confidentiality (auch Privacy)</li>
+<li>Integrity (Echtheit)</li>
+<li>Availability</li>
+<li>Kurz: CIA</li>
+</ul>
+</li>
+<li>
+<p><strong>Chat:</strong> Management - Welches sind die wichtigsten Aufgaben eines Managers</p>
+<ul>
+<li>Planung</li>
+<li>Unterstützung der Realisierung</li>
+<li>Kontrolle</li>
+<li>Korrektur</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-2-standards">Vorlesung 2 - Standards</h2>
+<ul>
+<li>
+<p><strong>Folie 2</strong>
+    De-facto Standards beispiele: ASCII (später ANSI standard), Ethernet (später IEEE-Standard), SQL</p>
+</li>
+<li>
+<p><strong>Chat</strong>: Wozu nutzen wir Standards?</p>
+<ul>
+<li>Kompatibilität gewährleisten</li>
+<li>Markterweiterung<ul>
+<li>Differenzieren gegenüber Mitbewerber (z.B.Autoindustrie)</li>
+</ul>
+</li>
+<li>Kundenanforderung</li>
+<li>Unabhängige Prüfung (Zertifizierung)</li>
+<li>Bessere Qualität</li>
+<li>Auszeichnung (Gütesiegel)</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 5</strong>
+JTC: Joint Technical Committee</p>
+</li>
+<li>
+<p><strong>Folie 25</strong></p>
+<ul>
+<li>27001 gibt an, wie das ISMS aussehen soll</li>
+<li>27002 gibt best practises für die Umsetzung an</li>
+<li>27006: Diese Anforderungen müssen von Auditors erfüllt werden, damit sie andere mit 27001 zertifizieren können</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 27:</strong></p>
+<ul>
+<li>iso 27001 gilt nicht nur für IT-Systeme, sondern für Firmeninformation allgemein</li>
+<li>definiert auch Prozesse (zb. Changemanagement)</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 36:</strong> Unterschied 27001 vs. 27002</p>
+<ul>
+<li>27001: Sagt was zu tun ist und was die Norm ist</li>
+<li>27002: Sagt was wie zu tun ist mit Umsetzungshinweisen</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-3-gefahrdungen">Vorlesung 3 - Gefährdungen</h2>
+<h3 id="notizen-referat-hypponen">Notizen Referat Hyppönen</h3>
+<ul>
+<li>Job war früher "Computer sichern"</li>
+<li>Ist zu einem sichern "der Gesellschaft" geworden, da alles af Computern läuft</li>
+<li>Mit einem Netzwerk, das gross genug ist, ist es fast umöglich, es komplett zu beschützen</li>
+<li>Viren und co. werden von kriminellen Organisationen gschrieben</li>
+<li>Angreifer verschieben Server ständig in der Welt, was ausnutzt, dass überall andere Rechte gelten</li>
+<li>Angriffe von staatlichen Organisationen</li>
+<li>Hacktivismus: Angriffe aus politischer Motivation<ul>
+<li>Z.b. Attacke auf Sony von Nordkorea aus wegen Film</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-4-massnahmen-informationsquellen">Vorlesung 4 - Massnahmen / Informationsquellen</h2>
+<ul>
+<li>
+<p><strong>Folie 8:</strong><br />
+    Personal Firewall hat Kopplung zu den Applikationen (kann auch Applikationen unterscheiden)</p>
+</li>
+<li>
+<p><strong>Folie 12:</strong><br />
+    Same origin policy: zb. nur Anfragen von einem bestimmten Server erlauben</p>
+</li>
+<li>
+<p><strong>Folie 19:</strong><br />
+    Bei biologischen Merkmalen gibt es immer Fehlerraten: Wie viel Toleranz hat die Software?</p>
+</li>
+<li>
+<p><strong>JUST-Culture</strong>  </p>
+<ul>
+<li>Heisst auch, Regeln u.U zu brechen (eigene Entscheidungen treffen)</li>
+<li>Fehler / Misstände melden</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-5-cryptobasics">Vorlesung 5 - Cryptobasics</h2>
+<ul>
+<li>
+<p><strong>Folie 9:</strong><br />
+    Ansatz: LSB des Host-Images mit MSB des Covert-Images ersetzen.</p>
+</li>
+<li>
+<p><strong>Folie 17:</strong><br />
+    Chat: Überprüfen, ob man den richtigen Schlüssel hat: Zb. mit Dictionary abgleichen, Meta-Informationen prüfen, Ethernet-Checksums (grundsätzl.: Ist der Test "sinnvoll"?)</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Siehe auch:
+ <a href="https://www.khanacademy.org/computing/computer-science/cryptography/crypt/v/intro-to-cryptography">https://www.khanacademy.org/computing/computer-science/cryptography/crypt/v/intro-to-cryptography</a></p>
+</div>
+<ul>
+<li>
+<p><strong>Folie 23: Chat:</strong><br />
+Kein "e" im Text</p>
+</li>
+<li>
+<p><strong>Folie 28: Chat</strong></p>
+<ul>
+<li>Würfelzeichen: <script type="math/tex"> H(X) = 2.58 </script>
+</li>
+<li>Buchstaben <script type="math/tex"> ABCD = 1.75 Bit </script>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 32:</strong><br />
+    "Welcome to all Workshop Participants"</p>
+</li>
+<li>
+<p><strong>Folie 47:</strong><br />
+<script type="math/tex">26!</script> mögliche Schlüssel = <script type="math/tex">4 * {10}^{26}</script>
+</p>
+</li>
+<li>
+<p><strong>Folie 51:</strong><br />
+    zb. häufigstes Zeichen suchen und annehmen, dass es "e" ist</p>
+</li>
+<li>
+<p><strong>Folie 55: Vigenere</strong><br />
+    Jeder Buchstabe wird mit einer anderen Anzahl verschoben</p>
+</li>
+<li>
+<p><strong>Folie 60:</strong><br />
+    Geheimcode wird immer wiederholt. Wenn man die länge kennt, ist zb. jedes 6te Zeichen gleich weit verschoben, kann man jedes 6te Zeichen analysieren (wieder mit verteilung)</p>
+</li>
+<li>
+<p><strong>Folie 63:</strong><br />
+    Lösung: WOPK...</p>
+</li>
+<li>
+<p><strong>Folie 67:</strong><br />
+    XOR-Verknüpfungen</p>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-6-encryption">Vorlesung 6 - Encryption</h2>
+<ul>
+<li><strong>Folie 6</strong><ul>
+<li>A5/1 hat geheimen Algorithmus (security by obscurity), wurde aber schnell geknackt</li>
+</ul>
+</li>
+<li><strong>Folie 9</strong><ul>
+<li>Plaintext XOR Cipher Stream = Ciphertext</li>
+<li>Ciphertext XOR Cipher Stream = Plaintext</li>
+<li>Problem: Takt muss exakt stimmen</li>
+<li>PRNG generiert aus kurzer Zeichenfolge einen pseudo-zufälligen Cipher-Stream</li>
+</ul>
+</li>
+<li><strong>Folie 11</strong><ul>
+<li>
+<script type="math/tex">2^k</script> mögliche Zustände, d.h spätestens dann wiederholt es sich</li>
+<li>Problem mit 0-Folge</li>
+</ul>
+</li>
+<li><strong>Chat Folie 12</strong><ul>
+<li>Immer 1., 2. und letztes Bit XOR</li>
+<li>Max. <script type="math/tex">2^n - 1</script> Länge</li>
+</ul>
+</li>
+<li><strong>Folie 14</strong><ul>
+<li>Reihe X korreliert mit Output -&gt; Attacke möglich</li>
+</ul>
+</li>
+<li><strong>Folie 18</strong><ul>
+<li>IV: Initalisierungsvektor (beiden bekannt)</li>
+<li>Braucht mit Brute-force nur noch <script type="math/tex">2^{40}</script> Möglichkeiten</li>
+</ul>
+</li>
+<li><strong>Chat Folie 20</strong><ul>
+<li>Hex: 4 bit</li>
+<li>Base64: 6 bit</li>
+<li>Ziffern: 3.3 bit</li>
+<li>Alphabet: <script type="math/tex">\log_2{(26)} = 4.7\;\text{bit}</script>
+</li>
+<li>Alphabet &amp; Ziffern: <script type="math/tex">\log_2{(26)} = 5.1\;\text{bit}</script>
+</li>
+<li>In der Praxis sind die Zeichen aber nicht zufällig gewählt, der Informationsgehalt ist also wesentlich geringer</li>
+</ul>
+<hr />
+</li>
+</ul>
+<h2 id="vorlesung-7-asymmetric-encryption">Vorlesung 7 - Asymmetric Encryption</h2>
+<ul>
+<li><strong>Folie 3</strong><ul>
+<li>Public-Key Verfahren ist grundsätzlich Block-Cipher</li>
+<li>RSA oder ECC (Eliptic-Curve-Cryptography)</li>
+<li>RSA: Large Key-Size: 2048bit (Symmetrisch: zb. AES256)</li>
+<li>ECC: Small Key Size (224bit)</li>
+</ul>
+</li>
+<li><strong>Folie 4</strong><ul>
+<li>Key-Exchange (Public Key Distribution): Public-Key-Verfahren, um symmetrischen Key auszutauschen (Diffie-Hellmann, ECC)</li>
+</ul>
+</li>
+<li><strong>Folie 7 Chat</strong><ul>
+<li>
+<script type="math/tex">A_s = \frac{n(n-1)}{2} = 4950 </script>
+</li>
+<li>
+<script type="math/tex">A_p = 100</script>
+</li>
+</ul>
+</li>
+<li>Animation Faktorisieren vs. Multiplizieren: <a href="https://www.khanacademy.org/computing/computer-science/cryptography/modern-crypt/p/time-complexity-exploration">https://www.khanacademy.org/computing/computer-science/cryptography/modern-crypt/p/time-complexity-exploration</a></li>
+<li><strong>Folie 17</strong><ul>
+<li>Generieren einer Zufallszahl zb. mit Mausbewegungen</li>
+<li>Primzahl wählen: <a href="http://crypto.stackexchange.com/questions/1970/how-are-primes-generated-for-rsa">http://crypto.stackexchange.com/questions/1970/how-are-primes-generated-for-rsa</a></li>
+</ul>
+</li>
+<li><strong>Folie 19</strong><br />
+    GCHQ hat schon 1970 das gleiche Verfahren wie bei RSA entwickelt<hr />
+</li>
+</ul>
+<h2 id="vorlesung-8-digital-signatures">Vorlesung 8 - Digital Signatures</h2>
+<ul>
+<li><strong>Folie 2</strong><ul>
+<li>Authenticity: Person ist die, wofür sie sich ausgibt</li>
+</ul>
+</li>
+<li><strong>Folie 4</strong><ul>
+<li>"to hash": Etwas zerhacken</li>
+<li>Bildet Daten variable Länge in ein Code fixer Länge ab</li>
+<li>-&gt; Verschiedene Meldungen führen auf denselben Hash</li>
+<li>Auch MDC (Modification Detection Code), oder Message Digest (MD)</li>
+<li>Einweg-Funktion, zurückrechnen darf nicht möglich sein</li>
+<li>Hash wird verschlüsselt -&gt; Keyed Hash</li>
+<li>MAC: Message Authentication Code</li>
+<li>Idee Signaturen: Hash mit private key verschlüsseln, der Empfänger entschlüsselt mit public key (beweist Authentizität)</li>
+</ul>
+</li>
+<li><strong>Folie 10</strong><ul>
+<li>Komplexität: <script type="math/tex">2 * 2^{56} = 2^{57}</script>, beide Hashes können einzeln angegriffen werden</li>
+</ul>
+</li>
+<li><strong>Folie 13</strong><ul>
+<li>In gefälschten Meldungen Zusatztext einfügen, bis gleicher Hash entsteht wie bei Ursprungsnachricht</li>
+</ul>
+</li>
+<li><strong>Folie 32</strong><ul>
+<li>Anforderungen:<ul>
+<li>Hohe Geschwindigkeit, aber nicht zu schnell</li>
+<li>1 Bit veränderung -&gt; komplett anderer Hash</li>
+<li>Kollisionen verhindern</li>
+</ul>
+</li>
+<li>Zu Programmen angebene Hashes<ul>
+<li>Schlechte Idee, weil auf der Website einfach der Hash ausgetauscht werden könnte</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Folie 45</strong><ul>
+<li>Links: Private key von Bob</li>
+<li>Rechts: Public Key von Bob</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../rki/" class="btn btn-neutral float-right" title="RKI">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../exev/" class="btn btn-neutral" title="ExEv"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/Excape/hsr-docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../exev/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../rki/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

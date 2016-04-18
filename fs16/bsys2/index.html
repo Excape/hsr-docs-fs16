@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Robin Suter">
+  
+  <title>Bsys2 - HSR Notizen</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../extra.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Bsys2";
+    var mkdocs_page_input_path = "fs16/bsys2.md";
+    var mkdocs_page_url = "/fs16/bsys2/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> HSR Notizen</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>FS16</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ad1/">AD1</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../an2/">An2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../autospr/">AutoSpr</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Bsys2</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#betriebssysteme-2">Betriebssysteme 2</a></li>
+                
+                    <li><a class="toctree-l4" href="#allgemein">Allgemein</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-1-ms-windows-gui">Vorlesung 1 - MS Windows GUI</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-2-x-window">Vorlesung 2 - X-Window</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-3-speichersystem">Vorlesung 3 - Speichersystem</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-4-heap">Vorlesung 4 - Heap</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-5-prozessadressraume-realer-speicher">Vorlesung 5 - Prozessadressräume / Realer Speicher</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-6-unix-shell-skripts-1">Vorlesung 6 - Unix-Shell-Skripts (1)</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-7-unix-shell-skripts-2">Vorlesung 7 - Unix-Shell-Skripts (2)</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-8-virtueller-speicher-1">Vorlesung 8 - Virtueller Speicher (1)</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../exev/">ExEv</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../infsi1/">InfSi1</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../rki/">RKI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tecbec/">TecBEC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../wed1/">WED1</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../playground/">Playground</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">HSR Notizen</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>FS16 &raquo;</li>
+        
+      
+    
+    <li>Bsys2</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/Excape/hsr-docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="betriebssysteme-2">Betriebssysteme 2</h1>
+<h2 id="allgemein">Allgemein</h2>
+<hr />
+<h2 id="vorlesung-1-ms-windows-gui">Vorlesung 1 - MS Windows GUI</h2>
+<p>Im Buch werden deutsche Begriffe verwendet, in der Vorlesung englische (Übersetzung im Anhang)</p>
+<ul>
+<li>
+<p><strong>2 Programmiermodelle</strong></p>
+<ul>
+<li>Lineare Programmierung: Programmgesteuert, zb. Skripte</li>
+<li>Ereignisgesteuert (Event-driven): Programm reagiert auf Ereignisse (zb. Mausklick). Beispiel: Key-tool (zertifikate erzeugen). Benutzer sagt Appl., was sie tun soll (Inversion of Control)<ul>
+<li>Beim Start wird das GUI aufgebaut</li>
+<li>In Endlosschleife wird Event verarbeitet</li>
+<li>Blockieren und auf nächstes Event warten</li>
+<li>Ein Spezielles Event bricht Programm ab</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 10:</strong><br />
+<code>hPrevInstance</code> ist normalerweise null</p>
+</li>
+<li>
+<p><strong>Folie 11</strong></p>
+<ul>
+<li>Ein Thread wird zum GUI-Thread nach CreateWindow()</li>
+<li>sollten keine Operationen ausgeführt werden, die blockieren</li>
+<li>Pro Thread können mehrere Fenster erzeugt werden (Thread von winMain() muss mind. 1 Fenster erzeugen)</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 14</strong></p>
+<ul>
+<li>Message Queues sind verkettete Listen</li>
+<li>Betriebssystem begrenzt grösse auf 10'000</li>
+<li>mit WP_PAINT wird Fenster neu gezeichnet</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 23</strong></p>
+<ul>
+<li>GET_X_LPARAM() ist ein Makro</li>
+<li>Makro-Aufruf ist Platzhalter für Code, der vom Compiler eingesetzt wird</li>
+<li>Aufruf macht bei Funktion oder Makro kein Unterschied</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 36</strong>: Fensterhierarchie</p>
+<ul>
+<li>Controls sich auch immer Child Windows (zb. Buttons)</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-2-x-window">Vorlesung 2 - X-Window</h2>
+<p>Q&amp;A: <a href="http://tinyurl.com/X-Win-FS16">http://tinyurl.com/X-Win-FS16</a></p>
+<p>Der X-Server zeigt das Fenster an, der Client ist die Applikation</p>
+<ul>
+<li>
+<p><strong>Folie 119</strong>:<br />
+    Window Manager ist auf Folie remote, es kann aber mit dem XDMCP-Protokoll konfiguriert werden (kann auch neben X-Server laufen</p>
+</li>
+<li>
+<p><strong>Folie 133</strong>:<br />
+    Events werden von Root nach unten gereicht bis zum Zielfenster</p>
+</li>
+<li>
+<p><strong>Folie 135</strong>:<br />
+    Fensterrahmen werden vom Window manager gezeichnet</p>
+</li>
+<li>
+<p><strong>Folie 144</strong>:
+    Event muss zuerst von einem Fenster in event_mask aufgenommen werden, damit Events dieses Typs behandelt werden. Andere Events gehen jeweils an das übergeordnete Fenster (ausser es ist do_not_propagate_mask gesetzt)</p>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-3-speichersystem">Vorlesung 3 - Speichersystem</h2>
+<p><strong>Ziel</strong>: Mit Abwegung von Kosten und Leistung eine Speicherhieararchie wählen</p>
+<p><strong>Thema</strong>: Speicherhierarchie (Lokalitätseffekt), Hardwarestruktur (Cache Funktionsweise, grundlegende Speicherprinzipien)</p>
+<ul>
+<li>
+<p><strong>Folie 2:</strong><br />
+    Warum nicht überall den schnellsten Speicher benutzen?  Wäre zu teuer</p>
+</li>
+<li>
+<p><strong>Folie 6:</strong></p>
+<ul>
+<li>CPU kann von Main Memory direkt lesen</li>
+<li>Input/Output (-&gt; zb. Harddisk) ist Sekundär-Speicher</li>
+<li>Daten im Sekundärspeicher werden zuerst in den Hauptspeicher geladen, damit sie die CPU benutzen kann</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 9:</strong></p>
+<ul>
+<li>Schieberegister-Speicher: Serialisierung mit Hilfe eines Schieberegisters (Parallel/Seriell-Umwandung)
+zb. bei S-ATA verwendet</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 10: Assoziativ Speicher</strong>:<br />
+    Speicherinhalte über Inhalt adressiert</p>
+</li>
+<li>
+<p><strong>Folie 11:</strong></p>
+<ul>
+<li>Muster identifiziert Teilinformation (nur der Teil mit der Maske aus dem Speicher ist relevant)</li>
+<li>Maske: Diese Bits müssen übereinstimmen</li>
+<li>
+<p>Für jede Zeile prüfen, ob jedes Bit in der Maske im Muster gleich ist. Wenn ja -&gt; Trefferbit = 1</p>
+</li>
+<li>
+<p>Die Zeilen wo Treffer erzielt sind Resultate (auch mehrere möglich)</p>
+</li>
+<li>Gültigkeitsbit: Wenn 0, wird nie Treffer erzielt (dort ist kein Eintrag). Sonst könnte die Zahl 0 nicht abgelegt werden</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 14:</strong></p>
+<ul>
+<li>Lokalitätseffekt: Programme nützen oft Speicher in kleinem Adressbereich</li>
+<li>Daher ist ein Cache nützlich, häufig genutzte Daten können dort abgelegt werden</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 15:</strong><br />
+    Zeitliche Lokalität: z.B. Mehrfache Zugriffe auf die gleiche Variable</p>
+</li>
+<li>
+<p><strong>Folie 16:</strong><br />
+    SRAM: Statischer RAM, wird für Cache verwendet</p>
+</li>
+</ul>
+<p><strong>Write-Through:</strong> Alle Inhalte im Cache sind auch im hauptspeicher</p>
+<p><strong>Write-Back:</strong> Inhalte vom Cache werden in den Hauptspeicher zurück geschrieben, sobald er aus Cache entfernt wird</p>
+<ul>
+<li><strong>Folie 26</strong> - Bsp:  <ul>
+<li>Cache-Grösse: 10Kb</li>
+<li>Programm-Grösse: 5 Kb</li>
+<li>Programm wird 20x durchlaufen</li>
+<li>das erste Mal kein Cache, danach 19x über den Cache</li>
+</ul>
+</li>
+</ul>
+<p>
+<script type="math/tex; mode=display">h = \frac {19 * 5 kb}{20 * 5 kb} = 0.95</script>
+-&gt; = 95% effizient</p>
+<hr />
+<h2 id="vorlesung-4-heap">Vorlesung 4 - Heap</h2>
+<p><strong>Dynamischer Speicher</strong> (aus SW-sicht): Speicher, der nur von teilen des Programms zugreifbar sind</p>
+<p><code>malloc()</code>: Speicher auf Heap reservieren<br />
+<code>calloc()</code>: speicher reservieren, aber initialisiert<br />
+<code>free()</code>: Speicher freigeben</p>
+<ul>
+<li>
+<p><strong>Folie 41:</strong><br />
+    A: Reserviere genau so viel Speicher, wie die Applikation will. Im Heap muss bekannt sein, wie gross eine Variable ist<br />
+    B: Variablen in Grössenklassen aufteilen ("Pools").</p>
+</li>
+<li>
+<p><strong>Folie 49:</strong><br />
+    Beinflussen im Programm: Speicher in der Reihenfolge freigeben, in der er reserviert wurde</p>
+</li>
+<li>
+<p><strong>Folie 50</strong><br />
+    Zersötrung bei Überlauf: Wenn zb. Bereich A weiter schreibt als der reservierte Bereich, werden dessen Metadaten überschrieben</p>
+</li>
+<li>
+<p><strong>Folie 55:</strong><br />
+    Nicht sicher, da beim "reinschreiben" in Bereich B die magische Zahl nicht unbedingt überschrieben werden muss -&gt; Überlauf wird nicht erkannt</p>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-5-prozessadressraume-realer-speicher">Vorlesung 5 - Prozessadressräume / Realer Speicher</h2>
+<h3 id="prozessadressraume">Prozessadressräume</h3>
+<ul>
+<li>
+<p><strong>Folie 86:</strong></p>
+<ul>
+<li>Programmcode und vorinitialisierte Variablen werden bei Programmstart in den Speicher kopiert</li>
+<li>Environment-Region: Kopie der Umgebungsvariablen (jeder Prozess hat eigene Umgebungsvariablen)</li>
+<li>Argument-Region: zb. Aufruf-Parameter</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 88:</strong><br />
+    Memory Mapped File: Ein Teil eines Files im Memory ablegen, das Programm schreibt dann in den Speicher. Nur die ÄNderungen werden dann zurück auf die Harddisk geschrieben (geht nur bei virtualisiertem Speicher)</p>
+</li>
+</ul>
+<h3 id="realer-speicher">Realer Speicher</h3>
+<p><strong>Monoprogrammierung:</strong> Nur ein Programm gleichzeitig ausführbar<br />
+<strong>Multiprogrammierung:</strong> Speicher wird in Partitionen aufgeteilt, Programme könnnen parallel lab. zufen</p>
+<ul>
+<li>
+<p><strong>Folie 104:</strong><br />
+    Feste Partitonen: Bei Start des Rechners Grösse festgelegt, danach nicht mehr verändert</p>
+</li>
+<li>
+<p><strong>Folie 105:</strong><br />
+    Speichernutzung schlecht: für kleine Programme wird ein grosser Platz reserviert, evtl. hat dann ein Prozess mit mehr Speicheranforderung kein Platz mehr in den anderen Partitionen</p>
+</li>
+<li>
+<p><strong>Folie 106:</strong><br />
+    Problem: prozess kann Queue nicht wechseln, obwohl eine Partiton frei wäre</p>
+</li>
+<li>
+<p><strong>Folie 108:</strong><br />
+    Pro Prozess ein Schlüssel (Zahl) in ein Register geladen. Ein schlüssel wurde einer Partition zugeteilt, dann bei jedem Zugriff auf Speicherschutz überprüft</p>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-6-unix-shell-skripts-1">Vorlesung 6 - Unix-Shell-Skripts (1)</h2>
+<p>Feedback: <a href="http://tinyurl.com/Shell-FS16">http://tinyurl.com/Shell-FS16</a></p>
+<ul>
+<li>Bash-Login-Skripte<ul>
+<li><code>~/.bash_profile</code> für normales Login</li>
+<li><code>~/.bash_rc</code> für remote-login (ssh)</li>
+</ul>
+</li>
+<li>Shell-Befehle<ul>
+<li><code>k1 || k2</code>: k2 wird <strong>nur</strong> ausgeführt, falls k1 nicht erfolgreich ist</li>
+<li><code>(k)</code>: k wird in Subshell ausgeführt</li>
+</ul>
+</li>
+<li>Variablen<ul>
+<li><code>$SHELL</code> ist eine Umgebungsvariable, zeigt also zb. nicht, in welcher Shell ein Skript gerade ausgeführt wird!</li>
+<li>Einlesen von Variablen: <code>read &lt;variable&gt;</code></li>
+<li>Einlesen aus File: <code>read w1 w2 w3 &lt; wordfile.txt</code>, wobei die einzelnen w1, w2, w3 im file mit einem leerzeichen getrennt sind</li>
+<li>Spezialvariablen:
+    <img alt="Spezialvariablen" src="../img/spezial-shell-variablen.png" /></li>
+<li>Array: <code>arr=(11 23 55)</code>, lesen: <code>${arr[0]}</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-7-unix-shell-skripts-2">Vorlesung 7 - Unix-Shell-Skripts (2)</h2>
+<p>Feedback: <a href="http://tinyurl.com/Shell-FS16">http://tinyurl.com/Shell-FS16</a></p>
+<p>Funktionsweise $OPTIND: <a href="http://stackoverflow.com/questions/14249931/how-does-the-optind-variable-work-in-the-shell-builtin-getopts">http://stackoverflow.com/questions/14249931/how-does-the-optind-variable-work-in-the-shell-builtin-getopts</a></p>
+<hr />
+<h2 id="vorlesung-8-virtueller-speicher-1">Vorlesung 8 - Virtueller Speicher (1)</h2>
+<p>Multiprogrammierung mit realem Speicher: Einen "Offset" in ein Register schreiben und die Sprungadressen jeweils verschieben, um auf die richtige Speicher-"Partition" zuzugreifen</p>
+<ul>
+<li>
+<p><strong>Folie 132</strong></p>
+<ul>
+<li>
+<p>Umsetzungstabelle</p>
+<table>
+<thead>
+<tr>
+<th>Art</th>
+<th>Adresse</th>
+<th>Länge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1: Code</td>
+<td>A1: 0</td>
+<td>L1</td>
+</tr>
+<tr>
+<td>2: Daten</td>
+<td>A2: 100</td>
+<td>L2</td>
+</tr>
+<tr>
+<td>3: Stack</td>
+<td>A3: 5000</td>
+<td>L3</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Vorteile:</p>
+<ul>
+<li>Speicherschutzverletzung erkennen</li>
+<li>Prozesse sind isoliert und können nicht auf Speicher anderer Prozesse zugreifen</li>
+<li>Code-Injection verhindern (Code als "read-only")</li>
+<li>Code-Aufruf auf Stack verhindern</li>
+</ul>
+</li>
+<li>Nachteile: <ul>
+<li>Umsetzungstabelle braucht Speicher</li>
+<li>Verwaltungsaufwand</li>
+</ul>
+</li>
+<li><strong>Folie 141</strong></li>
+<li>Jede Virtuelle Adresse wird verschoben um die Adresse, die in der Umsetzungstabelle steht</li>
+<li><strong>Folie 142</strong></li>
+<li>Segmentnummer ist Index in Tabelle ST</li>
+<li>Relativadresse wird Addiert mit Segmentstartadresse, sofern sie nicht ausserhalb des Bereichs liegt</li>
+<li>Fehler in Folie: <script type="math/tex">A_S</script> statt <script type="math/tex">S_A</script>
+</li>
+<li><strong>Folien 146-148</strong></li>
+<li>Speicher in fixe Blöcke unterteilen (= Seiten)</li>
+<li>Virtueller Adressraum wird ebenfalls in gleichgrosse Pages unterteilt</li>
+<li>In "Page Table" hat jeder Eintrag ("Page Table Entry", PTE) einen Index (Page-Nr), Gültigkeitsbit (Zugriff erlaubt oder nicht) und Read/Write-Bit (Schreibschutz)</li>
+<li>Gültigkeitsbit, um Speicherschutzverletzungen zu verhindern</li>
+<li>Fehler Folie 147: Grüne Pages rechts gehören zu Prozess B</li>
+<li><strong>Folie 151</strong></li>
+<li>k = 13</li>
+<li>Seitendeskriptoren = 8, weil 3 Bit für virtuelle Seitennr.</li>
+<li><strong>Folie 155</strong></li>
+<li>Minimaler Speicherbedarf:<ul>
+<li>1 page directory: 4 KB</li>
+<li>1 page table: 4 KB</li>
+<li>= 8 KB</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../exev/" class="btn btn-neutral float-right" title="ExEv">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../autospr/" class="btn btn-neutral" title="AutoSpr"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/Excape/hsr-docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../autospr/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../exev/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

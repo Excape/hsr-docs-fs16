@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Robin Suter">
+  
+  <title>AD1 - HSR Notizen</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../extra.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "AD1";
+    var mkdocs_page_input_path = "fs16/ad1.md";
+    var mkdocs_page_url = "/fs16/ad1/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> HSR Notizen</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>FS16</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">AD1</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#algorithmen-und-datenstrukturen">Algorithmen und Datenstrukturen</a></li>
+                
+                    <li><a class="toctree-l4" href="#allgemein">Allgemein</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-1-intro-oo-design">Vorlesung 1 - Intro / OO-Design</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-2-arrays-linkedlists-analyse-von-algorithmen">Vorlesung 2 - Arrays / LinkedLists / Analyse von Algorithmen</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-3-algorithm-analysis-rekursion">Vorlesung 3 - Algorithm Analysis / Rekursion</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-4-rekursion">Vorlesung 4 - Rekursion</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-5-rekursion-ii">Vorlesung 5 - Rekursion II</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-6-stacks">Vorlesung 6 - Stacks</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-7-queues">Vorlesung 7 - Queues</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../an2/">An2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../autospr/">AutoSpr</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../bsys2/">Bsys2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../exev/">ExEv</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../infsi1/">InfSi1</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../rki/">RKI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../tecbec/">TecBEC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../wed1/">WED1</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../playground/">Playground</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">HSR Notizen</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>FS16 &raquo;</li>
+        
+      
+    
+    <li>AD1</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/Excape/hsr-docs" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="algorithmen-und-datenstrukturen">Algorithmen und Datenstrukturen</h1>
+<h2 id="allgemein">Allgemein</h2>
+<hr />
+<h2 id="vorlesung-1-intro-oo-design">Vorlesung 1 - Intro / OO-Design</h2>
+<ul>
+<li>
+<p>Error-Left<br />
+    Error-Zeitpunkte: Compilation, Linking, Runtime<br />
+    Ziel: zb. von Runtime zu Compilation Errors, zb. bei Generics: Vorher Runtime-Fehler, mit Generics Compilation-Errors</p>
+</li>
+<li>
+<p>Folie 7: Divide-and-conquer:
+    Problem in einzelne Teilprobleme teilen und diese einzeln lösen</p>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-2-arrays-linkedlists-analyse-von-algorithmen">Vorlesung 2 - Arrays / LinkedLists / Analyse von Algorithmen</h2>
+<ul>
+<li>
+<p>Arrays<br />
+    + Schneller Zugriff (bei random access)<br />
+    - Feste Grösse</p>
+</li>
+<li>
+<p>Singly-Linked vs Doubly-Linked List<br />
+    - Im schlimmsten Fall braucht es nur halb so viel Such-Operationen bei der Doubly-linked-List (wenn Element in der Mitte)</p>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-3-algorithm-analysis-rekursion">Vorlesung 3 - Algorithm Analysis / Rekursion</h2>
+<ul>
+<li>
+<p>Folie 30:<br />
+    Big-Omega ist die Umkehrung von O(n): f(n) &gt;= c * g(n)<br />
+    big-Theta: "Bandbreite", in der Komplexität ist</p>
+</li>
+<li>
+<p>Folie 31:<br />
+    Asympotisch: Für sehr grosse zahlen</p>
+</li>
+</ul>
+<h3 id="rekursion">Rekursion</h3>
+<ul>
+<li>
+<p>Stack-Size ist in der JVM standardmässig 1MB, kann aber angepasst werden unter Run Configuration - Java-Argument: "-Xss2m" für 2 MB Stack-size</p>
+</li>
+<li>
+<p>Folie 12<br />
+    Bei n=123 ist Ausgabe "321"</p>
+</li>
+<li>
+<p>Design-pattern  Adapter:</p>
+<ol>
+<li>Variante: Komposition: Interface implementieren, bestehende Klasse verwenden (Wrapper)</li>
+<li>Variante: Vererbung: Ein Interface implementieren und bestehende Klasse vererben (Klassen-Adapter)</li>
+</ol>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-4-rekursion">Vorlesung 4 - Rekursion</h2>
+<ul>
+<li>
+<p>Folie 28:<br />
+<strong>Vorteil</strong> von Klassen-Adapter hier: Weniger "boiler-plate" code, Methoden wie "size()" müssen nicht neu implementiert werden<br />
+    Grosser <strong>Nachteil</strong>: Alle Methoden von Vector werden geerbt, also auch solche, die eigentlich nicht zu einem Stack gehören dürfen (zb. set(), removeElementAt(), ...)</p>
+</li>
+<li>
+<p>Objekt-Adapter für robuste Software</p>
+</li>
+<li>
+<p>Klassen-Adapter ist schneller (weniger boiler-plate), dafür hat man mehr Kontrolle über die verfügbaren Methoden</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Vererbung wird zu Compile-Time festgelegt, bei der Komposition wird erst zur Runtime das objekt erstellt, es ist also flexibler</p>
+</div>
+<hr />
+<h2 id="vorlesung-5-rekursion-ii">Vorlesung 5 - Rekursion II</h2>
+<ul>
+<li>
+<p>Folie 41:
+    Mit diesem Algorithmus gibt es weniger multiplikationen, da nicht von 1 bis n eine Multiplikation gemacht werden muss, sondern n wird jeweils halbiert:
+    <script type="math/tex; mode=display">3^9 = 3^6 * 3^6</script>
+<script type="math/tex; mode=display">3^{19} = 3 * 3^9 * 3^9</script>
+Dies ist <strong>keine</strong> Endrekursion!</p>
+</li>
+<li>
+<p>Folie 50:<br />
+    Keine Endrekursion, da das Ergebnis erst beim Stack-Abbau berechnet wird</p>
+</li>
+<li>
+<p>Folie 52:<br />
+    Dies ist Endrekursion, da das Ergebnis schon nach dem Aufbau der Rekursion feststeht</p>
+</li>
+<li>
+<p>Folie 66:<br />
+    Dies ist <script type="math/tex">O(n)</script>! Weil die Lösungsmenge nicht aufgeteilt wird, sondern nur "divide and conquer" (zb. bei Parallelisierung sinnvoll)<br />
+<strong>Keine</strong> Endrekursion<br />
+<script type="math/tex">1 + 2 + 4 ... + \frac n4 + \frac n2 + n = 2n -1</script> rekursive Aufrufe</p>
+</li>
+<li>
+<p>Folie 68<br />
+    Alternative mit Integer:
+    <script type="math/tex; mode=display">floor: \frac n2</script>
+<script type="math/tex; mode=display">ceil: \frac n2 + n % 2</script>
+</p>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-6-stacks">Vorlesung 6 - Stacks</h2>
+<ul>
+<li><strong>Folie 5</strong><ul>
+<li>In diesem Beispiel gibt pop() bei leerem Stack <em>null</em> zurück</li>
+</ul>
+</li>
+<li><strong>Folie 6</strong><ul>
+<li><em>java.util.Stack<E>.push()</em> gibt das Item gleich wieder zurück</li>
+<li>Gibt <em>EmptyStackException</em>, falls Stack leer ist (bei pop() und peek())</li>
+</ul>
+</li>
+<li><strong>Folie 8</strong><ul>
+<li>EmptyStackException ist RuntimeException, also <strong>unchecked</strong> (Designfrage)</li>
+</ul>
+</li>
+<li><strong>Folie 11</strong><ul>
+<li>PC (Programmzähler) zeigt auf Position nach dem Funktionsaufruf (Rücksprungadresse). Hier zb. zeigt PC = 1 auf die Zeile nach <code>bar (k);</code></li>
+</ul>
+</li>
+<li><strong>Folie 17</strong><ul>
+<li>Das gepopte Element wird auf <em>null</em> gesetzt, damit die Referenz entfernt wird und der GC aufräumen kann.</li>
+</ul>
+</li>
+<li><strong>Folie 18</strong><ul>
+<li>list.addFirst() ist <script type="math/tex">O(1)</script>, da einfach ein neues Element an den Anfang "gehängt" wird.</li>
+<li>Würde das oberste Element als letztes angehängt, wäre es <script type="math/tex">O(n)</script>, da die ganze Liste durchiteriert werden müsste</li>
+</ul>
+</li>
+<li><strong>Folie 31</strong><ul>
+<li>Im Java Doc steht, dass statt java.util.Stack besser <em>Deque</em> benutzt werden soll</li>
+<li>Problem: Der Stack erbt alle Methoden von <em>Vector</em> und kann somit auch zb. "SetElementAt", also mehr als ein Stack eigentlich können sollte</li>
+<li><strong>Merksatz</strong> Design: Wenn B von A erbt, fragen: Ist B auch ein A?</li>
+<li>Hier: Ist Stack auch ein Vektor? &lt;- Nein</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-7-queues">Vorlesung 7 - Queues</h2>
+<ul>
+<li>"DeQueue", "Deque (sprich Decked)": Double ended Queue</li>
+<li>Nicht zu verwechseln mit der Operation "Dequeue"!</li>
+<li>NodeDequeue: Eine leere Queue hat trailer und header (2 Nodes)<ul>
+<li>Muss nicht immer auf null testen, sondern nur, ob man am "Rand" ist</li>
+</ul>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../an2/" class="btn btn-neutral float-right" title="An2">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../.." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/Excape/hsr-docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../an2/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
