@@ -106,3 +106,5 @@ Dies ist **keine** Endrekursion!
 
 * "DeQueue", "Deque (sprich Decked)": Double ended Queue
 * Nicht zu verwechseln mit der Operation "Dequeue"!
+* NodeDequeue: Eine leere Queue hat trailer und header (2 Nodes)
+    * Muss nicht immer auf null testen, sondern nur, ob man am "Rand" ist

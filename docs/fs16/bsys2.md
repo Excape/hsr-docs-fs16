@@ -182,3 +182,32 @@ Feedback: <http://tinyurl.com/Shell-FS16>
 Feedback: <http://tinyurl.com/Shell-FS16>
 
 Funktionsweise $OPTIND: <http://stackoverflow.com/questions/14249931/how-does-the-optind-variable-work-in-the-shell-builtin-getopts>
+
+---
+## Vorlesung 8 - Virtueller Speicher (1)
+
+Multiprogrammierung mit realem Speicher: Einen "Offset" in ein Register schreiben und die Sprungadressen jeweils verschieben, um auf die richtige Speicher-"Partition" zuzugreifen
+
+* **Folie 132**
+    * Umsetzungstabelle
+
+        Art | Adresse | Länge
+        ---------|----------|---
+        1: Code  | A1: 0    | L1
+        2: Daten | A2: 100  | L2
+        3: Stack | A3: 5000 | L3
+
+    * Vorteile:
+        * Speicherschutzverletzung erkennen
+        * Prozesse sind isoliert und können nicht auf Speicher anderer Prozesse zugreifen
+        * Code-Injection verhindern (Code als "read-only")
+        * Code-Aufruf auf Stack verhindern
+    * Nachteile: 
+        * Umsetzungstabelle braucht Speicher
+        * Verwaltungsaufwand
+* **Folie 141**
+    Jede Virtuelle Adresse wird verschoben um die Adresse, die in der Umsetzungstabelle steht
+* **Folie 142**
+    * Segmentnummer ist Index in Tabelle ST
+    * Relativadresse wird Addiert mit Segmentstartadresse, sofern sie nicht ausserhalb des Bereichs liegt
+    * Fehler in Folie: \(A_S\) statt \(S_A\) 
