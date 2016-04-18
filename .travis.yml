@@ -1,4 +1,2 @@
-before_install:
-    - sudo apt-get update && sudo apt-get install -y --no-install-recommends mkdocs && sudo pip install python-markdown-math
+before_install: pip install -r requirements.txt
 script: mkdocs gh-deploy --clean
-sudo: required
