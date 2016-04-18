@@ -15,9 +15,11 @@ cp -R site/ ../
 echo "fetch origin"
 git fetch origin
 echo "checkout gh-pages"
-git checkout -b gh-pages
+git checkout -b 'gh-pages'
+git branch -v -a
+git status
 echo "reset head" 
-git reset --hard origin/gh-pages
+git reset --hard 'origin/gh-pages'
 
 #sync site
 rsync -av ../site/ .
