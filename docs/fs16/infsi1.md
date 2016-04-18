@@ -156,7 +156,7 @@ Kein "e" im Text
     * Alphabet & Ziffern: \(\log_2{(26)} = 5.1\;\text{bit}\)
     * In der Praxis sind die Zeichen aber nicht zufällig gewählt, der Informationsgehalt ist also wesentlich geringer
 ---
-## Vorlesung 7
+## Vorlesung 7 - Asymmetric Encryption
 * **Folie 3**
     * Public-Key Verfahren ist grundsätzlich Block-Cipher
     * RSA oder ECC (Eliptic-Curve-Cryptography)
@@ -171,5 +171,33 @@ Kein "e" im Text
 * **Folie 17**
     * Generieren einer Zufallszahl zb. mit Mausbewegungen
     * Primzahl wählen: <http://crypto.stackexchange.com/questions/1970/how-are-primes-generated-for-rsa>
-* **Folie 19**
-    * GCHQ hat schon 1970 das gleiche Verfahren wie bei RSA entwickelt
+* **Folie 19**  
+    GCHQ hat schon 1970 das gleiche Verfahren wie bei RSA entwickelt
+---
+## Vorlesung 8 - Digital Signatures
+
+* **Folie 2**
+    * Authenticity: Person ist die, wofür sie sich ausgibt
+* **Folie 4**
+    * "to hash": Etwas zerhacken
+    * Bildet Daten variable Länge in ein Code fixer Länge ab
+    * -> Verschiedene Meldungen führen auf denselben Hash
+    * Auch MDC (Modification Detection Code), oder Message Digest (MD)
+    * Einweg-Funktion, zurückrechnen darf nicht möglich sein
+    * Hash wird verschlüsselt -> Keyed Hash
+    * MAC: Message Authentication Code
+    * Idee Signaturen: Hash mit private key verschlüsseln, der Empfänger entschlüsselt mit public key (beweist Authentizität)
+* **Folie 10**
+    * Komplexität: \(2 * 2^{56} = 2^{57}\), beide Hashes können einzeln angegriffen werden
+* **Folie 13**
+    * In gefälschten Meldungen Zusatztext einfügen, bis gleicher Hash entsteht wie bei Ursprungsnachricht
+* **Folie 32**
+    * Anforderungen:
+        * Hohe Geschwindigkeit, aber nicht zu schnell
+        * 1 Bit veränderung -> komplett anderer Hash
+        * Kollisionen verhindern
+    * Zu Programmen angebene Hashes
+        * Schlechte Idee, weil auf der Website einfach der Hash ausgetauscht werden könnte
+* **Folie 45**
+    * Links: Private key von Bob
+    * Rechts: Public Key von Bob

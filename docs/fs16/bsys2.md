@@ -206,8 +206,22 @@ Multiprogrammierung mit realem Speicher: Einen "Offset" in ein Register schreibe
         * Umsetzungstabelle braucht Speicher
         * Verwaltungsaufwand
 * **Folie 141**
-    Jede Virtuelle Adresse wird verschoben um die Adresse, die in der Umsetzungstabelle steht
+    * Jede Virtuelle Adresse wird verschoben um die Adresse, die in der Umsetzungstabelle steht
 * **Folie 142**
     * Segmentnummer ist Index in Tabelle ST
     * Relativadresse wird Addiert mit Segmentstartadresse, sofern sie nicht ausserhalb des Bereichs liegt
     * Fehler in Folie: \(A_S\) statt \(S_A\) 
+* **Folien 146-148**
+    * Speicher in fixe Blöcke unterteilen (= Seiten)
+    * Virtueller Adressraum wird ebenfalls in gleichgrosse Pages unterteilt
+    * In "Page Table" hat jeder Eintrag ("Page Table Entry", PTE) einen Index (Page-Nr), Gültigkeitsbit (Zugriff erlaubt oder nicht) und Read/Write-Bit (Schreibschutz)
+    * Gültigkeitsbit, um Speicherschutzverletzungen zu verhindern
+    * Fehler Folie 147: Grüne Pages rechts gehören zu Prozess B
+* **Folie 151**
+    * k = 13
+    * Seitendeskriptoren = 8, weil 3 Bit für virtuelle Seitennr.
+* **Folie 155**
+    * Minimaler Speicherbedarf:
+        * 1 page directory: 4 KB
+        * 1 page table: 4 KB
+        * = 8 KB
