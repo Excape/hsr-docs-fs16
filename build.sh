@@ -12,8 +12,12 @@ mkdocs build --clean
 cp -R site/ ../
 
 # Git HEAD is detached - checkout gh-pages
+echo "fetch origin"
 git fetch origin
-git checkout -b gh-pages origin/gh-pages
+echo "checkout gh-pages"
+git checkout -b gh-pages
+echo "reset head" 
+git reset --hard origin/gh-pages
 
 #sync site
 rsync -av ../site/ .
