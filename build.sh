@@ -8,23 +8,15 @@ git config user.email "r1suter@hsr.ch"
 #Build with mkdocs into ./site
 mkdocs build --clean
 
-#Copy site away
-cp -R site/ ../
 
-# Git HEAD is detached - checkout gh-pages
-echo "fetch origin"
-git fetch origin
-git remote -v show origin
-echo "checkout gh-pages"
-git checkout -b 'gh-pages'
-git status
-echo "reset head" 
-git reset --hard 'origin/gh-pages'
+# Checkout gh-pages
+git clone --branch gh-pages git@github.com:Excape/hsr-docs.git gh-pages
 
 #sync site
-rsync -av ../site/ .
+rsync -av site/ gh-pages/
 
 #commit
+cd gh-pages
 git add .
 git commit -m "Deploy from Travis CI"
 git push
