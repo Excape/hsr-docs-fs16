@@ -14,9 +14,9 @@ cp -R site/ ../
 # Git HEAD is detached - checkout gh-pages
 echo "fetch origin"
 git fetch origin
+git remote -v show origin
 echo "checkout gh-pages"
 git checkout -b 'gh-pages'
-git branch -v -a
 git status
 echo "reset head" 
 git reset --hard 'origin/gh-pages'
