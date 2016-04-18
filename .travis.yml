@@ -3,8 +3,5 @@ script:
     - git config user.name "Travis CI"
     - git config user.email "r1suter@hsr.ch"
     - mkdocs gh-deploy --clean -v
-    - echo "test" > testfile.txt
-    - git add testfile.txt
-    - git commit -m "test commit from travis"
-    - git push
+    - git status
 sudo: required
