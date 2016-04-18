@@ -125,9 +125,7 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-6-encryption">Vorlesung 6 - Encryption</a></li>
                 
-                    <li><a class="toctree-l4" href="#vorlesung-7-asymmetric-encryption">Vorlesung 7 - Asymmetric Encryption</a></li>
-                
-                    <li><a class="toctree-l4" href="#vorlesung-8-digital-signatures">Vorlesung 8 - Digital Signatures</a></li>
+                    <li><a class="toctree-l4" href="#vorlesung-7">Vorlesung 7</a></li>
                 
             
             </ul>
@@ -436,7 +434,7 @@ Kein "e" im Text</p>
 <hr />
 </li>
 </ul>
-<h2 id="vorlesung-7-asymmetric-encryption">Vorlesung 7 - Asymmetric Encryption</h2>
+<h2 id="vorlesung-7">Vorlesung 7</h2>
 <ul>
 <li><strong>Folie 3</strong><ul>
 <li>Public-Key Verfahren ist grundsätzlich Block-Cipher</li>
@@ -464,51 +462,8 @@ Kein "e" im Text</p>
 <li>Primzahl wählen: <a href="http://crypto.stackexchange.com/questions/1970/how-are-primes-generated-for-rsa">http://crypto.stackexchange.com/questions/1970/how-are-primes-generated-for-rsa</a></li>
 </ul>
 </li>
-<li><strong>Folie 19</strong><br />
-    GCHQ hat schon 1970 das gleiche Verfahren wie bei RSA entwickelt<hr />
-</li>
-</ul>
-<h2 id="vorlesung-8-digital-signatures">Vorlesung 8 - Digital Signatures</h2>
-<ul>
-<li><strong>Folie 2</strong><ul>
-<li>Authenticity: Person ist die, wofür sie sich ausgibt</li>
-</ul>
-</li>
-<li><strong>Folie 4</strong><ul>
-<li>"to hash": Etwas zerhacken</li>
-<li>Bildet Daten variable Länge in ein Code fixer Länge ab</li>
-<li>-&gt; Verschiedene Meldungen führen auf denselben Hash</li>
-<li>Auch MDC (Modification Detection Code), oder Message Digest (MD)</li>
-<li>Einweg-Funktion, zurückrechnen darf nicht möglich sein</li>
-<li>Hash wird verschlüsselt -&gt; Keyed Hash</li>
-<li>MAC: Message Authentication Code</li>
-<li>Idee Signaturen: Hash mit private key verschlüsseln, der Empfänger entschlüsselt mit public key (beweist Authentizität)</li>
-</ul>
-</li>
-<li><strong>Folie 10</strong><ul>
-<li>Komplexität: <script type="math/tex">2 * 2^{56} = 2^{57}</script>, beide Hashes können einzeln angegriffen werden</li>
-</ul>
-</li>
-<li><strong>Folie 13</strong><ul>
-<li>In gefälschten Meldungen Zusatztext einfügen, bis gleicher Hash entsteht wie bei Ursprungsnachricht</li>
-</ul>
-</li>
-<li><strong>Folie 32</strong><ul>
-<li>Anforderungen:<ul>
-<li>Hohe Geschwindigkeit, aber nicht zu schnell</li>
-<li>1 Bit veränderung -&gt; komplett anderer Hash</li>
-<li>Kollisionen verhindern</li>
-</ul>
-</li>
-<li>Zu Programmen angebene Hashes<ul>
-<li>Schlechte Idee, weil auf der Website einfach der Hash ausgetauscht werden könnte</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Folie 45</strong><ul>
-<li>Links: Private key von Bob</li>
-<li>Rechts: Public Key von Bob</li>
+<li><strong>Folie 19</strong><ul>
+<li>GCHQ hat schon 1970 das gleiche Verfahren wie bei RSA entwickelt</li>
 </ul>
 </li>
 </ul>
