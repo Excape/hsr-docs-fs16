@@ -108,3 +108,41 @@ Dies ist **keine** Endrekursion!
 * Nicht zu verwechseln mit der Operation "Dequeue"!
 * NodeDequeue: Eine leere Queue hat trailer und header (2 Nodes)
     * Muss nicht immer auf null testen, sondern nur, ob man am "Rand" ist
+
+---
+## Vorlesung 8 - List & Iterations (1)
+
+Unterschied zu Qeues:
+* Positionsangabe
+* Implementation kann verschieden sein
+
+* **Folie 3**
+    * `E set(i, e)` gibt das alte Element zurück
+    * Ebenso `E remove(i)`
+    * Fehler in Folie: add(i, e) wirf nur eine Exception wenn \(i \notin [0, size()]\)
+* **Folie 5**
+    * Achtung bei `set(2, C)`, es kann mit set() nichts hinten an der Liste angehängt werden
+
+* **Folie 10**
+    * Dies ist nicht java.util.ArrayList!
+    * Size-Attribut für schnellere Performance
+* **Folie 20**
+    * Für Array-Kopieren `java.lang.System.arracopy` verwenden (Native C-Funktion)
+* **Folie 23**
+    * k ist die Anzahl Umkopierungen
+    * \(n + \frac{c*k*(k+1)}{2}\) (Arithmetische Reihe)
+* **Folie 25**
+$$1 + (c+1) + 2(c+1) + 3(c+1)...$$
+    * \(c+1\) auf \(c\) vereinfachen
+* **Folie 26**
+$$ 2^{\log(n)+1} = 2^{\log(n)}*2^1 = n\cdot2 $$
+* **Folie 30**
+    * Hier wird das Array jeweils um 1.5x vergrössert
+    * Ammortisierungszeit auch \(\frac{O(n)}n = O(1)\)
+* **Folie 37**
+    * p, q, r, usw. sind Positions-Objekte, die Zahlen die Inhalte davon (mit `Position.getElement()` darauf zugreifen)
+    * Vorteil mit Positionsobjekte: Set(), remove() etc. sind \(O(1)\), da nur das Objekt verändert werden muss, nicht durchiteriert bis zur entsprechenden Position in der Liste
+
+* **Folie 46**
+    * trailer und header nodes sind nicht Teil der liste, es werden nur die Elemente dazwischen zurück gegeben
+* 

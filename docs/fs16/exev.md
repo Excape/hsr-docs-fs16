@@ -119,3 +119,32 @@ Es gibt aber trotzdem eine Korrelation, aber keine lineare!
 
 * Folie 6:  
     Das Roulette bildet ein System mit 6 Ereignissen, jedes Ereignis ist eine Teilmenge von \(\Omega\)
+    
+---
+## Vorlesung 6 - Zufallsvariable und Verteilungen
+Kontrollfragen:
+
+1. Funktion von Folge zufälliger Werte
+2. stetig: unendlich viele zwischenwerte
+3. seed = startwert, Zahlen haben statistische Eigenschaften, sind reproduzierbar
+4. Sequenzlänge: Anzahl der Zufallszahlen
+5. Weil unterschiedliche Prozesse simuliert werden, die unterschiedlich verteilt sind
+6. Ja, hat grosse Auswirkungen. Wenn Fehler in Datenanalyse geschehen, gibt es auch Fehler im Resultat
+
+!!! info
+    Literatur: Bourier 7.1.1 - 7.1.3, 7.2.1 - 7.2.3
+    
+---
+## Vorlesung 7 - Grundlagen schliessende Statistik
+
+* **Folie 4**
+    * Schliessende Statistik: Man kennt die Realisierungen (durch Experiment), sucht aber die Verteilungsfunktion
+    * Mit vielen Messungen nähert man sich charakteristischen Grössen an
+* **Folie 5**
+    * Charakteristische Grössen können errechnet werden. Ist das dann aber allgemeingültig?
+    * Experimente sind nur Stichproben
+    * Entscheidung durch Vergleich dieser errechneten Grössen und der Theorie
+* **Folie 12**
+    * t-Verteilung ist etwas "pessimistischer" als Normalverteilung
+* **Folie 14**
+    * Varianz: Wenn \(n \rightarrow \infty\), wird die Varianz gegen 0. D.h wenn die Stichprobe die gesamte Grundmenge erfasst, ist die Varianz 0
