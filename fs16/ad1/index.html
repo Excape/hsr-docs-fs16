@@ -92,6 +92,8 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-7-queues">Vorlesung 7 - Queues</a></li>
                 
+                    <li><a class="toctree-l4" href="#vorlesung-8-list-iterations-1">Vorlesung 8 - List &amp; Iterations (1)</a></li>
+                
             
             </ul>
         
@@ -359,6 +361,73 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
 <li>Muss nicht immer auf null testen, sondern nur, ob man am "Rand" ist</li>
 </ul>
 </li>
+</ul>
+<hr />
+<h2 id="vorlesung-8-list-iterations-1">Vorlesung 8 - List &amp; Iterations (1)</h2>
+<p>Unterschied zu Qeues:
+<em> Positionsangabe
+</em> Implementation kann verschieden sein</p>
+<ul>
+<li><strong>Folie 3</strong><ul>
+<li><code>E set(i, e)</code> gibt das alte Element zurück</li>
+<li>Ebenso <code>E remove(i)</code></li>
+<li>Fehler in Folie: add(i, e) wirf nur eine Exception wenn <script type="math/tex">i \notin [0, size()]</script>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 5</strong></p>
+<ul>
+<li>Achtung bei <code>set(2, C)</code>, es kann mit set() nichts hinten an der Liste angehängt werden</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 10</strong></p>
+<ul>
+<li>Dies ist nicht java.util.ArrayList!</li>
+<li>Size-Attribut für schnellere Performance</li>
+</ul>
+</li>
+<li><strong>Folie 20</strong><ul>
+<li>Für Array-Kopieren <code>java.lang.System.arracopy</code> verwenden (Native C-Funktion)</li>
+</ul>
+</li>
+<li><strong>Folie 23</strong><ul>
+<li>k ist die Anzahl Umkopierungen</li>
+<li>
+<script type="math/tex">n + \frac{c*k*(k+1)}{2}</script> (Arithmetische Reihe)</li>
+</ul>
+</li>
+<li><strong>Folie 25</strong>
+<script type="math/tex; mode=display">1 + (c+1) + 2(c+1) + 3(c+1)...</script>
+<ul>
+<li>
+<script type="math/tex">c+1</script> auf <script type="math/tex">c</script> vereinfachen</li>
+</ul>
+</li>
+<li><strong>Folie 26</strong>
+<script type="math/tex; mode=display"> 2^{\log(n)+1} = 2^{\log(n)}*2^1 = n\cdot2 </script>
+</li>
+<li><strong>Folie 30</strong><ul>
+<li>Hier wird das Array jeweils um 1.5x vergrössert</li>
+<li>Ammortisierungszeit auch <script type="math/tex">\frac{O(n)}n = O(1)</script>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 37</strong></p>
+<ul>
+<li>p, q, r, usw. sind Positions-Objekte, die Zahlen die Inhalte davon (mit <code>Position.getElement()</code> darauf zugreifen)</li>
+<li>Vorteil mit Positionsobjekte: Set(), remove() etc. sind <script type="math/tex">O(1)</script>, da nur das Objekt verändert werden muss, nicht durchiteriert bis zur entsprechenden Position in der Liste</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 46</strong></p>
+<ul>
+<li>trailer und header nodes sind nicht Teil der liste, es werden nur die Elemente dazwischen zurück gegeben</li>
+</ul>
+</li>
+<li></li>
 </ul>
               
             </div>
