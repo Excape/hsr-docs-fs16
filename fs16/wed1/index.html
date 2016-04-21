@@ -148,6 +148,8 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-7-javascript-1">Vorlesung 7 - Javascript (1)</a></li>
                 
+                    <li><a class="toctree-l4" href="#vorlesung-8-javascript-2">Vorlesung 8 - Javascript (2)</a></li>
+                
             
             </ul>
         
@@ -556,6 +558,96 @@ Für Suchmaschinen / Accessibility Tools / ... zur besseren Auszeichnung</p>
 <li><code>for (var x in arr)</code> iteriert nicht über die Werte, sondern nur über die Properties (bei einem "primitiven Array" der Index ab 0)</li>
 <li>Wie erwwartet bei <code>for (z of arr)</code></li>
 <li>Diese Varianten sind erst ab ES6 unterstützt, arr.forEach(function) aber schon früher</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-8-javascript-2">Vorlesung 8 - Javascript (2)</h2>
+<ul>
+<li><strong>Funktionen</strong><ul>
+<li>Die variable argument ist kein Array, sondern ein eigener Datentyp (iterieren mit Index geht aber)</li>
+<li>Funktionen haben properties (name, length (Anzahl erwartete Parameter))</li>
+<li><code>fn.toString()</code> gibt den Sourcecode der Funktion zurück</li>
+</ul>
+</li>
+<li><strong>Scope</strong><ul>
+<li>Sichtbarkeit der Variablen und Funktionen</li>
+<li>Variablendeklaration ohne <code>var</code> -&gt; global<ul>
+<li>Aufrufbar unter global.varname bzw. window.varname</li>
+</ul>
+</li>
+<li>Deklaration mit <code>var</code> -&gt; Nur im aktuellen und in "Child" scopes ("Closure")</li>
+<li>Äussere Scopes können auf innere zugreifen, innere aber nicht auf äussere Scopes.</li>
+<li>Node.js: Pro File wird ein Scope erzeugt (wenn nicht epxlizit global definiert)</li>
+<li>Verhalten Browser: jede Variable ausserhalb einer Funktion ist global</li>
+<li><code>let</code>-Keyword<ul>
+<li>Scope ist nur der Block (bei var ist der Scope immer die ganze Funktion!)</li>
+<li>Braucht <code>use strict</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Context</strong><ul>
+<li>Bei aufruf einer normalen Funktion ist <code>this</code> das <em>globale</em> Objekt</li>
+<li>Wenn die Funktion auf einem Objekt aufgerufen wird, ist <code>this</code> dieses Objekt</li>
+<li>Mit <code>fn.call()</code> kann das <code>this</code> von <code>fn</code> gesetzt werden</li>
+</ul>
+</li>
+<li><strong>Use strict</strong><ul>
+<li>Macht Javascript strikter</li>
+<li>z.B. <code>var</code> wird erzwungen</li>
+<li>Code wird vom Compiler besser optimiert</li>
+<li>Wird für viele ES-Features benötigt (z.B. <code>let</code>)</li>
+<li>Aktivieren mit <code>'use script'</code><ul>
+<li>Am Anfang des Files für das ganze File</li>
+<li>Am Anfang einer Funktion für die Funktion</li>
+<li>Grundsätzlich: Wird für den aktuellen Scope gesetzt</li>
+<li>Wird aber nicht an aufgerufene Funktionen vererbt!</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Arrow Functions</strong><ul>
+<li>Funktion ohne <code>function</code> keyword</li>
+<li>Wie Lambdas in Java</li>
+<li>Mit <code>() =&gt; {code; return x;}</code> kann auch ein Block definiert werden</li>
+<li>Das <code>this</code> wird immer auf das aktuelle Object gebunden ("intuitiv")</li>
+</ul>
+</li>
+<li><strong>Javascript Features</strong><ul>
+<li>Hoisting<ul>
+<li>Alle Funktionen sind im ganzen File aufrufbar</li>
+<li>Die Funktionsdeklarationen und Definitionen (nicht aber Initialisierungen) werden nach oben verschoben</li>
+<li>Kann zu unerwarteten Verhalten führen (auch mit 'use strict')</li>
+<li>Wenn Funktion einer variablen zugewiesen wird, wird die Variablendeklration verschoben, nicht aber die Funktion selbst</li>
+<li><code>let</code> wird nicht "gehoisted"</li>
+</ul>
+</li>
+<li>Jedes Objekt ist eine Hashtable<ul>
+<li>Key-Value-Pairs</li>
+<li>Funktionen kann man mit Properties ergänzen</li>
+<li>Zugriff mit <code>object[key]</code> oder <code>object.key</code></li>
+</ul>
+</li>
+<li>Statement oder Expression<ul>
+<li>Expression erzeugt einen Wert</li>
+<li>Statement führt etwas aus</li>
+</ul>
+</li>
+<li>Semicolon insertions<ul>
+<li>Fügt javascript selbst ein, falls es sonst einen Fehler geben würde</li>
+<li>Man sollte immer Semikolons selbst machen!</li>
+<li>Beispiele Folie 79: "6". Wird "korrekt" ausgeführt</li>
+</ul>
+</li>
+<li>Regex<ul>
+<li><code>/regex/.test("teststring")</code> -&gt; true/false</li>
+</ul>
+</li>
+<li>Date<ul>
+<li>Formatierung geht mit ES6 besser</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
