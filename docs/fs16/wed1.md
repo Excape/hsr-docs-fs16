@@ -257,3 +257,63 @@ Variante mit externem File:
     * `for (var x in arr)` iteriert nicht über die Werte, sondern nur über die Properties (bei einem "primitiven Array" der Index ab 0)
     * Wie erwwartet bei `for (z of arr)`
     * Diese Varianten sind erst ab ES6 unterstützt, arr.forEach(function) aber schon früher
+
+---
+## Vorlesung 8 - Javascript (2)
+
+* **Funktionen**
+    * Die variable argument ist kein Array, sondern ein eigener Datentyp (iterieren mit Index geht aber)
+    * Funktionen haben properties (name, length (Anzahl erwartete Parameter))
+    * `fn.toString()` gibt den Sourcecode der Funktion zurück
+* **Scope**
+    * Sichtbarkeit der Variablen und Funktionen
+    * Variablendeklaration ohne `var` -> global
+        * Aufrufbar unter global.varname bzw. window.varname
+    * Deklaration mit `var` -> Nur im aktuellen und in "Child" scopes ("Closure")
+    * Äussere Scopes können auf innere zugreifen, innere aber nicht auf äussere Scopes.
+    * Node.js: Pro File wird ein Scope erzeugt (wenn nicht epxlizit global definiert)
+    * Verhalten Browser: jede Variable ausserhalb einer Funktion ist global
+    * `let`-Keyword
+        * Scope ist nur der Block (bei var ist der Scope immer die ganze Funktion!)
+        * Braucht `use strict`
+* **Context**
+    * Bei aufruf einer normalen Funktion ist `this` das *globale* Objekt
+    * Wenn die Funktion auf einem Objekt aufgerufen wird, ist `this` dieses Objekt
+    * Mit `fn.call()` kann das `this` von `fn` gesetzt werden
+* **Use strict**
+    * Macht Javascript strikter
+    * z.B. `var` wird erzwungen
+    * Code wird vom Compiler besser optimiert
+    * Wird für viele ES-Features benötigt (z.B. `let`)
+    * Aktivieren mit `'use script'`
+        * Am Anfang des Files für das ganze File
+        * Am Anfang einer Funktion für die Funktion
+        * Grundsätzlich: Wird für den aktuellen Scope gesetzt
+        * Wird aber nicht an aufgerufene Funktionen vererbt!
+* **Arrow Functions**
+    * Funktion ohne `function` keyword
+    * Wie Lambdas in Java
+    * Mit `() => {code; return x;}` kann auch ein Block definiert werden
+    * Das `this` wird immer auf das aktuelle Object gebunden ("intuitiv")
+* **Javascript Features**
+    * Hoisting
+        * Alle Funktionen sind im ganzen File aufrufbar
+        * Die Funktionsdeklarationen und Definitionen (nicht aber Initialisierungen) werden nach oben verschoben
+        * Kann zu unerwarteten Verhalten führen (auch mit 'use strict')
+        * Wenn Funktion einer variablen zugewiesen wird, wird die Variablendeklration verschoben, nicht aber die Funktion selbst
+        * `let` wird nicht "gehoisted"
+    * Jedes Objekt ist eine Hashtable
+        * Key-Value-Pairs
+        * Funktionen kann man mit Properties ergänzen
+        * Zugriff mit `object[key]` oder `object.key`
+    * Statement oder Expression
+        * Expression erzeugt einen Wert
+        * Statement führt etwas aus
+    * Semicolon insertions
+        * Fügt javascript selbst ein, falls es sonst einen Fehler geben würde
+        * Man sollte immer Semikolons selbst machen!
+        * Beispiele Folie 79: "6". Wird "korrekt" ausgeführt
+    * Regex
+        * `/regex/.test("teststring")` -> true/false
+    * Date
+        * Formatierung geht mit ES6 besser
