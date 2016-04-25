@@ -115,6 +115,8 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-8-virtueller-speicher-1">Vorlesung 8 - Virtueller Speicher (1)</a></li>
                 
+                    <li><a class="toctree-l4" href="#vorlesung-9-ein-und-ausgabe">Vorlesung 9 - Ein- und Ausgabe</a></li>
+                
             
             </ul>
         
@@ -518,6 +520,41 @@ zb. bei S-ATA verwendet</li>
 <li>= 8 KB</li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-9-ein-und-ausgabe">Vorlesung 9 - Ein- und Ausgabe</h2>
+<p>Feedback: <a href="http://tinyurl.com/EinAusgabe-FS16">http://tinyurl.com/EinAusgabe-FS16</a></p>
+<p>DMA: Direct Memory Access</p>
+<ul>
+<li><strong>Programmgesteurte I/O</strong><ul>
+<li>"Einfachster Fall"</li>
+<li>Alles in Software, in einem Loop wird gewartet bis ein Input kommt</li>
+<li>Polling: Man schaut ständig ob Input vorhanden ist</li>
+<li>Braucht "busy wait" -&gt; Vergeudung von Rechenzeit</li>
+<li>Wird benötigt, wenn Interrupt nicht unterstützt wird</li>
+</ul>
+</li>
+<li><strong>Interrupt-gesteuerte I/O</strong><ul>
+<li>Hardware unterbricht</li>
+<li>Wenn Behandlung beendet, kehre zum unterbrochenen Programm zurück</li>
+<li>CPU prüft nach jeder Ausführung, ob es ein Interrupt gibt</li>
+<li>Vektorisierung<ul>
+<li>Interrupt-Signale durchnummeriert</li>
+<li>Tabelle aus Interrupt-Nummer und Adresse der Funktion (ISR)</li>
+<li>ISR: Interrupt Service Routine</li>
+</ul>
+</li>
+<li>Synchrone Interrupts: An Befehl gebunden, d.h hat direkt mit vorangegangenem Befehl zu tun</li>
+<li>Asynchrone Interrupts: Können jederzeit auftreten (z.B. durch Peripherie)</li>
+</ul>
+</li>
+<li><strong>I/O mittels DMA</strong><ul>
+<li>I/O an speziellen DMA-Controller deligieren</li>
+<li>Betriebssystem gibt Quell- und Zieladresse an</li>
+<li>DMA transferiert Daten ohne Hilfe der CPU</li>
+<li>Nach Abschluss meldet sich DMA-Controller per Interrupt bei der CPU</li>
 </ul>
 </li>
 </ul>
