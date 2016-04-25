@@ -201,3 +201,21 @@ Kein "e" im Text
 * **Folie 45**
     * Links: Private key von Bob
     * Rechts: Public Key von Bob
+
+---
+## Vorlesung 9 - Zertifikate und PKI
+
+* **Chat Folie 5**
+    * MITM kreiert eigener Key und gaukelt Alice vor, es sei der der Bank
+    * Alice verschlüsselt mit dem falschen Key, MITM kann es lesen
+    * MITM verschlüsselt mit dem echten Key der Bank und schickt es weiter (und umgekehrt)
+* **Folie 9**
+    * Fingerprint ist Hash des Public Keys
+* **Folie 15**
+    * PGP-Code wurde auf Bücher gedruckt und exportiert (dank Meinungsfreiheit in den USA)
+* **Chat Folie 16**
+    * \(x^6 = 7 \cdot 10^9 \rightarrow x = 43.7\)
+    * not everyone knows 50 other people (some are not mutually exclusive)
+* **Folie 32**
+    * Codierung in Base64 für 6-Bit ASCII Darstellung
+    * pem: Darstellbarer text (ASCII 6-bit)

@@ -225,3 +225,32 @@ Multiprogrammierung mit realem Speicher: Einen "Offset" in ein Register schreibe
         * 1 page directory: 4 KB
         * 1 page table: 4 KB
         * = 8 KB
+
+---
+## Vorlesung 9 - Ein- und Ausgabe
+
+Feedback: <http://tinyurl.com/EinAusgabe-FS16>
+
+DMA: Direct Memory Access
+
+* **Programmgesteurte I/O**
+    * "Einfachster Fall"
+    * Alles in Software, in einem Loop wird gewartet bis ein Input kommt
+    * Polling: Man schaut ständig ob Input vorhanden ist
+    * Braucht "busy wait" -> Vergeudung von Rechenzeit
+    * Wird benötigt, wenn Interrupt nicht unterstützt wird
+* **Interrupt-gesteuerte I/O**
+    * Hardware unterbricht
+    * Wenn Behandlung beendet, kehre zum unterbrochenen Programm zurück
+    * CPU prüft nach jeder Ausführung, ob es ein Interrupt gibt
+    * Vektorisierung
+        * Interrupt-Signale durchnummeriert
+        * Tabelle aus Interrupt-Nummer und Adresse der Funktion (ISR)
+        * ISR: Interrupt Service Routine
+    * Synchrone Interrupts: An Befehl gebunden, d.h hat direkt mit vorangegangenem Befehl zu tun
+    * Asynchrone Interrupts: Können jederzeit auftreten (z.B. durch Peripherie)
+* **I/O mittels DMA**
+    * I/O an speziellen DMA-Controller deligieren
+    * Betriebssystem gibt Quell- und Zieladresse an
+    * DMA transferiert Daten ohne Hilfe der CPU
+    * Nach Abschluss meldet sich DMA-Controller per Interrupt bei der CPU
