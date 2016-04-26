@@ -131,8 +131,8 @@ Kontrollfragen:
 5. Weil unterschiedliche Prozesse simuliert werden, die unterschiedlich verteilt sind
 6. Ja, hat grosse Auswirkungen. Wenn Fehler in Datenanalyse geschehen, gibt es auch Fehler im Resultat
 
-!!! info
-    Literatur: Bourier 7.1.1 - 7.1.3, 7.2.1 - 7.2.3
+!!! info "Literatur"
+    Bourier 7.1.1 - 7.1.3, 7.2.1 - 7.2.3
     
 ---
 ## Vorlesung 7 - Grundlagen schliessende Statistik
@@ -148,3 +148,25 @@ Kontrollfragen:
     * t-Verteilung ist etwas "pessimistischer" als Normalverteilung
 * **Folie 14**
     * Varianz: Wenn \(n \rightarrow \infty\), wird die Varianz gegen 0. D.h wenn die Stichprobe die gesamte Grundmenge erfasst, ist die Varianz 0
+
+---
+## Vorlesung 8 - schliessende Stat. & Schätzverfahren
+### Folien 7. Grundlagen der schliessenden Statistik
+
+Siehe Handnotizen
+
+!!! info "Literatur"
+    * Bourier Kapitel 8
+    * Kommentierte Formelsammlung, Skripteserver
+    
+### Folien 8. Schätzverfahren
+Verfahren, wenn \(\mu\) und \(\sigma\) unbekannt sind.
+
+* **Folie 5**
+    * \(\hat T\) ist der Schätzwert
+    * \(T\) ist der richtige Wert
+* **Folie 6**
+    * Differenziere: \(\frac 1n \sum{(x_i^2 - 2x_i\hat\mu + \mu^2)}\)
+    * \(-\frac 1n \sum{2x_i + 2\mu} = 0\)
+    * \(\mu = \frac 1n \sum x_i = \overline x\)
+* 
