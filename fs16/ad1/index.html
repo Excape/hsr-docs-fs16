@@ -94,6 +94,8 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-8-list-iterations-1">Vorlesung 8 - List &amp; Iterations (1)</a></li>
                 
+                    <li><a class="toctree-l4" href="#vorlesung-9-lists-trees">Vorlesung 9 - Lists &amp; Trees</a></li>
+                
             
             </ul>
         
@@ -364,11 +366,15 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
 </ul>
 <hr />
 <h2 id="vorlesung-8-list-iterations-1">Vorlesung 8 - List &amp; Iterations (1)</h2>
-<p>Unterschied zu Qeues:
-<em> Positionsangabe
-</em> Implementation kann verschieden sein</p>
+<p>Unterschied zu Qeues:</p>
 <ul>
-<li><strong>Folie 3</strong><ul>
+<li>Positionsangabe</li>
+<li>
+<p>Implementation kann verschieden sein</p>
+</li>
+<li>
+<p><strong>Folie 3</strong></p>
+<ul>
 <li><code>E set(i, e)</code> gibt das alte Element zurück</li>
 <li>Ebenso <code>E remove(i)</code></li>
 <li>Fehler in Folie: add(i, e) wirf nur eine Exception wenn <script type="math/tex">i \notin [0, size()]</script>
@@ -427,7 +433,60 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
 <li>trailer und header nodes sind nicht Teil der liste, es werden nur die Elemente dazwischen zurück gegeben</li>
 </ul>
 </li>
-<li></li>
+</ul>
+<hr />
+<h2 id="vorlesung-9-lists-trees">Vorlesung 9 - Lists &amp; Trees</h2>
+<h3 id="lists">Lists</h3>
+<ul>
+<li><strong>Folie 50</strong><ul>
+<li>addBetween() ist eine private Method</li>
+<li>Weil node davor und danach stimmen muss; gefährlich, wenn Klasse public wäre</li>
+</ul>
+</li>
+<li>
+<p>Das Position Interface wird verwendet, damit für den Benutzer nur <code>getElement()</code> exposed wird, und nicht Node-Operationen wie <code>getNext()</code> oder <code>getPrevious()</code>. So wird die interne Struktur isoliert</p>
+</li>
+<li>
+<p><code>validate()</code> stellt sicher, dass die Position eine Node ist und noch in der Liste ist (noch ein <code>next</code> hat). Voraussetzung ist, dass die Referenzen bei remove() aus der Liste auf null gesetzt werden.</p>
+</li>
+<li>
+<p><strong>Folie 61</strong></p>
+<ul>
+<li>Hier ist die Liste "zirkulär", d.h wenn mit header.getNext() durchiteriert wird, landet man irgendwann wieder auf dem header (darum der for-loop dementsprechend)</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 63</strong></p>
+<ul>
+<li>Aus Performance-Gründen. Die Methoden werden für die entsprechenden Datenstrukturen optimiert. Funktionieren würde es auch ohne Überschreiben, aber viel langsamer</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 64</strong></p>
+<ul>
+<li>Korrektur: <code>addFirst()</code> ist bei ArrayList <script type="math/tex">O(n)</script>
+</li>
+<li><code>indexOf(p)</code> ist bei ArrayList nur <script type="math/tex">O(1)</script> wenn "p" Positions-Objekte sind </li>
+</ul>
+</li>
+</ul>
+<h3 id="trees">Trees</h3>
+<p>Tress sind abstrakte, hierarchische Strukturen bestehend aus Knoten in Eltern-Kind Relationen</p>
+<ul>
+<li>Eigenschaften<ul>
+<li>Internene Knoten: Knoten mit mind. 1 Child</li>
+<li>Externer Knoten: Blattknoten (Leaf-Nodes), Knoten ohne Kinder</li>
+<li>Tiefe: Anzahl Vorgänger</li>
+<li>Höhe eines Knotens: Höhe im Baum von oben. Leaf-Nodes: 0</li>
+<li>Höhe eines Baums: Höhe der Wurzel (Root)</li>
+<li>Sibling: Geschwisterknoten</li>
+</ul>
+</li>
+<li>Baum-Traversierung (jeden Knoten "besuchen")<ul>
+<li>Preorder: Jeder Knoten vor seinen Childs besuchen, wie der Ausdruck eines Dokuments</li>
+<li>Postorder: Jeder Knoten wird nach seinen Childs besucht</li>
+</ul>
+</li>
 </ul>
               
             </div>
