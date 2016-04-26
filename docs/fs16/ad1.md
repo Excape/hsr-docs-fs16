@@ -113,6 +113,7 @@ Dies ist **keine** Endrekursion!
 ## Vorlesung 8 - List & Iterations (1)
 
 Unterschied zu Qeues:
+
 * Positionsangabe
 * Implementation kann verschieden sein
 
@@ -145,4 +146,37 @@ $$ 2^{\log(n)+1} = 2^{\log(n)}*2^1 = n\cdot2 $$
 
 * **Folie 46**
     * trailer und header nodes sind nicht Teil der liste, es werden nur die Elemente dazwischen zurück gegeben
-* 
+
+---
+## Vorlesung 9 - Lists & Trees
+
+### Lists
+* **Folie 50**
+    * addBetween() ist eine private Method
+    * Weil node davor und danach stimmen muss; gefährlich, wenn Klasse public wäre
+* Das Position Interface wird verwendet, damit für den Benutzer nur `getElement()` exposed wird, und nicht Node-Operationen wie `getNext()` oder `getPrevious()`. So wird die interne Struktur isoliert
+
+* `validate()` stellt sicher, dass die Position eine Node ist und noch in der Liste ist (noch ein `next` hat). Voraussetzung ist, dass die Referenzen bei remove() aus der Liste auf null gesetzt werden.
+
+* **Folie 61**
+    * Hier ist die Liste "zirkulär", d.h wenn mit header.getNext() durchiteriert wird, landet man irgendwann wieder auf dem header (darum der for-loop dementsprechend)
+* **Folie 63**
+    * Aus Performance-Gründen. Die Methoden werden für die entsprechenden Datenstrukturen optimiert. Funktionieren würde es auch ohne Überschreiben, aber viel langsamer
+
+* **Folie 64**
+    * Korrektur: `addFirst()` ist bei ArrayList \(O(n)\)
+    * `indexOf(p)` ist bei ArrayList nur \(O(1)\) wenn "p" Positions-Objekte sind 
+
+### Trees
+Tress sind abstrakte, hierarchische Strukturen bestehend aus Knoten in Eltern-Kind Relationen
+
+* Eigenschaften
+    * Internene Knoten: Knoten mit mind. 1 Child
+    * Externer Knoten: Blattknoten (Leaf-Nodes), Knoten ohne Kinder
+    * Tiefe: Anzahl Vorgänger
+    * Höhe eines Knotens: Höhe im Baum von oben. Leaf-Nodes: 0
+    * Höhe eines Baums: Höhe der Wurzel (Root)
+    * Sibling: Geschwisterknoten
+* Baum-Traversierung (jeden Knoten "besuchen")
+    * Preorder: Jeder Knoten vor seinen Childs besuchen, wie der Ausdruck eines Dokuments
+    * Postorder: Jeder Knoten wird nach seinen Childs besucht
