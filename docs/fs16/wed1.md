@@ -317,3 +317,36 @@ Variante mit externem File:
         * `/regex/.test("teststring")` -> true/false
     * Date
         * Formatierung geht mit ES6 besser
+---
+## Vorlesung 9 - DOM & Events
+* **Folie 5**
+    * Browser erstellt DOM Tree aus HTML
+    * Browser rendert den DOM Tree jedes Mal, wenn er verändert wird
+    * -> Viele kleine Änderungen in der DOM brauchen viel Rechenaufwand
+    * Render-Tree braucht nur Elemente, die angezeigt werden (z.B. ohne <head\> oder Kommentare)
+* **Folie 6**
+    * Anzeige im Developer Window ist nur eine HTML-Repräsenation des DOM-Baums, nicht der Source-Code
+* **Folie 10**
+    * Parsen geht Schritt für Schritt. Sobald ein Script gefunden wird, wird es vom JS-Interpreter ausgeführt. D.h beim Ausführen eines Scripts ist `document` noch nicht vollständig geladen
+    * Lösung: `ẁindow.onload()`
+* **JS einbinden**
+    * `<script></script>` gibt aktuell Probleme mit WebStorm
+    * Besser: `<script src="script.js"></script>`
+* **Whitespace**
+    * Jeder Zeilenumbruch ist ein Whitespace im DOM-Tree
+    * Diese Whitespaces werden auch im Browser gerendert und brauchen Platz
+    * `e.nextElementSibling` statt `e.nextSibling` verwenden, um nicht auf whitespace-nodes zu treffen
+    * Workaround: Umbrüche mit Kommentare maskieren
+* **Folie 17**
+    * Korrektur: `getElementById()` gibt `node` zurück, nicht `NodeList`
+    * "life": NodeList Ändert sich mit dem DOM-Tree mit (dynamisch)
+* **Events**
+    * onload() oder `addEventListener("load", fn)` ist identisch
+    * onload, onclick etc. geht nur, wenn ein Event Handler zugewiesen wird
+* **Event-Bubbling**
+    * Ein Event auf einem Element "bubbled" hoch zu den Parent-Elementen im DOM-Tree
+    * Die Event-Handler werden nacheinander aufgerufen, zuerst der direkt auf dem Event, dann parents, usw.
+    * Mit `event.target` prüfen, was geklickt wurde (von innen nach aussen)
+    * mit `event.stopPropagation()` weiteres bubbling verhindern
+    * Verarbeitung sollte nicht länger als 100ms benötigen, da sonst UI bemerkbar langsamer wird
+    * Double click löst zwei Klicks aus
