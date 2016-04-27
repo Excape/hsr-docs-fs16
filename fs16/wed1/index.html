@@ -150,6 +150,8 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-8-javascript-2">Vorlesung 8 - Javascript (2)</a></li>
                 
+                    <li><a class="toctree-l4" href="#vorlesung-9-dom-events">Vorlesung 9 - DOM &amp; Events</a></li>
+                
             
             </ul>
         
@@ -648,6 +650,57 @@ Für Suchmaschinen / Accessibility Tools / ... zur besseren Auszeichnung</p>
 <li>Formatierung geht mit ES6 besser</li>
 </ul>
 </li>
+</ul>
+<hr />
+</li>
+</ul>
+<h2 id="vorlesung-9-dom-events">Vorlesung 9 - DOM &amp; Events</h2>
+<ul>
+<li><strong>Folie 5</strong><ul>
+<li>Browser erstellt DOM Tree aus HTML</li>
+<li>Browser rendert den DOM Tree jedes Mal, wenn er verändert wird</li>
+<li>-&gt; Viele kleine Änderungen in der DOM brauchen viel Rechenaufwand</li>
+<li>Render-Tree braucht nur Elemente, die angezeigt werden (z.B. ohne &lt;head> oder Kommentare)</li>
+</ul>
+</li>
+<li><strong>Folie 6</strong><ul>
+<li>Anzeige im Developer Window ist nur eine HTML-Repräsenation des DOM-Baums, nicht der Source-Code</li>
+</ul>
+</li>
+<li><strong>Folie 10</strong><ul>
+<li>Parsen geht Schritt für Schritt. Sobald ein Script gefunden wird, wird es vom JS-Interpreter ausgeführt. D.h beim Ausführen eines Scripts ist <code>document</code> noch nicht vollständig geladen</li>
+<li>Lösung: <code>ẁindow.onload()</code></li>
+</ul>
+</li>
+<li><strong>JS einbinden</strong><ul>
+<li><code>&lt;script&gt;&lt;/script&gt;</code> gibt aktuell Probleme mit WebStorm</li>
+<li>Besser: <code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></li>
+</ul>
+</li>
+<li><strong>Whitespace</strong><ul>
+<li>Jeder Zeilenumbruch ist ein Whitespace im DOM-Tree</li>
+<li>Diese Whitespaces werden auch im Browser gerendert und brauchen Platz</li>
+<li><code>e.nextElementSibling</code> statt <code>e.nextSibling</code> verwenden, um nicht auf whitespace-nodes zu treffen</li>
+<li>Workaround: Umbrüche mit Kommentare maskieren</li>
+</ul>
+</li>
+<li><strong>Folie 17</strong><ul>
+<li>Korrektur: <code>getElementById()</code> gibt <code>node</code> zurück, nicht <code>NodeList</code></li>
+<li>"life": NodeList Ändert sich mit dem DOM-Tree mit (dynamisch)</li>
+</ul>
+</li>
+<li><strong>Events</strong><ul>
+<li>onload() oder <code>addEventListener("load", fn)</code> ist identisch</li>
+<li>onload, onclick etc. geht nur, wenn ein Event Handler zugewiesen wird</li>
+</ul>
+</li>
+<li><strong>Event-Bubbling</strong><ul>
+<li>Ein Event auf einem Element "bubbled" hoch zu den Parent-Elementen im DOM-Tree</li>
+<li>Die Event-Handler werden nacheinander aufgerufen, zuerst der direkt auf dem Event, dann parents, usw.</li>
+<li>Mit <code>event.target</code> prüfen, was geklickt wurde (von innen nach aussen)</li>
+<li>mit <code>event.stopPropagation()</code> weiteres bubbling verhindern</li>
+<li>Verarbeitung sollte nicht länger als 100ms benötigen, da sonst UI bemerkbar langsamer wird</li>
+<li>Double click löst zwei Klicks aus</li>
 </ul>
 </li>
 </ul>
