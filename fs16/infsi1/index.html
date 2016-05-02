@@ -131,6 +131,8 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-9-zertifikate-und-pki">Vorlesung 9 - Zertifikate und PKI</a></li>
                 
+                    <li><a class="toctree-l4" href="#vorlesung-10-tlsssl">Vorlesung 10 - TLS/SSL</a></li>
+                
             
             </ul>
         
@@ -538,9 +540,96 @@ Kein "e" im Text</p>
 <li>not everyone knows 50 other people (some are not mutually exclusive)</li>
 </ul>
 </li>
-<li><strong>Folie 32</strong><ul>
+<li>
+<p><strong>Folie 32</strong></p>
+<ul>
 <li>Codierung in Base64 für 6-Bit ASCII Darstellung</li>
 <li>pem: Darstellbarer text (ASCII 6-bit)</li>
+</ul>
+<p><img alt="CryptoBasics Zusammenfassung" src="../img/crypto-basics.png" /></p>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-10-tlsssl">Vorlesung 10 - TLS/SSL</h2>
+<ul>
+<li><strong>Folie 2 Chat</strong><ul>
+<li>"High Performance" ist Werbespruch, Zertifikat hat nichts mit der Performance zu tun</li>
+<li>Bob erhält nicht eine "Kopie" des Certs, nur ein signierter Public Key</li>
+</ul>
+</li>
+<li><strong>Folie 7</strong><ul>
+<li>Signer ist die CA</li>
+<li>CA signiert Public-Key des Servers</li>
+</ul>
+</li>
+<li><strong>TLS Handshake - Folie 15</strong><ul>
+<li>Key Exchange<ul>
+<li>Client schickt zufallszahl + cipher list</li>
+<li>Server antwortet mit gewünschtem Cipher + Certificate + Session ID</li>
+<li>Client prüft Cert</li>
+<li>Client bildet aus allen Zufallszahlen einen "Master Key" und schickt ihn verschlüsselt zum Server</li>
+<li>Server und Client haben nun gemeinsamen Symmetric key</li>
+<li><code>ChangeSipherSpec</code>: Wechseln von asymmetrisch zu symmetrischer Verschlüsselung</li>
+</ul>
+</li>
+<li>Encrypted Session<ul>
+<li>Server und Client benutzen Symmetric Key </li>
+</ul>
+</li>
+<li>Mehr Infos: <a href="https://sites.google.com/site/tlsssloverview/handshake-process">https://sites.google.com/site/tlsssloverview/handshake-process</a></li>
+</ul>
+</li>
+<li><strong>Folie 18 - TLS Resume</strong><ul>
+<li>Session Resume: Die Session ID ernet verwenden</li>
+<li>Server und Client benutzen wieder den gleichen Master Key</li>
+</ul>
+</li>
+<li><strong>Folie 19 - False Start</strong><ul>
+<li>Die Daten schon schicken, bevor das letzte Ack vom Server empfangen wird</li>
+</ul>
+</li>
+<li><strong>Folie 24 - Ephemeral DH</strong><ul>
+<li>Ephemeral: "flüchtig"</li>
+<li>Alle Diffie-Hellmann Ciphers benutzen solche "flüchtigen" Schlüssel</li>
+<li>"DHE": Diffie Hellmann Ephemeral</li>
+<li>Für jede Verbindung wird ein neues Secret ausgehandelt</li>
+<li>ohne "Ephemeral" würde DH immer dasselbe Secret zwischen gleichem Client und Server ausgehandelt</li>
+<li><a href="https://tls.mbed.org/kb/cryptography/ephemeral-diffie-hellman">https://tls.mbed.org/kb/cryptography/ephemeral-diffie-hellman</a></li>
+</ul>
+</li>
+<li><strong>Folie 29</strong><ul>
+<li>Client sendet beim Client Hello seine Session ID mit</li>
+</ul>
+</li>
+<li><strong>Folie 34</strong><ul>
+<li>Nachteil MAC (Hash): Bei Brute-Force theoretischein Nachteil, aber hier ist er mit dem Key verschlüsselt, daher kein Problem</li>
+</ul>
+</li>
+<li><strong>Chat Folie 37</strong><ul>
+<li>Chrome: chrome://flags</li>
+<li>Firefox: about:config - security.tls</li>
+</ul>
+</li>
+<li><strong>Folie 40 - Proxies</strong><ul>
+<li>Proxy baut Verbindung zum Server auf, und anschliessend mit eigenem Zertifikat zum Client</li>
+<li>Auf dem Client muss das Proxy-Zertifikat trusted sein (Root CA installiert)</li>
+</ul>
+</li>
+<li><strong>Chat Folie 43</strong><ul>
+<li>MitM ist SSL-Proxy</li>
+</ul>
+</li>
+<li><strong>Folie 47 - Perfect Forward Secrecy</strong><ul>
+<li>Verhindert, dass alte Verbindungem im Nachhinein noch entschlüsselt werden können</li>
+<li>DH: Client und Server generieren einen shared key, ohne ihn je zu übertragen</li>
+</ul>
+</li>
+<li><strong>Folie 57 - Certifacte Pinning</strong><ul>
+<li>Es werden nur noch bestimmte Public-Keys zugelassen</li>
+<li>Server sagt Client, er soll nur bestimmte Public-Keys akzeptierten</li>
+<li>Zur Verhinderung von MitM</li>
+<li><a href="https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning">https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning</a></li>
+<li><a href="https://developer.mozilla.org/en/docs/Web/Security/Public_Key_Pinning">https://developer.mozilla.org/en/docs/Web/Security/Public_Key_Pinning</a></li>
 </ul>
 </li>
 </ul>
