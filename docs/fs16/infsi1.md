@@ -219,3 +219,60 @@ Kein "e" im Text
 * **Folie 32**
     * Codierung in Base64 für 6-Bit ASCII Darstellung
     * pem: Darstellbarer text (ASCII 6-bit)
+
+    ![CryptoBasics Zusammenfassung](img/crypto-basics.png)
+
+
+---
+## Vorlesung 10 - TLS/SSL
+
+* **Folie 2 Chat**
+    * "High Performance" ist Werbespruch, Zertifikat hat nichts mit der Performance zu tun
+    * Bob erhält nicht eine "Kopie" des Certs, nur ein signierter Public Key
+* **Folie 7**
+    * Signer ist die CA
+    * CA signiert Public-Key des Servers
+* **TLS Handshake - Folie 15**
+    * Key Exchange
+        * Client schickt zufallszahl + cipher list
+        * Server antwortet mit gewünschtem Cipher + Certificate + Session ID
+        * Client prüft Cert
+        * Client bildet aus allen Zufallszahlen einen "Master Key" und schickt ihn verschlüsselt zum Server
+        * Server und Client haben nun gemeinsamen Symmetric key
+        * `ChangeSipherSpec`: Wechseln von asymmetrisch zu symmetrischer Verschlüsselung
+    * Encrypted Session
+        * Server und Client benutzen Symmetric Key 
+    * Mehr Infos: <https://sites.google.com/site/tlsssloverview/handshake-process>
+* **Folie 18 - TLS Resume**
+    * Session Resume: Die Session ID ernet verwenden
+    * Server und Client benutzen wieder den gleichen Master Key
+* **Folie 19 - False Start**
+    * Die Daten schon schicken, bevor das letzte Ack vom Server empfangen wird
+* **Folie 24 - Ephemeral DH**
+    * Ephemeral: "flüchtig"
+    * Alle Diffie-Hellmann Ciphers benutzen solche "flüchtigen" Schlüssel
+    * "DHE": Diffie Hellmann Ephemeral
+    * Für jede Verbindung wird ein neues Secret ausgehandelt
+    * ohne "Ephemeral" würde DH immer dasselbe Secret zwischen gleichem Client und Server ausgehandelt
+    * <https://tls.mbed.org/kb/cryptography/ephemeral-diffie-hellman>
+* **Folie 29**
+    * Client sendet beim Client Hello seine Session ID mit
+* **Folie 34**
+    * Nachteil MAC (Hash): Bei Brute-Force theoretischein Nachteil, aber hier ist er mit dem Key verschlüsselt, daher kein Problem
+* **Chat Folie 37**
+    * Chrome: chrome://flags
+    * Firefox: about:config - security.tls
+* **Folie 40 - Proxies**
+    * Proxy baut Verbindung zum Server auf, und anschliessend mit eigenem Zertifikat zum Client
+    * Auf dem Client muss das Proxy-Zertifikat trusted sein (Root CA installiert)
+* **Chat Folie 43**
+    * MitM ist SSL-Proxy
+* **Folie 47 - Perfect Forward Secrecy**
+    * Verhindert, dass alte Verbindungem im Nachhinein noch entschlüsselt werden können
+    * DH: Client und Server generieren einen shared key, ohne ihn je zu übertragen
+* **Folie 57 - Certifacte Pinning**
+    * Es werden nur noch bestimmte Public-Keys zugelassen
+    * Server sagt Client, er soll nur bestimmte Public-Keys akzeptierten
+    * Zur Verhinderung von MitM
+    * <https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning>
+    * <https://developer.mozilla.org/en/docs/Web/Security/Public_Key_Pinning>

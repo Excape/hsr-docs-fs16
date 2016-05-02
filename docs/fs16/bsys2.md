@@ -254,3 +254,32 @@ DMA: Direct Memory Access
     * Betriebssystem gibt Quell- und Zieladresse an
     * DMA transferiert Daten ohne Hilfe der CPU
     * Nach Abschluss meldet sich DMA-Controller per Interrupt bei der CPU
+---
+## Vorlesung 10 - Virtueller Speicher (2)
+
+Valid-Bit = 0 in Umsetzungstabelle, heisst:
+
+- Seite gehört zum Prozess, aber fehlt im HS -> Laden ab Datenträger
+    - Auslagerungsdatei
+    - ausführbare Daten
+- Schutzverletzung
+
+* **Folie 173**
+    * Alternative: 
+        * Swapping (Ganze Prozesse werden ausgelagert)
+        * Segment-Wechsel-Verfahren (Segmente können aber viel grösser sein als Pages)
+
+* **Folie 178**
+    * Rechenbeispiel:
+        $$T_{eff} = T_M - p * T_m + pT_{PF}$$
+        $$T_{eff} - T_M = -p(T_M * T_{PF})$$
+        $$p = \frac{t_{eff} - T_M}{T_{PF} - T_M}$$
+        $$\frac{40\cdot 10^{-9}}{10\cdot10^{-3}} = 4\cdot10^{-6} = \text{jeder 250'000 Zugriff}$$
+
+* **Folie 184**
+    * Diagramm B: Annahme, dass das Programm alle Adressen gleich häufig verwendet
+    * Dies ist aber in der Realität nicht so (Lokalitätseffekt)
+
+* **Folie 186**
+    * Wenn ein Prozess plötzlich viel Page Faults hat, Platzzuteilung temporär vergrössern.
+    * Wenn wenig Fehler verursacht werden, Platzzuteilung wieder verkleinern
