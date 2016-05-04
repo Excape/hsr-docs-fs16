@@ -169,4 +169,11 @@ Verfahren, wenn \(\mu\) und \(\sigma\) unbekannt sind.
     * Differenziere: \(\frac 1n \sum{(x_i^2 - 2x_i\hat\mu + \mu^2)}\)
     * \(-\frac 1n \sum{2x_i + 2\mu} = 0\)
     * \(\mu = \frac 1n \sum x_i = \overline x\)
-* 
+
+## Vorlesung 9 - Schätzverfahren (2)
+Geänderte Folien "8.Schätzverfahren+.pdf"
+
+Siehe Handnotizen
+
+!!! info "Literatur"
+    Bourier Kapitel 9

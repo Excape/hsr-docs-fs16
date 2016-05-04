@@ -350,3 +350,37 @@ Variante mit externem File:
     * mit `event.stopPropagation()` weiteres bubbling verhindern
     * Verarbeitung sollte nicht länger als 100ms benötigen, da sonst UI bemerkbar langsamer wird
     * Double click löst zwei Klicks aus
+
+---
+## Vorlesung 10 - jQuery
+
+* jQuery 2 nutzen (kein IE 6/7/8 Support)
+* Kleine DOM-Manipulationen besser ohne jQuery
+* Mächtiger als die Standard Document API von Javascript
+* `$()` ist eine Funktion
+* Function Chaining: Weitere funktionen anhängen
+* Gleich wie `$(document).on('ready', function() {})`:
+
+``` javascript
+$(function () {
+    //code
+});
+```
+* `ready` wird ausgelöst, sobald DOM-Manipulationen möglich sind, aber Bilder müssen nich nicht geladen werden
+* `load` wird erst ausgelöst, nachdem ALLES geladen wurde
+* **IIFE**
+    * Immediately-invoked function expression
+    * Definiert neuen Scope
+    * Definiert anonyme funktion, die sofort ausgeführt wird
+
+``` javascript
+(function() {
+    // code in eigenem scope
+})();
+```
+* `$("<css-selector>")` gibt jQuery ResultSet zurück, auf dem jQuery-Funktionen aufgerufen werden können
+* `$("<css-selector>")[<index>]` gibt "natives" Element zurück
+* **DOM-Manipulation**
+    * z.b. `val()` ist ein Getter, `val(value)` ein Setter
+    * `val()` -> Wert des ersten elements
+    * `text()` -> Alle Elemente, bzw. konkatenierte Liste beim getter

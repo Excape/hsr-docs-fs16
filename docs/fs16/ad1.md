@@ -1,6 +1,8 @@
 # Algorithmen und Datenstrukturen
 
-## Allgemein
+## Prüfungsinfo
+
+* Alle Unterlagen erlaubt
 
 ---
 ## Vorlesung 1 - Intro / OO-Design
@@ -110,7 +112,7 @@ Dies ist **keine** Endrekursion!
     * Muss nicht immer auf null testen, sondern nur, ob man am "Rand" ist
 
 ---
-## Vorlesung 8 - List & Iterations (1)
+## Vorlesung 8 - Lists (1)
 
 Unterschied zu Qeues:
 
@@ -154,6 +156,7 @@ $$ 2^{\log(n)+1} = 2^{\log(n)}*2^1 = n\cdot2 $$
 * **Folie 50**
     * addBetween() ist eine private Method
     * Weil node davor und danach stimmen muss; gefährlich, wenn Klasse public wäre
+    
 * Das Position Interface wird verwendet, damit für den Benutzer nur `getElement()` exposed wird, und nicht Node-Operationen wie `getNext()` oder `getPrevious()`. So wird die interne Struktur isoliert
 
 * `validate()` stellt sicher, dass die Position eine Node ist und noch in der Liste ist (noch ein `next` hat). Voraussetzung ist, dass die Referenzen bei remove() aus der Liste auf null gesetzt werden.
@@ -167,16 +170,44 @@ $$ 2^{\log(n)+1} = 2^{\log(n)}*2^1 = n\cdot2 $$
     * Korrektur: `addFirst()` ist bei ArrayList \(O(n)\)
     * `indexOf(p)` ist bei ArrayList nur \(O(1)\) wenn "p" Positions-Objekte sind 
 
+
+---
+## Vorlesung 10 - Iteratoren & Trees
+### Iterators
+* **Iterator-Varianten**
+    * Snapshot-Iterator
+        * Vor dem Iterieren eine Kopie erstellen
+        * \(O(n)\)
+    * Lazy-Iterator
+        * Direkt auf der Datenstruktur iterieren
+        * Wenn Datenstruktur verändert wird, kann der Iterator unerwartet reagieren
+        * Bei java api verwendet
+        * Java Framework wirft exception bei `next()`, wenn Datenstruktur verändert wurde
+        * Java hat Iterator.remove(), um das aktuelle Element zu löschen
+        * \(O(1)\)
+* **Implementierung**
+    * `NoSuchElementException`
+        * Wenn `next()` false ergibt, aber `next()` aufgerufen wird
+    * `UnsupportedOperationException`
+        * Iterator hat remove() nicht implementiert, zb. wenn Liste mit `Array.asList()` erstellt wird (AbstractList)
+    * `IllegalStateException`
+        * Wenn zwei mal hintereinander `remove()` aufgerufen wird
+
 ### Trees
 Tress sind abstrakte, hierarchische Strukturen bestehend aus Knoten in Eltern-Kind Relationen
 
-* Eigenschaften
+* **Eigenschaften**
     * Internene Knoten: Knoten mit mind. 1 Child
     * Externer Knoten: Blattknoten (Leaf-Nodes), Knoten ohne Kinder
     * Tiefe: Anzahl Vorgänger
     * Höhe eines Knotens: Höhe im Baum von oben. Leaf-Nodes: 0
     * Höhe eines Baums: Höhe der Wurzel (Root)
     * Sibling: Geschwisterknoten
-* Baum-Traversierung (jeden Knoten "besuchen")
+* **Baum-Traversierung** (jeden Knoten "besuchen")
     * Preorder: Jeder Knoten vor seinen Childs besuchen, wie der Ausdruck eines Dokuments
-    * Postorder: Jeder Knoten wird nach seinen Childs besucht
+    * Postorder: Jeder Knoten wird nach seinen Children besucht
+* **Binäre Bäume**
+    * Haben pro Knoten ein geordnetes Paar von children (left, right)
+    * Jeder Knoten hat (in einem echten Binärbaum) ein Sibling (ausser root)
+    * Balancierter, "Echter" Binärbaum: Jeder Knoten hat genau zwei Children
+    * Unbalanciert: Das "Gewicht" liegt auf einer Seite
