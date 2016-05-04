@@ -76,7 +76,7 @@
             
                 <li class="toctree-l3"><a href="#algorithmen-und-datenstrukturen">Algorithmen und Datenstrukturen</a></li>
                 
-                    <li><a class="toctree-l4" href="#allgemein">Allgemein</a></li>
+                    <li><a class="toctree-l4" href="#prufungsinfo">Prüfungsinfo</a></li>
                 
                     <li><a class="toctree-l4" href="#vorlesung-1-intro-oo-design">Vorlesung 1 - Intro / OO-Design</a></li>
                 
@@ -92,9 +92,11 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-7-queues">Vorlesung 7 - Queues</a></li>
                 
-                    <li><a class="toctree-l4" href="#vorlesung-8-list-iterations-1">Vorlesung 8 - List &amp; Iterations (1)</a></li>
+                    <li><a class="toctree-l4" href="#vorlesung-8-lists-1">Vorlesung 8 - Lists (1)</a></li>
                 
                     <li><a class="toctree-l4" href="#vorlesung-9-lists-trees">Vorlesung 9 - Lists &amp; Trees</a></li>
+                
+                    <li><a class="toctree-l4" href="#vorlesung-10-iteratoren-trees">Vorlesung 10 - Iteratoren &amp; Trees</a></li>
                 
             
             </ul>
@@ -209,7 +211,10 @@
             <div class="section">
               
                 <h1 id="algorithmen-und-datenstrukturen">Algorithmen und Datenstrukturen</h1>
-<h2 id="allgemein">Allgemein</h2>
+<h2 id="prufungsinfo">Prüfungsinfo</h2>
+<ul>
+<li>Alle Unterlagen erlaubt</li>
+</ul>
 <hr />
 <h2 id="vorlesung-1-intro-oo-design">Vorlesung 1 - Intro / OO-Design</h2>
 <ul>
@@ -365,7 +370,7 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
 </li>
 </ul>
 <hr />
-<h2 id="vorlesung-8-list-iterations-1">Vorlesung 8 - List &amp; Iterations (1)</h2>
+<h2 id="vorlesung-8-lists-1">Vorlesung 8 - Lists (1)</h2>
 <p>Unterschied zu Qeues:</p>
 <ul>
 <li>Positionsangabe</li>
@@ -438,7 +443,9 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
 <h2 id="vorlesung-9-lists-trees">Vorlesung 9 - Lists &amp; Trees</h2>
 <h3 id="lists">Lists</h3>
 <ul>
-<li><strong>Folie 50</strong><ul>
+<li>
+<p><strong>Folie 50</strong></p>
+<ul>
 <li>addBetween() ist eine private Method</li>
 <li>Weil node davor und danach stimmen muss; gefährlich, wenn Klasse public wäre</li>
 </ul>
@@ -470,10 +477,51 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
 </ul>
 </li>
 </ul>
+<hr />
+<h2 id="vorlesung-10-iteratoren-trees">Vorlesung 10 - Iteratoren &amp; Trees</h2>
+<h3 id="iterators">Iterators</h3>
+<ul>
+<li><strong>Iterator-Varianten</strong><ul>
+<li>Snapshot-Iterator<ul>
+<li>Vor dem Iterieren eine Kopie erstellen</li>
+<li>
+<script type="math/tex">O(n)</script>
+</li>
+</ul>
+</li>
+<li>Lazy-Iterator<ul>
+<li>Direkt auf der Datenstruktur iterieren</li>
+<li>Wenn Datenstruktur verändert wird, kann der Iterator unerwartet reagieren</li>
+<li>Bei java api verwendet</li>
+<li>Java Framework wirft exception bei <code>next()</code>, wenn Datenstruktur verändert wurde</li>
+<li>Java hat Iterator.remove(), um das aktuelle Element zu löschen</li>
+<li>
+<script type="math/tex">O(1)</script>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Implementierung</strong><ul>
+<li><code>NoSuchElementException</code><ul>
+<li>Wenn <code>next()</code> false ergibt, aber <code>next()</code> aufgerufen wird</li>
+</ul>
+</li>
+<li><code>UnsupportedOperationException</code><ul>
+<li>Iterator hat remove() nicht implementiert, zb. wenn Liste mit <code>Array.asList()</code> erstellt wird (AbstractList)</li>
+</ul>
+</li>
+<li><code>IllegalStateException</code><ul>
+<li>Wenn zwei mal hintereinander <code>remove()</code> aufgerufen wird</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="trees">Trees</h3>
 <p>Tress sind abstrakte, hierarchische Strukturen bestehend aus Knoten in Eltern-Kind Relationen</p>
 <ul>
-<li>Eigenschaften<ul>
+<li><strong>Eigenschaften</strong><ul>
 <li>Internene Knoten: Knoten mit mind. 1 Child</li>
 <li>Externer Knoten: Blattknoten (Leaf-Nodes), Knoten ohne Kinder</li>
 <li>Tiefe: Anzahl Vorgänger</li>
@@ -482,9 +530,16 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
 <li>Sibling: Geschwisterknoten</li>
 </ul>
 </li>
-<li>Baum-Traversierung (jeden Knoten "besuchen")<ul>
+<li><strong>Baum-Traversierung</strong> (jeden Knoten "besuchen")<ul>
 <li>Preorder: Jeder Knoten vor seinen Childs besuchen, wie der Ausdruck eines Dokuments</li>
-<li>Postorder: Jeder Knoten wird nach seinen Childs besucht</li>
+<li>Postorder: Jeder Knoten wird nach seinen Children besucht</li>
+</ul>
+</li>
+<li><strong>Binäre Bäume</strong><ul>
+<li>Haben pro Knoten ein geordnetes Paar von children (left, right)</li>
+<li>Jeder Knoten hat (in einem echten Binärbaum) ein Sibling (ausser root)</li>
+<li>Balancierter, "Echter" Binärbaum: Jeder Knoten hat genau zwei Children</li>
+<li>Unbalanciert: Das "Gewicht" liegt auf einer Seite</li>
 </ul>
 </li>
 </ul>

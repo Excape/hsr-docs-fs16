@@ -152,6 +152,8 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-9-dom-events">Vorlesung 9 - DOM &amp; Events</a></li>
                 
+                    <li><a class="toctree-l4" href="#vorlesung-10-jquery">Vorlesung 10 - jQuery</a></li>
+                
             
             </ul>
         
@@ -701,6 +703,46 @@ Für Suchmaschinen / Accessibility Tools / ... zur besseren Auszeichnung</p>
 <li>mit <code>event.stopPropagation()</code> weiteres bubbling verhindern</li>
 <li>Verarbeitung sollte nicht länger als 100ms benötigen, da sonst UI bemerkbar langsamer wird</li>
 <li>Double click löst zwei Klicks aus</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-10-jquery">Vorlesung 10 - jQuery</h2>
+<ul>
+<li>jQuery 2 nutzen (kein IE 6/7/8 Support)</li>
+<li>Kleine DOM-Manipulationen besser ohne jQuery</li>
+<li>Mächtiger als die Standard Document API von Javascript</li>
+<li><code>$()</code> ist eine Funktion</li>
+<li>Function Chaining: Weitere funktionen anhängen</li>
+<li>Gleich wie <code>$(document).on('ready', function() {})</code>:</li>
+</ul>
+<pre><code class="javascript">$(function () {
+    //code
+});
+</code></pre>
+
+<ul>
+<li><code>ready</code> wird ausgelöst, sobald DOM-Manipulationen möglich sind, aber Bilder müssen nich nicht geladen werden</li>
+<li><code>load</code> wird erst ausgelöst, nachdem ALLES geladen wurde</li>
+<li><strong>IIFE</strong><ul>
+<li>Immediately-invoked function expression</li>
+<li>Definiert neuen Scope</li>
+<li>Definiert anonyme funktion, die sofort ausgeführt wird</li>
+</ul>
+</li>
+</ul>
+<pre><code class="javascript">(function() {
+    // code in eigenem scope
+})();
+</code></pre>
+
+<ul>
+<li><code>$("&lt;css-selector&gt;")</code> gibt jQuery ResultSet zurück, auf dem jQuery-Funktionen aufgerufen werden können</li>
+<li><code>$("&lt;css-selector&gt;")[&lt;index&gt;]</code> gibt "natives" Element zurück</li>
+<li><strong>DOM-Manipulation</strong><ul>
+<li>z.b. <code>val()</code> ist ein Getter, <code>val(value)</code> ein Setter</li>
+<li><code>val()</code> -&gt; Wert des ersten elements</li>
+<li><code>text()</code> -&gt; Alle Elemente, bzw. konkatenierte Liste beim getter</li>
 </ul>
 </li>
 </ul>
