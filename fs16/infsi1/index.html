@@ -133,6 +133,8 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-10-tlsssl">Vorlesung 10 - TLS/SSL</a></li>
                 
+                    <li><a class="toctree-l4" href="#vorlesung-11-iam">Vorlesung 11 - IAM</a></li>
+                
             
             </ul>
         
@@ -624,12 +626,55 @@ Kein "e" im Text</p>
 <li>DH: Client und Server generieren einen shared key, ohne ihn je zu übertragen</li>
 </ul>
 </li>
-<li><strong>Folie 57 - Certifacte Pinning</strong><ul>
+<li><strong>Folie 57 - Certificate Pinning</strong><ul>
 <li>Es werden nur noch bestimmte Public-Keys zugelassen</li>
 <li>Server sagt Client, er soll nur bestimmte Public-Keys akzeptierten</li>
 <li>Zur Verhinderung von MitM</li>
 <li><a href="https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning">https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning</a></li>
 <li><a href="https://developer.mozilla.org/en/docs/Web/Security/Public_Key_Pinning">https://developer.mozilla.org/en/docs/Web/Security/Public_Key_Pinning</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-11-iam">Vorlesung 11 - IAM</h2>
+<ul>
+<li><strong>AAA</strong>*<ul>
+<li>Identification: User gibt sich für jemanden aus</li>
+<li><strong>Authentication</strong>: Beweis, dass der User der ist, wofür er sich ausgibt</li>
+<li><strong>Authorization</strong>: Was der User darf und was nicht</li>
+<li><strong>Accounting</strong>: Abrechnung für das, was der User macht ("Logging")</li>
+</ul>
+</li>
+<li><strong>Authentication</strong><ul>
+<li>What you know (Password)</li>
+<li>What you have (Token, Scratch list, Certificate)</li>
+<li>What you are (Fingerprint, Iris, ...)<ul>
+<li>Fingerprint, Iris scan fälschbar</li>
+<li>Gesichts- und Stimmen-Erkennung unzuverlässig</li>
+<li>Sehr sicher ist Retina-Scan</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Folie 5</strong><ul>
+<li>Die grüne Schwelle ist die Einstellung des Sensors </li>
+<li>Je schwächer man sie einstellt, desto weniger Fehler gibt es bei berechtigten User, aber desto höher ist die "False Acceptance Rate"</li>
+<li>Je grösser der Abstand der beiden Kurven, desto besser</li>
+<li>Verbesserung durch Kombination mehrerer Sensoren</li>
+</ul>
+</li>
+<li>Rainbow-Tables: Vorberechnete Tabelle von Hashes</li>
+<li>Salt hilft nicht gegen Dictionary-Attacks, da die Hashes einfach mit dem Salt berechnet werden</li>
+<li><strong>Challenge / Response</strong><ul>
+<li>Nonce: Einmaliger Wert (nicht zwingend zufällig)</li>
+<li>
+<script type="math/tex">R_U</script>: User Nonce</li>
+<li>User und beide Nonces werden mit dem Passwort gehasht (=MAC, Message Authentication Code)</li>
+<li>MAC wird mit User Nonce übertragen</li>
+</ul>
+</li>
+<li><strong>C / R mit Digital Signatures</strong><ul>
+<li>Der Hash wird signiert mit dem Private key und überprüft mit dem Public key</li>
 </ul>
 </li>
 </ul>

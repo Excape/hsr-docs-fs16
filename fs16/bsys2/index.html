@@ -119,6 +119,8 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-10-virtueller-speicher-2">Vorlesung 10 - Virtueller Speicher (2)</a></li>
                 
+                    <li><a class="toctree-l4" href="#vorlesung-11-dateisysteme-1">Vorlesung 11 - Dateisysteme (1)</a></li>
+                
             
             </ul>
         
@@ -605,6 +607,63 @@ zb. bei S-ATA verwendet</li>
 <ul>
 <li>Wenn ein Prozess plötzlich viel Page Faults hat, Platzzuteilung temporär vergrössern.</li>
 <li>Wenn wenig Fehler verursacht werden, Platzzuteilung wieder verkleinern</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-11-dateisysteme-1">Vorlesung 11 - Dateisysteme (1)</h2>
+<p>Prüfungsrelevant: Alles was sowohl in der Vorlesung als auch im Buch ist + Übungen</p>
+<ul>
+<li><strong>Begriff</strong><ul>
+<li>Teil des Betriebssystems<ul>
+<li>Abstrahiert den Zugriff auf Datenträger</li>
+</ul>
+</li>
+<li>Dateisystem auf Datenträger<ul>
+<li>Organisation der Daten auf Datenträger</li>
+</ul>
+</li>
+<li>Heute geht es um den ersten Punkt</li>
+</ul>
+</li>
+<li><strong>Dateitypen</strong><ul>
+<li>Keine Suchabfragen auf Datei möglich, weil BS nichts über den Dateiinhalt weiss</li>
+<li>Dateityp wird durch Dateiendung festgelegt</li>
+<li>Unix hat "Magic Word", wodurch das BS den Dateityp auslesen kann (Dateiendung hat keine Bedeutung)</li>
+<li>Binärdatei kann innere Struktur haben (ist der Applikation bekannt)</li>
+<li>GIF z.B. hat einen vorgegebenen Anfang</li>
+<li>Verzeichnis-"Dateien" sind alle gleich gross (s. Folie 19)</li>
+</ul>
+</li>
+<li><strong>Verzeichnisse</strong><ul>
+<li>Sind System-Dateien</li>
+<li>Namen sind bei Linux Case-Sensitive, bei Windows nicht</li>
+</ul>
+</li>
+<li><strong>Verknüpfungen</strong><ul>
+<li>".lnk" ist eine "weiche" Verknüpfung, aber eigentlich eine normale Datei</li>
+<li>Hard-Link: <ul>
+<li>Zusätzlicher Name für gleiche Datei</li>
+<li>I.d.R nur für Dateien (um zyklische Verknüpfungen zu vermeiden, Endlosrekursion)</li>
+<li>Datei wird erst gelöscht, wenn es die letzte Verknüpfung ist</li>
+</ul>
+</li>
+<li>Soft-Link:<ul>
+<li>Spezielle Datei</li>
+<li>Löschen löscht nur die Verknüpfung</li>
+<li>Im Unterschied zum Hard-Link Verknüfpung in andere Dateisysteme möglich</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Grundlagen und Verwaltungsdaten</strong><ul>
+<li>Mehrere Prozesse können auf eine Datei zugreifen, jeder Prozess hat eigenen Schreib-/Lese-Zeiger</li>
+<li>Braucht Massnahmen zur Erhaltung der Konsistenz</li>
+<li>Zugriff über Handle (File Descriptor unter Linux)</li>
+<li>Handle zeigt auf Handle Table, das BS verwaltet dann den Zugriff über das Kernel object</li>
+<li>Jeder Prozess besitzt  mehrstufige Handle Table</li>
+<li>Bei mehreren Zugriffen auf die gleiche Datei werden normalerweise mehrere File Objects erzeugt, da Schreib-/Lese-Zeiger im File object hinterlegt ist</li>
+<li>Linux: stdin, stdout und stderr sind File Descriptors 0, 1 und 2</li>
 </ul>
 </li>
 </ul>
