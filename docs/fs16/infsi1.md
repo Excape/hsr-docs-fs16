@@ -270,9 +270,38 @@ Kein "e" im Text
 * **Folie 47 - Perfect Forward Secrecy**
     * Verhindert, dass alte Verbindungem im Nachhinein noch entschlüsselt werden können
     * DH: Client und Server generieren einen shared key, ohne ihn je zu übertragen
-* **Folie 57 - Certifacte Pinning**
+* **Folie 57 - Certificate Pinning**
     * Es werden nur noch bestimmte Public-Keys zugelassen
     * Server sagt Client, er soll nur bestimmte Public-Keys akzeptierten
     * Zur Verhinderung von MitM
     * <https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning>
     * <https://developer.mozilla.org/en/docs/Web/Security/Public_Key_Pinning>
+
+---
+## Vorlesung 11 - IAM
+* **AAA***
+    * Identification: User gibt sich für jemanden aus
+    * **Authentication**: Beweis, dass der User der ist, wofür er sich ausgibt
+    * **Authorization**: Was der User darf und was nicht
+    * **Accounting**: Abrechnung für das, was der User macht ("Logging")
+* **Authentication**
+    * What you know (Password)
+    * What you have (Token, Scratch list, Certificate)
+    * What you are (Fingerprint, Iris, ...)
+        * Fingerprint, Iris scan fälschbar
+        * Gesichts- und Stimmen-Erkennung unzuverlässig
+        * Sehr sicher ist Retina-Scan
+* **Folie 5**
+    * Die grüne Schwelle ist die Einstellung des Sensors 
+    * Je schwächer man sie einstellt, desto weniger Fehler gibt es bei berechtigten User, aber desto höher ist die "False Acceptance Rate"
+    * Je grösser der Abstand der beiden Kurven, desto besser
+    * Verbesserung durch Kombination mehrerer Sensoren
+* Rainbow-Tables: Vorberechnete Tabelle von Hashes
+* Salt hilft nicht gegen Dictionary-Attacks, da die Hashes einfach mit dem Salt berechnet werden
+* **Challenge / Response**
+    * Nonce: Einmaliger Wert (nicht zwingend zufällig)
+    * \(R_U\): User Nonce
+    * User und beide Nonces werden mit dem Passwort gehasht (=MAC, Message Authentication Code)
+    * MAC wird mit User Nonce übertragen
+* **C / R mit Digital Signatures**
+    * Der Hash wird signiert mit dem Private key und überprüft mit dem Public key

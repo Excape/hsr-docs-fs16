@@ -49,7 +49,7 @@ Für Suchmaschinen / Accessibility Tools / ... zur besseren Auszeichnung
     `<b>` und `<i>` wurden in html5 umdefiniert, damit es nicht mehr ein Aussehen beschreibt
 
 * **Folie 22:**  
-    Navigation nicht im Footer verwenden (stattdessen <aside> verwenden)
+    Navigation nicht im Footer verwenden (stattdessen `<aside>` verwenden)
 
 Mime-Types: <https://wiki.selfhtml.org/wiki/Referenz:MIME-Typen>
 

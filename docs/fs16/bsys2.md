@@ -283,3 +283,43 @@ Valid-Bit = 0 in Umsetzungstabelle, heisst:
 * **Folie 186**
     * Wenn ein Prozess plötzlich viel Page Faults hat, Platzzuteilung temporär vergrössern.
     * Wenn wenig Fehler verursacht werden, Platzzuteilung wieder verkleinern
+
+---
+## Vorlesung 11 - Dateisysteme (1)
+
+Prüfungsrelevant: Alles was sowohl in der Vorlesung als auch im Buch ist + Übungen
+
+* **Begriff**
+    * Teil des Betriebssystems
+        * Abstrahiert den Zugriff auf Datenträger
+    * Dateisystem auf Datenträger
+        * Organisation der Daten auf Datenträger
+    * Heute geht es um den ersten Punkt
+* **Dateitypen**
+    * Keine Suchabfragen auf Datei möglich, weil BS nichts über den Dateiinhalt weiss
+    * Dateityp wird durch Dateiendung festgelegt
+    * Unix hat "Magic Word", wodurch das BS den Dateityp auslesen kann (Dateiendung hat keine Bedeutung)
+    * Binärdatei kann innere Struktur haben (ist der Applikation bekannt)
+    * GIF z.B. hat einen vorgegebenen Anfang
+    * Verzeichnis-"Dateien" sind alle gleich gross (s. Folie 19)
+* **Verzeichnisse**
+    * Sind System-Dateien
+    * Namen sind bei Linux Case-Sensitive, bei Windows nicht
+* **Verknüpfungen**
+    * ".lnk" ist eine "weiche" Verknüpfung, aber eigentlich eine normale Datei
+    * Hard-Link: 
+        * Zusätzlicher Name für gleiche Datei
+        * I.d.R nur für Dateien (um zyklische Verknüpfungen zu vermeiden, Endlosrekursion)
+        * Datei wird erst gelöscht, wenn es die letzte Verknüpfung ist
+    * Soft-Link:
+        * Spezielle Datei
+        * Löschen löscht nur die Verknüpfung
+        * Im Unterschied zum Hard-Link Verknüfpung in andere Dateisysteme möglich
+* **Grundlagen und Verwaltungsdaten**
+    * Mehrere Prozesse können auf eine Datei zugreifen, jeder Prozess hat eigenen Schreib-/Lese-Zeiger
+    * Braucht Massnahmen zur Erhaltung der Konsistenz
+    * Zugriff über Handle (File Descriptor unter Linux)
+    * Handle zeigt auf Handle Table, das BS verwaltet dann den Zugriff über das Kernel object
+    * Jeder Prozess besitzt  mehrstufige Handle Table
+    * Bei mehreren Zugriffen auf die gleiche Datei werden normalerweise mehrere File Objects erzeugt, da Schreib-/Lese-Zeiger im File object hinterlegt ist
+    * Linux: stdin, stdout und stderr sind File Descriptors 0, 1 und 2
