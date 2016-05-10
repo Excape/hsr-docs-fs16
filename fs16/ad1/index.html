@@ -98,6 +98,8 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-10-iteratoren-trees">Vorlesung 10 - Iteratoren &amp; Trees</a></li>
                 
+                    <li><a class="toctree-l4" href="#vorlesung-11-trees-priority-queues">Vorlesung 11 - Trees &amp; Priority Queues</a></li>
+                
             
             </ul>
         
@@ -213,7 +215,11 @@
                 <h1 id="algorithmen-und-datenstrukturen">Algorithmen und Datenstrukturen</h1>
 <h2 id="prufungsinfo">Prüfungsinfo</h2>
 <ul>
-<li>Alle Unterlagen erlaubt</li>
+<li>Alle Papier-Unterlagen erlaubt</li>
+<li>Bleistift erlaubt (empfohlen für Zeichnungen)</li>
+<li>90 Min</li>
+<li>Stoff: Vorlesung + Übungen ohne JUnit</li>
+<li>Einzelheiten: Siehe Titelblatt</li>
 </ul>
 <hr />
 <h2 id="vorlesung-1-intro-oo-design">Vorlesung 1 - Intro / OO-Design</h2>
@@ -532,7 +538,16 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
 </li>
 <li><strong>Baum-Traversierung</strong> (jeden Knoten "besuchen")<ul>
 <li>Preorder: Jeder Knoten vor seinen Childs besuchen, wie der Ausdruck eines Dokuments</li>
-<li>Postorder: Jeder Knoten wird nach seinen Children besucht</li>
+<li>Postorder: Jeder Knoten wird nach seinen Children besucht<ul>
+<li>Anwendung: Auswertung arithmetischer Ausdrücke: Jeder Aufruf liefert Wert des Unterbaums. Eine solche Traversierung ist das gleiche wie ein Stack-Rechner (Reverse Polnische Notation)</li>
+</ul>
+</li>
+<li>Inorder: Von einem Knoten wird zuerst der linke Subtree besucht, dann der Knoten, und dann der rechte Subtree<ul>
+<li>Anwendung: Graphische Darstellung eines Baumes (x= inorder Rang, y=Tiefe)</li>
+<li>Anwendung: Ausgabe arithmetischer Ausdrücke. Operanden sind in den Blattknoten, Operatoren in den internen Knoten. Über jeden Subtree werden Klammern gesetzt</li>
+</ul>
+</li>
+<li>Alle drei sind Spezialfälle der <em>Euler Tour</em> Traversierung. Darin wird jeder Knoten drei mal besucht. Von links (preoder), unten (inorder) und rechts (postorder)</li>
 </ul>
 </li>
 <li><strong>Binäre Bäume</strong><ul>
@@ -540,6 +555,33 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
 <li>Jeder Knoten hat (in einem echten Binärbaum) ein Sibling (ausser root)</li>
 <li>Balancierter, "Echter" Binärbaum: Jeder Knoten hat genau zwei Children</li>
 <li>Unbalanciert: Das "Gewicht" liegt auf einer Seite</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-11-trees-priority-queues">Vorlesung 11 - Trees &amp; Priority Queues</h2>
+<h3 id="trees_1">Trees</h3>
+<ul>
+<li><strong>Template Method Pattern Euler Traversierung</strong><ul>
+<li>visitExternal(), visitLeft(), visitRight() etc. sind in abstrakter Klasse leer</li>
+<li>Die benötigten Methoden werden in konkreter Klasse überschrieben und "implementiert"</li>
+</ul>
+</li>
+<li><strong>GoF = Gang of Four</strong><ul>
+<li>Autoren des bekannten "Design Patterns" (1995)</li>
+</ul>
+</li>
+</ul>
+<h3 id="priority-queues">Priority Queues</h3>
+<ul>
+<li>Jeder Entry der Queue besteht aus einem Key-Value-Pair</li>
+<li><code>removeMin()</code> entfernt jeweils das Element mit dem niedrigsten Key (= <em>höchste Priorität</em>)</li>
+<li><strong>Comparator</strong><ul>
+<li>allgemein: <code>compare(a, b) {return a - b;}</code></li>
+</ul>
+</li>
+<li><strong>Folie 8</strong><ul>
+<li>Hier wird nur der Key verwendet, Values bleiben immer null.</li>
 </ul>
 </li>
 </ul>
