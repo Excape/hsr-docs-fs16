@@ -177,3 +177,21 @@ Siehe Handnotizen
 
 !!! info "Literatur"
     Bourier Kapitel 9
+    
+## Vorlesung 10 - Testverfahren
+Problem: Wenn ein zweites Experiment durchgeführt wird, sind die Ergebnisse dann tatsächlich besser? Sind sie  signifikant besser?
+
+* **Verteilungs- bzw. Anpassungstest**
+    * Bei Simulationen relevant, da die Zufallszahlen einer Verteilungsfunktion gehorchen sollen
+* **Folie 5**
+    * \(1 - \alpha\) ist die Wahrscheinlichkeit, dass die Zahl innerhalb des Intervalls ist, bzw \(\alpha\), dass sie ausserhalb ist
+* **Fehlerarten**
+    * Erste Art: Hypothese falscherweise ablehnen
+    * Zweiter Art: Hypothese falscherweise annehmen
+        * Je näher Hypothese und wahrer Wert zusammen liegen, desto höher ist die Fehlerwahrscheinlichkeit
+
+Siehe Handnotizen
+
+!!! info "Literatur"
+    Bourier Kapitel 10
+    

@@ -2,7 +2,11 @@
 
 ## Prüfungsinfo
 
-* Alle Unterlagen erlaubt
+* Alle Papier-Unterlagen erlaubt
+* Bleistift erlaubt (empfohlen für Zeichnungen)
+* 90 Min
+* Stoff: Vorlesung + Übungen ohne JUnit
+* Einzelheiten: Siehe Titelblatt
 
 ---
 ## Vorlesung 1 - Intro / OO-Design
@@ -206,8 +210,30 @@ Tress sind abstrakte, hierarchische Strukturen bestehend aus Knoten in Eltern-Ki
 * **Baum-Traversierung** (jeden Knoten "besuchen")
     * Preorder: Jeder Knoten vor seinen Childs besuchen, wie der Ausdruck eines Dokuments
     * Postorder: Jeder Knoten wird nach seinen Children besucht
+        * Anwendung: Auswertung arithmetischer Ausdrücke: Jeder Aufruf liefert Wert des Unterbaums. Eine solche Traversierung ist das gleiche wie ein Stack-Rechner (Reverse Polnische Notation)
+    * Inorder: Von einem Knoten wird zuerst der linke Subtree besucht, dann der Knoten, und dann der rechte Subtree
+        * Anwendung: Graphische Darstellung eines Baumes (x= inorder Rang, y=Tiefe)
+        * Anwendung: Ausgabe arithmetischer Ausdrücke. Operanden sind in den Blattknoten, Operatoren in den internen Knoten. Über jeden Subtree werden Klammern gesetzt
+    * Alle drei sind Spezialfälle der *Euler Tour* Traversierung. Darin wird jeder Knoten drei mal besucht. Von links (preoder), unten (inorder) und rechts (postorder)
 * **Binäre Bäume**
     * Haben pro Knoten ein geordnetes Paar von children (left, right)
     * Jeder Knoten hat (in einem echten Binärbaum) ein Sibling (ausser root)
     * Balancierter, "Echter" Binärbaum: Jeder Knoten hat genau zwei Children
     * Unbalanciert: Das "Gewicht" liegt auf einer Seite
+
+---
+## Vorlesung 11 - Trees & Priority Queues
+### Trees
+* **Template Method Pattern Euler Traversierung**
+    * visitExternal(), visitLeft(), visitRight() etc. sind in abstrakter Klasse leer
+    * Die benötigten Methoden werden in konkreter Klasse überschrieben und "implementiert"
+* **GoF = Gang of Four**
+    * Autoren des bekannten "Design Patterns" (1995)
+
+### Priority Queues
+* Jeder Entry der Queue besteht aus einem Key-Value-Pair
+* `removeMin()` entfernt jeweils das Element mit dem niedrigsten Key (= *höchste Priorität*)
+* **Comparator**
+    * allgemein: `compare(a, b) {return a - b;}`
+* **Folie 8**
+    * Hier wird nur der Key verwendet, Values bleiben immer null.
