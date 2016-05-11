@@ -154,6 +154,8 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-10-jquery">Vorlesung 10 - jQuery</a></li>
                 
+                    <li><a class="toctree-l4" href="#vorlesung-11-http-nodejs">Vorlesung 11 - HTTP &amp; Node.js</a></li>
+                
             
             </ul>
         
@@ -743,6 +745,34 @@ Für Suchmaschinen / Accessibility Tools / ... zur besseren Auszeichnung</p>
 <li>z.b. <code>val()</code> ist ein Getter, <code>val(value)</code> ein Setter</li>
 <li><code>val()</code> -&gt; Wert des ersten elements</li>
 <li><code>text()</code> -&gt; Alle Elemente, bzw. konkatenierte Liste beim getter</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-11-http-nodejs">Vorlesung 11 - HTTP &amp; Node.js</h2>
+<h3 id="http">HTTP</h3>
+<p>Die Browser-Hersteller haben die HTTP-Entwicklung geprägt</p>
+<ul>
+<li><strong>URI - Unified Resource Identifier</strong><ul>
+<li>URL gefolgt von URN (<em>Unified Resource Name</em>)</li>
+<li>URN identifiziert eine Ressource, unabängig von der URL (der "Ort")</li>
+<li>DNS-Name + Port wird auch <em>Origin</em> genannt</li>
+<li>Fragment (Anchor) geht nie auf den Server!</li>
+</ul>
+</li>
+<li><strong>HTTP-Methods</strong><ul>
+<li>Die Methods sollten nur für ihren Zweck verwendet werden</li>
+<li>In der Realität werden PUT, DELETE etc. oft von der Firewall geblockt, man muss mit GET und POST auskommen</li>
+<li>POST-Request-Inhalt muss immer beschrieben werden (<code>content-type</code>)</li>
+</ul>
+</li>
+<li><strong>Header</strong><ul>
+<li>E-Tag (<em>Entity Tag</em>) ist Hash über den Inhalt oder das Datum der letzten Änderung</li>
+<li>E-Tag wird beim Request mitgeschickt, wenn die Ressource bereits im Cache liegt</li>
+<li>Wenn der Server merkt, dass sich der Content nicht verändert hat, sendet er <em>304 Not Modified</em></li>
+<li><em>Pragma</em> (eigentlich im Request) heisst, man will auf jeden Fall die neue Version vom Server haben</li>
+<li>Cookies ohne Expiration Date sind "Session-Cookies"</li>
+<li>Cookies haben einen "Scope", der durch den Pfad gegeben wird</li>
 </ul>
 </li>
 </ul>
