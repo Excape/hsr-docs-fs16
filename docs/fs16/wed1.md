@@ -384,3 +384,26 @@ $(function () {
     * z.b. `val()` ist ein Getter, `val(value)` ein Setter
     * `val()` -> Wert des ersten elements
     * `text()` -> Alle Elemente, bzw. konkatenierte Liste beim getter
+
+---
+## Vorlesung 11 - HTTP & Node.js
+
+### HTTP
+Die Browser-Hersteller haben die HTTP-Entwicklung geprägt
+
+* **URI - Unified Resource Identifier**
+    * URL gefolgt von URN (*Unified Resource Name*)
+    * URN identifiziert eine Ressource, unabängig von der URL (der "Ort")
+    * DNS-Name + Port wird auch *Origin* genannt
+    * Fragment (Anchor) geht nie auf den Server!
+* **HTTP-Methods**
+    * Die Methods sollten nur für ihren Zweck verwendet werden
+    * In der Realität werden PUT, DELETE etc. oft von der Firewall geblockt, man muss mit GET und POST auskommen
+    * POST-Request-Inhalt muss immer beschrieben werden (`content-type`)
+* **Header**
+    * E-Tag (*Entity Tag*) ist Hash über den Inhalt oder das Datum der letzten Änderung
+    * E-Tag wird beim Request mitgeschickt, wenn die Ressource bereits im Cache liegt
+    * Wenn der Server merkt, dass sich der Content nicht verändert hat, sendet er *304 Not Modified*
+    * *Pragma* (eigentlich im Request) heisst, man will auf jeden Fall die neue Version vom Server haben
+    * Cookies ohne Expiration Date sind "Session-Cookies"
+    * Cookies haben einen "Scope", der durch den Pfad gegeben wird
