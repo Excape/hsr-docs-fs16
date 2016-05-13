@@ -162,8 +162,8 @@ Abgabe als Word oder ausgedruckt!!
 
 
 ---
-# Leistungsnachweis
-## Ausgangslage
+## Leistungsnachweis
+
 * Gespräch erarbeiten, das schlecht ausgeht
 * Konstruktive Variante entwickeln
     * Situation muss gleich bleiben
@@ -186,3 +186,8 @@ Abgabe als Word oder ausgedruckt!!
 * Benotung (zählt 20% zur Abschlussnote)
     * 75% inhalt (Gruppennnote)
     * 25% Individuell
+
+## Eigene Präsentation
+< https://www.ted.com/talks/amy_cuddy_your_body_language_shapes_who_you_are?language=de#>
+
+<http://research.microsoft.com/apps/video/default.aspx?id=238675&r=1>
