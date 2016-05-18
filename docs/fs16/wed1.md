@@ -407,3 +407,23 @@ Die Browser-Hersteller haben die HTTP-Entwicklung geprägt
     * *Pragma* (eigentlich im Request) heisst, man will auf jeden Fall die neue Version vom Server haben
     * Cookies ohne Expiration Date sind "Session-Cookies"
     * Cookies haben einen "Scope", der durch den Pfad gegeben wird
+    * Cookie mit `httpOnly` kann nur vom http-Protokoll gelesen werden (z.B. nicht mit JS)
+    * Cookie mit "Secure Flag" kann nur über sichere (https) Verbindung übertragen werden (auch in Kombination mit httponly möglich)
+
+---
+## Vorlesung 12 - AJAX
+Anwedung: zB. auf SBB-Seite Ortschaften vorschlagen ohne Neulaen der Seite
+
+*AJAX: Asynchronous JavaScript and XML*, man kann aber mehr als HTML und XML laden
+
+`event.preventDefault()` um das normale Verhalten zu verhindern, z.B. bei einem Link das Navigieren unterbinden
+
+`request.open(method, url, true)` mit 3. Parameter `true` aufrufen (default), damit der Request asynchron ausgeführt wird und nicht den Haupt-Thread von JS blockiert
+
+AJAX ist gewöhnlicher HTTP-Request, Server kann also nicht unterscheiden
+
+`readyState` = 4 wenn Request komplett (erfolgreich oder nicht)
+
+Bei einem `POST` Request ist `Content-Type` zwingend
+
+*Same Origin Policy*: Mit AJAX darf nur auf gleicher Host mit gleichem Port zugegriffen werden, dies wird vom Browser enforced. Wenn der entfernte Server `Access-Control-Allow-Origin` header schickt, ist aber Cross-Origin erlaubt (*CORS*)

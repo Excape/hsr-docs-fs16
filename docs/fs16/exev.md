@@ -177,7 +177,8 @@ Siehe Handnotizen
 
 !!! info "Literatur"
     Bourier Kapitel 9
-    
+
+---
 ## Vorlesung 10 - Testverfahren
 Problem: Wenn ein zweites Experiment durchgeführt wird, sind die Ergebnisse dann tatsächlich besser? Sind sie  signifikant besser?
 
@@ -192,6 +193,19 @@ Problem: Wenn ein zweites Experiment durchgeführt wird, sind die Ergebnisse dan
 
 Siehe Handnotizen
 
+* Eine Signifikanz feststellen
+* Nullhypothese: Annahme, die angenommen oder abgelehnt werden soll 
+* Signifikanzzahl: Irrtumswahrscheinlichkeit. Bereich, in der wir die Hypothese an- oder ablehnen
+* Testentscheidung: Wenn wir Annahmebereich verlassen, wird sie abgelehnt, sonst angenommen
+
+* Fehlerarten: s. oben
+* Einseitiger Parametertest: Nur auf untere oder obere Grenze überprüfen
+* Gewisse Anzahl Stichproben nötig 
+
+    
 !!! info "Literatur"
     Bourier Kapitel 10
-    
+---   
+## Vorlesung 11 - DoE Einführung
+
+Übersicht der ganzen Zusammenhänge: siehe Handnotizen

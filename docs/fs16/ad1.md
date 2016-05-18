@@ -237,3 +237,27 @@ Tress sind abstrakte, hierarchische Strukturen bestehend aus Knoten in Eltern-Ki
     * allgemein: `compare(a, b) {return a - b;}`
 * **Folie 8**
     * Hier wird nur der Key verwendet, Values bleiben immer null.
+
+## Vorlesung 12 - Heaps & Adaptable PQ
+### Heaps
+* **Folie 3**
+    * Der Heap wird in einem Binärbaum gespeichert
+    * Der Key jedes Knoten ausser die Wurzel muss grösser sein als sein parent-Knoten
+    * -> Das kleinste Element ist der Root-Knoten
+* **Folie 4**
+    * Alle Knoten bis h-1 sind gefüllt
+    * Die letzte Ebene (tiefe h) wird von links her aufgefüllt
+    * -> Der letzte Knoten ist der weiteste Rechts auf Tiefe h
+    * -> h ist \(\log_2 (n)\) abgerundet
+* **Folie 9**
+    * Die Bedingung für den Heap muss nur "upheap" geprüft werden, da Elemente immer von rechts eingefügt werden und der linke "Teilbaum" nie verändert werden muss
+* **Folie 11**
+    * Es sind explizit \(2\cdot\log_2 (n)\) Vergleiche, da immer beide Children überprüft werden müssen
+* **Folie 12**
+    * Die Priority-Queue mit einem Heap hat \(O(\log n)\) für insert() und removeMin(), was sie viel schneller macht als Insertion- bzw. Selection-Sort, die für jeweils eine Operation \(O(n^2)\) benötigen
+
+### Adaptable PQs
+* `remove(e)`: Entfernt eine Entry aus und liefert sie zurück
+* `replaceKey(e,k)`: Schlüssel der Entry e ersetzen und der alte Schlüssel zurück geben
+* `replaceValue(e,v)`: Der Wert der Entry e ersetzen und der alte Wert zurück geben
+* "Location-Aware" Entries haben eine Referenz auf ihre Position in der Datenstruktur gespeichert, damit für den Zugriff nicht die ganze Struktur abgesucht werden muss
