@@ -100,6 +100,8 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-11-trees-priority-queues">Vorlesung 11 - Trees &amp; Priority Queues</a></li>
                 
+                    <li><a class="toctree-l4" href="#vorlesung-12-heaps-adaptable-pq">Vorlesung 12 - Heaps &amp; Adaptable PQ</a></li>
+                
             
             </ul>
         
@@ -584,6 +586,42 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
 <li>Hier wird nur der Key verwendet, Values bleiben immer null.</li>
 </ul>
 </li>
+</ul>
+<h2 id="vorlesung-12-heaps-adaptable-pq">Vorlesung 12 - Heaps &amp; Adaptable PQ</h2>
+<h3 id="heaps">Heaps</h3>
+<ul>
+<li><strong>Folie 3</strong><ul>
+<li>Der Heap wird in einem Binärbaum gespeichert</li>
+<li>Der Key jedes Knoten ausser die Wurzel muss grösser sein als sein parent-Knoten</li>
+<li>-&gt; Das kleinste Element ist der Root-Knoten</li>
+</ul>
+</li>
+<li><strong>Folie 4</strong><ul>
+<li>Alle Knoten bis h-1 sind gefüllt</li>
+<li>Die letzte Ebene (tiefe h) wird von links her aufgefüllt</li>
+<li>-&gt; Der letzte Knoten ist der weiteste Rechts auf Tiefe h</li>
+<li>-&gt; h ist <script type="math/tex">\log_2 (n)</script> abgerundet</li>
+</ul>
+</li>
+<li><strong>Folie 9</strong><ul>
+<li>Die Bedingung für den Heap muss nur "upheap" geprüft werden, da Elemente immer von rechts eingefügt werden und der linke "Teilbaum" nie verändert werden muss</li>
+</ul>
+</li>
+<li><strong>Folie 11</strong><ul>
+<li>Es sind explizit <script type="math/tex">2\cdot\log_2 (n)</script> Vergleiche, da immer beide Children überprüft werden müssen</li>
+</ul>
+</li>
+<li><strong>Folie 12</strong><ul>
+<li>Die Priority-Queue mit einem Heap hat <script type="math/tex">O(\log n)</script> für insert() und removeMin(), was sie viel schneller macht als Insertion- bzw. Selection-Sort, die für jeweils eine Operation <script type="math/tex">O(n^2)</script> benötigen</li>
+</ul>
+</li>
+</ul>
+<h3 id="adaptable-pqs">Adaptable PQs</h3>
+<ul>
+<li><code>remove(e)</code>: Entfernt eine Entry aus und liefert sie zurück</li>
+<li><code>replaceKey(e,k)</code>: Schlüssel der Entry e ersetzen und der alte Schlüssel zurück geben</li>
+<li><code>replaceValue(e,v)</code>: Der Wert der Entry e ersetzen und der alte Wert zurück geben</li>
+<li>"Location-Aware" Entries haben eine Referenz auf ihre Position in der Datenstruktur gespeichert, damit für den Zugriff nicht die ganze Struktur abgesucht werden muss</li>
 </ul>
               
             </div>

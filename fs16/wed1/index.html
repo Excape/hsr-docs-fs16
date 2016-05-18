@@ -156,6 +156,8 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-11-http-nodejs">Vorlesung 11 - HTTP &amp; Node.js</a></li>
                 
+                    <li><a class="toctree-l4" href="#vorlesung-12-ajax">Vorlesung 12 - AJAX</a></li>
+                
             
             </ul>
         
@@ -773,9 +775,21 @@ Für Suchmaschinen / Accessibility Tools / ... zur besseren Auszeichnung</p>
 <li><em>Pragma</em> (eigentlich im Request) heisst, man will auf jeden Fall die neue Version vom Server haben</li>
 <li>Cookies ohne Expiration Date sind "Session-Cookies"</li>
 <li>Cookies haben einen "Scope", der durch den Pfad gegeben wird</li>
+<li>Cookie mit <code>httpOnly</code> kann nur vom http-Protokoll gelesen werden (z.B. nicht mit JS)</li>
+<li>Cookie mit "Secure Flag" kann nur über sichere (https) Verbindung übertragen werden (auch in Kombination mit httponly möglich)</li>
 </ul>
 </li>
 </ul>
+<hr />
+<h2 id="vorlesung-12-ajax">Vorlesung 12 - AJAX</h2>
+<p>Anwedung: zB. auf SBB-Seite Ortschaften vorschlagen ohne Neulaen der Seite</p>
+<p><em>AJAX: Asynchronous JavaScript and XML</em>, man kann aber mehr als HTML und XML laden</p>
+<p><code>event.preventDefault()</code> um das normale Verhalten zu verhindern, z.B. bei einem Link das Navigieren unterbinden</p>
+<p><code>request.open(method, url, true)</code> mit 3. Parameter <code>true</code> aufrufen (default), damit der Request asynchron ausgeführt wird und nicht den Haupt-Thread von JS blockiert</p>
+<p>AJAX ist gewöhnlicher HTTP-Request, Server kann also nicht unterscheiden</p>
+<p><code>readyState</code> = 4 wenn Request komplett (erfolgreich oder nicht)</p>
+<p>Bei einem <code>POST</code> Request ist <code>Content-Type</code> zwingend</p>
+<p><em>Same Origin Policy</em>: Mit AJAX darf nur auf gleicher Host mit gleichem Port zugegriffen werden, dies wird vom Browser enforced. Wenn der entfernte Server <code>Access-Control-Allow-Origin</code> header schickt, ist aber Cross-Origin erlaubt (<em>CORS</em>)</p>
               
             </div>
           </div>
