@@ -121,6 +121,8 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-11-dateisysteme-1">Vorlesung 11 - Dateisysteme (1)</a></li>
                 
+                    <li><a class="toctree-l4" href="#vorlesung-12-programmubersetzung">Vorlesung 12 - Programmübersetzung</a></li>
+                
             
             </ul>
         
@@ -664,6 +666,20 @@ zb. bei S-ATA verwendet</li>
 <li>Jeder Prozess besitzt  mehrstufige Handle Table</li>
 <li>Bei mehreren Zugriffen auf die gleiche Datei werden normalerweise mehrere File Objects erzeugt, da Schreib-/Lese-Zeiger im File object hinterlegt ist</li>
 <li>Linux: stdin, stdout und stderr sind File Descriptors 0, 1 und 2</li>
+</ul>
+<hr />
+</li>
+</ul>
+<h2 id="vorlesung-12-programmubersetzung">Vorlesung 12 - Programmübersetzung</h2>
+<p>Feedback: <a href="http://tinyurl.com/Uebersetzung-FS16">http://tinyurl.com/Uebersetzung-FS16</a></p>
+<ul>
+<li><strong>Mehrschritt-Übersetzung:</strong> Source-Files zuerst in "relocatable object files" übersetzen (*.o), die dann zusammen in ein executable übersetzt werden</li>
+<li><strong>Folie 420</strong><ul>
+<li>Precompiling ersetzt z.B. #define Makros</li>
+</ul>
+</li>
+<li><strong>Relokation</strong>:<ul>
+<li>Nach dem compile und assimbliereren (.o File) sind alle Sections auf Adresse 0. Beim binden werden sie mit den entsprechenden Offsets versehen</li>
 </ul>
 </li>
 </ul>

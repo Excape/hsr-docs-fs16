@@ -135,6 +135,8 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-11-iam">Vorlesung 11 - IAM</a></li>
                 
+                    <li><a class="toctree-l4" href="#vorlesung-12-file-and-disk-encryption">Vorlesung 12 - File and Disk Encryption</a></li>
+                
             
             </ul>
         
@@ -675,6 +677,67 @@ Kein "e" im Text</p>
 </li>
 <li><strong>C / R mit Digital Signatures</strong><ul>
 <li>Der Hash wird signiert mit dem Private key und überprüft mit dem Public key</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-12-file-and-disk-encryption">Vorlesung 12 - File and Disk Encryption</h2>
+<ul>
+<li><strong>Veracrypt</strong><ul>
+<li>Password wird tausende Male gehasht, damit Angriffe erschwert werden</li>
+<li>Hidden Volume (Folie 34):<ul>
+<li>Normales Volume wird mit Zufallsdaten initialisiert</li>
+<li>Encrypted Data wird von links aufgefüllt, es ist aber nicht ersichtlich, wie viele Bytes belegt sind</li>
+<li>Hidden Volume wird von rechts aufgefüllt, es ist also auch nicht ersichtlicht, dass es ein hidden volume gibt, da alles zufällig aussieht</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Zielsetzung Disk Encryption:<ul>
+<li>Verschlüsselung</li>
+<li>Schnelle Verschlüsselung / Entschlüsselung (mit CPU-Beschleunigung heute ca. 20 Gbit/s)</li>
+<li>Möglichst kleiner Overhead (zusätzliche Daten)</li>
+</ul>
+</li>
+<li>Man nimmt an, dass ein Angreifer <ul>
+<li>ständig Zugriff auf die Rohdaten der Harddisk hat</li>
+<li>Sehen, welche Bytes welche Verschlüsselung ergeben (known-Plaintext)</li>
+<li>noch nicht benutzte Sektoren entschlüsselt werden können</li>
+</ul>
+</li>
+<li>Jeder Sektor muss unabhängig verschlüsselt und entschlüsselt werden können (jeder Sektor eigener Initialisierungsvektor, normalerweise aus Sektornummer)</li>
+<li>Stream-Cipher nicht geeignet: Schlüsselstrom wiederholt sich irgendwann. Dann können zwei Ciphers miteinander XORed werden und man erhält den Klartext. So müssten nur zwei verschiedene Ciphers eines gleichen Blocks verglichen werden</li>
+<li><strong>CBC-based Encryption</strong><ul>
+<li>1 Sektor: 512B</li>
+<li>Pro Vorgang 16 Byte (128bit) verschlüsseln</li>
+<li>512 / 16 = 32 blocks, die verschlüsselt werden</li>
+<li>Für den ersten Block wird der IV verwendet (aus Sektornr)</li>
+<li>Unterschied in IVs ist Unterschied in beiden ersten Klartexten</li>
+<li>Attacke basiert auf zwei gleiche Ciphertext-Blöcke</li>
+<li>Folie 46:<ul>
+<li>
+<script type="math/tex">(1+\alpha)^k = 1 + k\cdot \alpha \text{ mit sehr kleinem } \alpha</script>
+</li>
+</ul>
+</li>
+<li>Festplatte müsste 256 Exabyte gross sein, damit p=50%, dass zwei Blöcke identisch sind</li>
+<li>Watermarking: Eine Datei verschlüsseln und nachweisen, dass diese auf der verschlüsselten Platte liegt<ul>
+<li>Durch geschicktes wählen des Plaintexts wird der este und zweite Block den gleichen Ciphertext ergeben</li>
+<li>Gegenmassnahme: IV ist geheim (z.B. abgeleitet aus Schlüssel)</li>
+</ul>
+</li>
+<li>Data Modification leak: Bei einer Änderung in einem Sektor ändert sich der Rest des Sektors ab der veränderten Stelle. So können auch hidden Volumes erkannt werden</li>
+<li>Veränderung des Ciphers macht den Plaintext unbrauchbar</li>
+<li>Movable Cipher Blocks: Bei Verschiebung in nichtallozierter Bereich kann alles ausser der erste Block entschlüsselt werden</li>
+</ul>
+</li>
+<li><strong>XTS-AES</strong><ul>
+<li>x hängt ab von Sektornr. i und die Position im Block j</li>
+<li>Zwei AES-Schlüssel</li>
+<li>Maske ist für jeden Block anders</li>
+<li>Padding im letzten Block eines Sektors ist der Ciphertext des vorletzten Blocks, es muss nur noch Cipher der Länge der letzten Plaintext-Bytes gespeichert werden -&gt; Der Cipher ist genau gleich lang wie der Plaintext (<em>Ciphertext Stealing</em>)</li>
+<li>XTS-AES Standard ausser bei Bitlocker</li>
+<li>Schwachstelle: AES-Schlüssel ist irgendwo im RAM (aus Performancegründen)</li>
 </ul>
 </li>
 </ul>
