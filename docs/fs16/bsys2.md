@@ -323,3 +323,13 @@ Prüfungsrelevant: Alles was sowohl in der Vorlesung als auch im Buch ist + Übu
     * Jeder Prozess besitzt  mehrstufige Handle Table
     * Bei mehreren Zugriffen auf die gleiche Datei werden normalerweise mehrere File Objects erzeugt, da Schreib-/Lese-Zeiger im File object hinterlegt ist
     * Linux: stdin, stdout und stderr sind File Descriptors 0, 1 und 2
+---
+## Vorlesung 12 - Programmübersetzung
+
+Feedback: <http://tinyurl.com/Uebersetzung-FS16>
+
+* **Mehrschritt-Übersetzung:** Source-Files zuerst in "relocatable object files" übersetzen (*.o), die dann zusammen in ein executable übersetzt werden
+* **Folie 420**
+    * Precompiling ersetzt z.B. #define Makros
+* **Relokation**:
+    * Nach dem compile und assimbliereren (.o File) sind alle Sections auf Adresse 0. Beim binden werden sie mit den entsprechenden Offsets versehen

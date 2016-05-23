@@ -305,3 +305,46 @@ Kein "e" im Text
     * MAC wird mit User Nonce übertragen
 * **C / R mit Digital Signatures**
     * Der Hash wird signiert mit dem Private key und überprüft mit dem Public key
+
+---
+## Vorlesung 12 - File and Disk Encryption
+
+* **Veracrypt**
+    * Password wird tausende Male gehasht, damit Angriffe erschwert werden
+    * Hidden Volume (Folie 34):
+        * Normales Volume wird mit Zufallsdaten initialisiert
+        * Encrypted Data wird von links aufgefüllt, es ist aber nicht ersichtlich, wie viele Bytes belegt sind
+        * Hidden Volume wird von rechts aufgefüllt, es ist also auch nicht ersichtlicht, dass es ein hidden volume gibt, da alles zufällig aussieht
+* Zielsetzung Disk Encryption:
+    * Verschlüsselung
+    * Schnelle Verschlüsselung / Entschlüsselung (mit CPU-Beschleunigung heute ca. 20 Gbit/s)
+    * Möglichst kleiner Overhead (zusätzliche Daten)
+* Man nimmt an, dass ein Angreifer 
+    * ständig Zugriff auf die Rohdaten der Harddisk hat
+    * Sehen, welche Bytes welche Verschlüsselung ergeben (known-Plaintext)
+    * noch nicht benutzte Sektoren entschlüsselt werden können
+* Jeder Sektor muss unabhängig verschlüsselt und entschlüsselt werden können (jeder Sektor eigener Initialisierungsvektor, normalerweise aus Sektornummer)
+* Stream-Cipher nicht geeignet: Schlüsselstrom wiederholt sich irgendwann. Dann können zwei Ciphers miteinander XORed werden und man erhält den Klartext. So müssten nur zwei verschiedene Ciphers eines gleichen Blocks verglichen werden
+* **CBC-based Encryption**
+    * 1 Sektor: 512B
+    * Pro Vorgang 16 Byte (128bit) verschlüsseln
+    * 512 / 16 = 32 blocks, die verschlüsselt werden
+    * Für den ersten Block wird der IV verwendet (aus Sektornr)
+    * Unterschied in IVs ist Unterschied in beiden ersten Klartexten
+    * Attacke basiert auf zwei gleiche Ciphertext-Blöcke
+    * Folie 46:
+        * \((1+\alpha)^k = 1 + k\cdot \alpha \text{ mit sehr kleinem } \alpha\)
+    * Festplatte müsste 256 Exabyte gross sein, damit p=50%, dass zwei Blöcke identisch sind
+    * Watermarking: Eine Datei verschlüsseln und nachweisen, dass diese auf der verschlüsselten Platte liegt
+        * Durch geschicktes wählen des Plaintexts wird der este und zweite Block den gleichen Ciphertext ergeben
+        * Gegenmassnahme: IV ist geheim (z.B. abgeleitet aus Schlüssel)
+    * Data Modification leak: Bei einer Änderung in einem Sektor ändert sich der Rest des Sektors ab der veränderten Stelle. So können auch hidden Volumes erkannt werden
+    * Veränderung des Ciphers macht den Plaintext unbrauchbar
+    * Movable Cipher Blocks: Bei Verschiebung in nichtallozierter Bereich kann alles ausser der erste Block entschlüsselt werden
+* **XTS-AES**
+    * x hängt ab von Sektornr. i und die Position im Block j
+    * Zwei AES-Schlüssel
+    * Maske ist für jeden Block anders
+    * Padding im letzten Block eines Sektors ist der Ciphertext des vorletzten Blocks, es muss nur noch Cipher der Länge der letzten Plaintext-Bytes gespeichert werden -> Der Cipher ist genau gleich lang wie der Plaintext (*Ciphertext Stealing*)
+    * XTS-AES Standard ausser bei Bitlocker
+    * Schwachstelle: AES-Schlüssel ist irgendwo im RAM (aus Performancegründen)
