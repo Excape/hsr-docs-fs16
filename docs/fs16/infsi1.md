@@ -314,7 +314,8 @@ Kein "e" im Text
     * Hidden Volume (Folie 34):
         * Normales Volume wird mit Zufallsdaten initialisiert
         * Encrypted Data wird von links aufgefüllt, es ist aber nicht ersichtlich, wie viele Bytes belegt sind
-        * Hidden Volume wird von rechts aufgefüllt, es ist also auch nicht ersichtlicht, dass es ein hidden volume gibt, da alles zufällig aussieht
+        * Hidden Volume wird auch von links aufgefüllt, es ist also auch nicht ersichtlicht, dass es ein hidden volume gibt, da alles zufällig aussieht
+        * Gefahr, wenn zuviele Daten in normales Volume geschrieben werden, da es nicht erkennen kann, wann es das hidden Volume überschreibt
 * Zielsetzung Disk Encryption:
     * Verschlüsselung
     * Schnelle Verschlüsselung / Entschlüsselung (mit CPU-Beschleunigung heute ca. 20 Gbit/s)
@@ -348,3 +349,6 @@ Kein "e" im Text
     * Padding im letzten Block eines Sektors ist der Ciphertext des vorletzten Blocks, es muss nur noch Cipher der Länge der letzten Plaintext-Bytes gespeichert werden -> Der Cipher ist genau gleich lang wie der Plaintext (*Ciphertext Stealing*)
     * XTS-AES Standard ausser bei Bitlocker
     * Schwachstelle: AES-Schlüssel ist irgendwo im RAM (aus Performancegründen)
+* **Password-Wechsel**
+    * Truecrypt erstellt einen zufälligen Encryption Key. Dieser wird durch das User-Passwort verschlüsselt. Bei Änderung des Passworts wird der "Master-Key" einfach mit dem neuen Schlüssel verschlüsselt, d.h. der eigentliche Encryption-Key ändert sich nicht (es muss nicht das ganze Volume neu verschlüsselt werden).
+    * Siehe <http://crypto.stackexchange.com/questions/18479/how-does-truecrypt-change-password-without-the-need-for-a-complete-re-encryption>
