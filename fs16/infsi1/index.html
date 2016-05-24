@@ -688,7 +688,8 @@ Kein "e" im Text</p>
 <li>Hidden Volume (Folie 34):<ul>
 <li>Normales Volume wird mit Zufallsdaten initialisiert</li>
 <li>Encrypted Data wird von links aufgefüllt, es ist aber nicht ersichtlich, wie viele Bytes belegt sind</li>
-<li>Hidden Volume wird von rechts aufgefüllt, es ist also auch nicht ersichtlicht, dass es ein hidden volume gibt, da alles zufällig aussieht</li>
+<li>Hidden Volume wird auch von links aufgefüllt, es ist also auch nicht ersichtlicht, dass es ein hidden volume gibt, da alles zufällig aussieht</li>
+<li>Gefahr, wenn zuviele Daten in normales Volume geschrieben werden, da es nicht erkennen kann, wann es das hidden Volume überschreibt</li>
 </ul>
 </li>
 </ul>
@@ -738,6 +739,11 @@ Kein "e" im Text</p>
 <li>Padding im letzten Block eines Sektors ist der Ciphertext des vorletzten Blocks, es muss nur noch Cipher der Länge der letzten Plaintext-Bytes gespeichert werden -&gt; Der Cipher ist genau gleich lang wie der Plaintext (<em>Ciphertext Stealing</em>)</li>
 <li>XTS-AES Standard ausser bei Bitlocker</li>
 <li>Schwachstelle: AES-Schlüssel ist irgendwo im RAM (aus Performancegründen)</li>
+</ul>
+</li>
+<li><strong>Password-Wechsel</strong><ul>
+<li>Truecrypt erstellt einen zufälligen Encryption Key. Dieser wird durch das User-Passwort verschlüsselt. Bei Änderung des Passworts wird der "Master-Key" einfach mit dem neuen Schlüssel verschlüsselt, d.h. der eigentliche Encryption-Key ändert sich nicht (es muss nicht das ganze Volume neu verschlüsselt werden).</li>
+<li>Siehe <a href="http://crypto.stackexchange.com/questions/18479/how-does-truecrypt-change-password-without-the-need-for-a-complete-re-encryption">http://crypto.stackexchange.com/questions/18479/how-does-truecrypt-change-password-without-the-need-for-a-complete-re-encryption</a></li>
 </ul>
 </li>
 </ul>

@@ -102,6 +102,8 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-12-heaps-adaptable-pq">Vorlesung 12 - Heaps &amp; Adaptable PQ</a></li>
                 
+                    <li><a class="toctree-l4" href="#vorlesung-13-maps-hash-tables">Vorlesung 13 - Maps &amp; Hash-Tables</a></li>
+                
             
             </ul>
         
@@ -587,6 +589,7 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
 </ul>
 </li>
 </ul>
+<hr />
 <h2 id="vorlesung-12-heaps-adaptable-pq">Vorlesung 12 - Heaps &amp; Adaptable PQ</h2>
 <h3 id="heaps">Heaps</h3>
 <ul>
@@ -622,6 +625,52 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
 <li><code>replaceKey(e,k)</code>: Schlüssel der Entry e ersetzen und der alte Schlüssel zurück geben</li>
 <li><code>replaceValue(e,v)</code>: Der Wert der Entry e ersetzen und der alte Wert zurück geben</li>
 <li>"Location-Aware" Entries haben eine Referenz auf ihre Position in der Datenstruktur gespeichert, damit für den Zugriff nicht die ganze Struktur abgesucht werden muss</li>
+</ul>
+<hr />
+<h2 id="vorlesung-13-maps-hash-tables">Vorlesung 13 - Maps &amp; Hash-Tables</h2>
+<h3 id="maps">Maps</h3>
+<p>Eine Map ist eine durchsuchbare Collection von Key-Value Entries. Pro Key wird nur <em>eine Entry</em> erlaubt.</p>
+<ul>
+<li><code>get(k)</code>: Value mit dem Key <code>k</code> zurückgeben, wenn nicht vorhanden <code>null</code></li>
+<li><code>put(k, v)</code>: Neue Entry(k, v) hinzufügen (Rückgabe <code>null</code>), wenn schon vorhanden, wird Value <code>v</code> ersetzt und der alte Value zurück gegeben</li>
+<li><code>remove(k)</code>: Entry mit Key <code>k</code> entfernen und zurück geben. Wenn nicht vorhanden <code>null</code></li>
+<li><code>values()</code>: Collection mit allen Werten (Duplikate möglich, da unterschiedliche Keys gleiche Values haben können)</li>
+<li>Implementierung mit Verketteter Liste<ul>
+<li>
+<script type="math/tex">O(n)</script> für <code>remove()</code> und <code>put()</code> und <code>get()</code></li>
+<li>Mit Sentinel Trick nur die hälfte der Abfrage möglich<ul>
+<li>Am Ende der Liste einen Eintrag mit gesuchtem Key eintragen</li>
+<li>Man muss dann nicht jedes Mal fragen, ob man am Ende der Liste ist, sondern nur, ob der Key stimmt</li>
+<li>Immer noch <script type="math/tex">O(n)</script>, aber Schritte werden ca. halbiert</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="hash-table">Hash-Table</h3>
+<ul>
+<li>Hash-Funktion bildet Keys auf Integer in bestimmten Intervall ab<ul>
+<li>Die Werte sollen möglichst gestreut werden</li>
+<li><code>hashCode()</code> gibt irgendeinen Integer zurück, der dann noch in das Intervall "gemappt" werden muss</li>
+<li><code>Object</code> in Java gibt eine Integer Adresse des Objekts aus dem Heap zurück</li>
+<li>Wert wird als Integer angeschaut (z.B. als Bits bei float)</li>
+<li>Sonst mit Komponentensumme: Wert unterteilen in Komponenten fixer Länge und die Komponenten addieren (overflow ignorieren)</li>
+<li>Polynom-Akkumulation: Komponenten als Koeffizienten eines Polynoms betrachten und mit einer konstanten Primzahl <script type="math/tex">z</script> ausrechnen. Wird z.B. bei Strings verwendet. Bsp: <script type="math/tex">"ab" \rightarrow 98 \cdot 31^0 + 97 \cdot 31^1 = 3105</script>
+</li>
+</ul>
+</li>
+<li>Hashtable Grösse: Primzahl wählen (bessere Streuung)</li>
+<li>offene Adressierung: Man bleibt bei Kollisionen in der Tabelle<ul>
+<li>Linear Probing: Wenn Kollision, suche nächster freier Platz</li>
+<li>Löschen: <ul>
+<li>Problem, weil get() dann evtl. nicht mehr funktioniert</li>
+<li>Lösung: Datensätze werden nicht gelöscht, sondern nur als gelöscht markiert (DEFUNCT Entry)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>geschlossene Adressierung: Separte Datenstruktur für Kollisionen (z.B. linked list)</li>
+<li>doppeltes Hashing: Zusätzliche Hash-Funktion verwenden</li>
 </ul>
               
             </div>
