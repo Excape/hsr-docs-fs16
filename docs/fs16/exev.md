@@ -209,3 +209,7 @@ Siehe Handnotizen
 ## Vorlesung 11 - DoE Einführung
 
 Übersicht der ganzen Zusammenhänge: siehe Handnotizen
+
+--
+## Vorlesung 12 - DoE
+Zum DoE kommen an der Prüfung nur Wissensfragen, keine Berechnungen

@@ -238,6 +238,7 @@ Tress sind abstrakte, hierarchische Strukturen bestehend aus Knoten in Eltern-Ki
 * **Folie 8**
     * Hier wird nur der Key verwendet, Values bleiben immer null.
 
+---
 ## Vorlesung 12 - Heaps & Adaptable PQ
 ### Heaps
 * **Folie 3**
@@ -261,3 +262,37 @@ Tress sind abstrakte, hierarchische Strukturen bestehend aus Knoten in Eltern-Ki
 * `replaceKey(e,k)`: Schlüssel der Entry e ersetzen und der alte Schlüssel zurück geben
 * `replaceValue(e,v)`: Der Wert der Entry e ersetzen und der alte Wert zurück geben
 * "Location-Aware" Entries haben eine Referenz auf ihre Position in der Datenstruktur gespeichert, damit für den Zugriff nicht die ganze Struktur abgesucht werden muss
+
+---
+## Vorlesung 13 - Maps & Hash-Tables
+### Maps
+
+Eine Map ist eine durchsuchbare Collection von Key-Value Entries. Pro Key wird nur *eine Entry* erlaubt.
+
+* `get(k)`: Value mit dem Key `k` zurückgeben, wenn nicht vorhanden `null`
+* `put(k, v)`: Neue Entry(k, v) hinzufügen (Rückgabe `null`), wenn schon vorhanden, wird Value `v` ersetzt und der alte Value zurück gegeben
+* `remove(k)`: Entry mit Key `k` entfernen und zurück geben. Wenn nicht vorhanden `null`
+* `values()`: Collection mit allen Werten (Duplikate möglich, da unterschiedliche Keys gleiche Values haben können)
+* Implementierung mit Verketteter Liste
+    * \(O(n)\) für `remove()` und `put()` und `get()`
+    * Mit Sentinel Trick nur die hälfte der Abfrage möglich
+        * Am Ende der Liste einen Eintrag mit gesuchtem Key eintragen
+        * Man muss dann nicht jedes Mal fragen, ob man am Ende der Liste ist, sondern nur, ob der Key stimmt
+        * Immer noch \(O(n)\), aber Schritte werden ca. halbiert
+
+### Hash-Table
+* Hash-Funktion bildet Keys auf Integer in bestimmten Intervall ab
+    * Die Werte sollen möglichst gestreut werden
+    * `hashCode()` gibt irgendeinen Integer zurück, der dann noch in das Intervall "gemappt" werden muss
+    * `Object` in Java gibt eine Integer Adresse des Objekts aus dem Heap zurück
+    * Wert wird als Integer angeschaut (z.B. als Bits bei float)
+    * Sonst mit Komponentensumme: Wert unterteilen in Komponenten fixer Länge und die Komponenten addieren (overflow ignorieren)
+    * Polynom-Akkumulation: Komponenten als Koeffizienten eines Polynoms betrachten und mit einer konstanten Primzahl \(z\) ausrechnen. Wird z.B. bei Strings verwendet. Bsp: \("ab" \rightarrow 98 \cdot 31^0 + 97 \cdot 31^1 = 3105\)
+* Hashtable Grösse: Primzahl wählen (bessere Streuung)
+* offene Adressierung: Man bleibt bei Kollisionen in der Tabelle
+    * Linear Probing: Wenn Kollision, suche nächster freier Platz
+    * Löschen: 
+        * Problem, weil get() dann evtl. nicht mehr funktioniert
+        * Lösung: Datensätze werden nicht gelöscht, sondern nur als gelöscht markiert (DEFUNCT Entry)
+* geschlossene Adressierung: Separte Datenstruktur für Kollisionen (z.B. linked list)
+* doppeltes Hashing: Zusätzliche Hash-Funktion verwenden
