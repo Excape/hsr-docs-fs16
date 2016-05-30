@@ -352,3 +352,43 @@ Kein "e" im Text
 * **Password-Wechsel**
     * Truecrypt erstellt einen zufälligen Encryption Key. Dieser wird durch das User-Passwort verschlüsselt. Bei Änderung des Passworts wird der "Master-Key" einfach mit dem neuen Schlüssel verschlüsselt, d.h. der eigentliche Encryption-Key ändert sich nicht (es muss nicht das ganze Volume neu verschlüsselt werden).
     * Siehe <http://crypto.stackexchange.com/questions/18479/how-does-truecrypt-change-password-without-the-need-for-a-complete-re-encryption>
+---
+## Vorlesung 13 - Secure Email
+
+* **Motivation**
+    * Signatur gegen Phishing / Spam
+    * Verschlüsselung gegen Spionage / Privatssphäre schützen
+* **MIME**
+    * E-Mail beruht auf 7-bit ASCII
+    * Um anhänge zu übertragen (Binary-Data), wird MIME verwendet, um anzugeben, welcher Datentyp es ist, und das File wird Base64-Encoded übertragen
+* **S/MIME - Secure MIME Signatur**
+    * Signatur ist ein weiterer MIME-Block
+    * Der Content-Type der Mail ist multipart/signed
+    * PKCS7-File (binär) wird als Base64 übertrage
+    * Signiert (gehasht) wird zwischen den Boundary-Strings der message
+    * Für Signierte Mails mit Anhängen wird im Message-Teil ein weiterer Boundary-String verwendet. Der Hash geht dann über die Message und den Anhang
+    * Mehrere Signaturen theoretisch möglich
+    * Nachteil: Grosse E-Mails, da Zertifikat immer mitgesendet wird
+    * Gefahr, wenn MTAs die MIME-Header ändern oder Ein Encoding in ein anderes konvertiert. Dann wird die Signatur ungültig
+    * Outlook kann auch die ganze Mail in den PKCS-Container verpacken, dann ist kein Clear-text beim Empfänger mehr sichtbar
+* **S/MIME Encryption**
+    * Daten werden in einen "Envelope" eingepackt
+    * Verschlüsselter Inhalt ist in *encryptedContentInfo - encryptedContent*
+    * Wenn nicht signiert wird, müssen keine Zertifikate übertragen werden (aber Verschlüsselung alleine nicht empfohlen)
+    * Hybride Verschlüsselung
+        * Nachricht Symmetrisch verschlüsseln mit zufälligem Key
+        * Key wird mit Public Key(s) verschlüsselt (für jeden Empfänger) - auch dem eigenen! Sonst können eigene E-Mails nicht mehr gelesen werden
+        * Verschlüsselte Key in *recipientInfo* übertragen
+    * Nachteil: 
+        * Man braucht Schlüssel von allen Empfängern
+        * Keine globalen Verzeichnisdienste (wie Keyserver bei PGP)
+    * Signieren, dann verschlüsseln
+        * Nachricht in PKCS-Container verpackt und signiert
+        * Dieser MIME-Block wird verschlüsselt
+    * Verschlüsseln, dann signieren
+        * Verschlüsselte Daten in MIME-Block wird verschlüsselt
+        * Vorteil: Signatur kann geprüft werden vor der Entschlüsselung
+    * Die meisten Tools verwenden signieren, dann verschlüsseln
+* Ein Zertifikat kann auch für mehrere Mail-Adressen gelten (über Subject Alternative Name)
+* Ein Zertifikat zum Signieren sollte nur einmal existieren
+* Ein Zertifikat zum Verschlüsseln sollte backuped sein, sonst kann bei Verlust die ganze Mail-Korrespondenz nicht mehr gelesen werden

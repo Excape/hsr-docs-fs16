@@ -333,3 +333,53 @@ Feedback: <http://tinyurl.com/Uebersetzung-FS16>
     * Precompiling ersetzt z.B. #define Makros
 * **Relokation**:
     * Nach dem compile und assimbliereren (.o File) sind alle Sections auf Adresse 0. Beim binden werden sie mit den entsprechenden Offsets versehen
+
+---
+## Vorlesung 13 - Dateisysteme (2)
+
+* Im Buch ist Unix File System beschrieben, hier wird ext2 erklärt
+* **Folie 7**
+    * Latenzzeit ist die Durchschnittliche Zugriffszeit (Hälfte des schlimmsten Falles, also eine ganze Umdrehung)
+* **Folie 10 - 11**
+    * Für heutige Harddisk geht die Berechnung über Zylinder, Heads und Sektoren nicht mehr
+    * Heute wird "LBA" (*Logical Block Adressing*) verwendet (Controller nummeriert Sektoren von 0 durch), damit die Datendichte innen und aussen gleich bleibt (unterschiedliche Sektoren pro Spur)
+* **Folie 12** 
+    * Verschnitt entsteht durch Datenblöcke, die nicht komplett gefüllt sind wegen Dateiende
+    * Warum braucht es Blöcke?
+        * Unterschiedliche Geschwindigkeiten zwischen Harddisk und Bus: Daten müssen gepuffert werden
+        * Fehlerkorrektur möglich pro Block
+* **Zusammenhängede Datenblöcke**
+    * Gibt externe Fragmentierung zwischen den Dateien
+    * Wird z.B. bei CD/DVD eingesetzt
+* **Belegungstabelle (FAT)**
+    * Wie verkettete Liste, aber Blocknummer wird in seppareter Tabelle geführt
+    * Die erste Nummer muss bekannt sein (bei FAT in Filesystem-Eintrag)
+* **I-Node**
+    * Jede Datei hat eine I-Node
+    * I-Node enthält alle Blocknummern, die zur Datei gehören
+* **Fragmentierung**
+    * Fragmentierung des Dateisystems: Datenblöcke sind auseinander, der Kopf muss oft bewegt werden -> Zugriff wird langsam
+* **ext2**
+    * Hat keine Zugriffsprotokolierung -> Gefahr von Inkosistenz bei unordentlichem abschalten!
+    * Jeder Block hat Kopie des Super-Block
+    * Wenn I-Node-Tabelle nicht reicht, wird verwiesen auf weitere Inode-Tabelle
+    * Verzeichnisse brauchen auch Inode struktur (Flag bi Filetype)
+    * Hard-Link verweist auf gleichen Inode wie Original-Datei
+    * Soft-Link ist eigene Datei, im Datenblock steht Pfad der Zieldatei
+* **FAT**
+    * FAT-X: Einträge sind X Bit gross
+    * exFAT ist proprietär und nicht mit anderen FAT-FS kompatibel
+    * FAT FS kennen keine Zugriffsrechte
+    * Keine Protokollierung, nur boot-block wird doppelt geführt
+    * Clusternummer beginnt erst bei Data Region (mit 2)
+    * FAT verwendet Little-Endian
+    * Dateien / Verzeichnisse als verkettete Listen abgelegt in Tabelle
+    * Ursprünglich 8 Zeichen für Name und 3 für Endung
+        * Mit VFAT bis 255 Zeichen
+        * Ist Kompatibel zum alten Schema
+    * Ein Verzeichnis enthählt Verzeichniseinträge für beinhaltende Dateien und Unterverzeichnisse
+* **NTFS**
+    * Partitionen sind "Volumes"
+    * "Alles ist eine Datei"
+    * Kleine Dateien werden direkt in File Table gespeichert
+    * Grosse Verzeichnisdaten werden in B-Trees gespeichert
