@@ -137,6 +137,8 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-12-file-and-disk-encryption">Vorlesung 12 - File and Disk Encryption</a></li>
                 
+                    <li><a class="toctree-l4" href="#vorlesung-13-secure-email">Vorlesung 13 - Secure Email</a></li>
+                
             
             </ul>
         
@@ -745,7 +747,64 @@ Kein "e" im Text</p>
 <li>Truecrypt erstellt einen zufälligen Encryption Key. Dieser wird durch das User-Passwort verschlüsselt. Bei Änderung des Passworts wird der "Master-Key" einfach mit dem neuen Schlüssel verschlüsselt, d.h. der eigentliche Encryption-Key ändert sich nicht (es muss nicht das ganze Volume neu verschlüsselt werden).</li>
 <li>Siehe <a href="http://crypto.stackexchange.com/questions/18479/how-does-truecrypt-change-password-without-the-need-for-a-complete-re-encryption">http://crypto.stackexchange.com/questions/18479/how-does-truecrypt-change-password-without-the-need-for-a-complete-re-encryption</a></li>
 </ul>
+<hr />
 </li>
+</ul>
+<h2 id="vorlesung-13-secure-email">Vorlesung 13 - Secure Email</h2>
+<ul>
+<li><strong>Motivation</strong><ul>
+<li>Signatur gegen Phishing / Spam</li>
+<li>Verschlüsselung gegen Spionage / Privatssphäre schützen</li>
+</ul>
+</li>
+<li><strong>MIME</strong><ul>
+<li>E-Mail beruht auf 7-bit ASCII</li>
+<li>Um anhänge zu übertragen (Binary-Data), wird MIME verwendet, um anzugeben, welcher Datentyp es ist, und das File wird Base64-Encoded übertragen</li>
+</ul>
+</li>
+<li><strong>S/MIME - Secure MIME Signatur</strong><ul>
+<li>Signatur ist ein weiterer MIME-Block</li>
+<li>Der Content-Type der Mail ist multipart/signed</li>
+<li>PKCS7-File (binär) wird als Base64 übertrage</li>
+<li>Signiert (gehasht) wird zwischen den Boundary-Strings der message</li>
+<li>Für Signierte Mails mit Anhängen wird im Message-Teil ein weiterer Boundary-String verwendet. Der Hash geht dann über die Message und den Anhang</li>
+<li>Mehrere Signaturen theoretisch möglich</li>
+<li>Nachteil: Grosse E-Mails, da Zertifikat immer mitgesendet wird</li>
+<li>Gefahr, wenn MTAs die MIME-Header ändern oder Ein Encoding in ein anderes konvertiert. Dann wird die Signatur ungültig</li>
+<li>Outlook kann auch die ganze Mail in den PKCS-Container verpacken, dann ist kein Clear-text beim Empfänger mehr sichtbar</li>
+</ul>
+</li>
+<li><strong>S/MIME Encryption</strong><ul>
+<li>Daten werden in einen "Envelope" eingepackt</li>
+<li>Verschlüsselter Inhalt ist in <em>encryptedContentInfo - encryptedContent</em></li>
+<li>Wenn nicht signiert wird, müssen keine Zertifikate übertragen werden (aber Verschlüsselung alleine nicht empfohlen)</li>
+<li>Hybride Verschlüsselung<ul>
+<li>Nachricht Symmetrisch verschlüsseln mit zufälligem Key</li>
+<li>Key wird mit Public Key(s) verschlüsselt (für jeden Empfänger) - auch dem eigenen! Sonst können eigene E-Mails nicht mehr gelesen werden</li>
+<li>Verschlüsselte Key in <em>recipientInfo</em> übertragen</li>
+</ul>
+</li>
+<li>Nachteil: <ul>
+<li>Man braucht Schlüssel von allen Empfängern</li>
+<li>Keine globalen Verzeichnisdienste (wie Keyserver bei PGP)</li>
+</ul>
+</li>
+<li>Signieren, dann verschlüsseln<ul>
+<li>Nachricht in PKCS-Container verpackt und signiert</li>
+<li>Dieser MIME-Block wird verschlüsselt</li>
+</ul>
+</li>
+<li>Verschlüsseln, dann signieren<ul>
+<li>Verschlüsselte Daten in MIME-Block wird verschlüsselt</li>
+<li>Vorteil: Signatur kann geprüft werden vor der Entschlüsselung</li>
+</ul>
+</li>
+<li>Die meisten Tools verwenden signieren, dann verschlüsseln</li>
+</ul>
+</li>
+<li>Ein Zertifikat kann auch für mehrere Mail-Adressen gelten (über Subject Alternative Name)</li>
+<li>Ein Zertifikat zum Signieren sollte nur einmal existieren</li>
+<li>Ein Zertifikat zum Verschlüsseln sollte backuped sein, sonst kann bei Verlust die ganze Mail-Korrespondenz nicht mehr gelesen werden</li>
 </ul>
               
             </div>

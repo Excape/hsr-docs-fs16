@@ -123,6 +123,8 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-12-programmubersetzung">Vorlesung 12 - Programmübersetzung</a></li>
                 
+                    <li><a class="toctree-l4" href="#vorlesung-13-dateisysteme-2">Vorlesung 13 - Dateisysteme (2)</a></li>
+                
             
             </ul>
         
@@ -680,6 +682,80 @@ zb. bei S-ATA verwendet</li>
 </li>
 <li><strong>Relokation</strong>:<ul>
 <li>Nach dem compile und assimbliereren (.o File) sind alle Sections auf Adresse 0. Beim binden werden sie mit den entsprechenden Offsets versehen</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="vorlesung-13-dateisysteme-2">Vorlesung 13 - Dateisysteme (2)</h2>
+<ul>
+<li>Im Buch ist Unix File System beschrieben, hier wird ext2 erklärt</li>
+<li><strong>Folie 7</strong><ul>
+<li>Latenzzeit ist die Durchschnittliche Zugriffszeit (Hälfte des schlimmsten Falles, also eine ganze Umdrehung)</li>
+</ul>
+</li>
+<li><strong>Folie 10 - 11</strong><ul>
+<li>Für heutige Harddisk geht die Berechnung über Zylinder, Heads und Sektoren nicht mehr</li>
+<li>Heute wird "LBA" (<em>Logical Block Adressing</em>) verwendet (Controller nummeriert Sektoren von 0 durch), damit die Datendichte innen und aussen gleich bleibt (unterschiedliche Sektoren pro Spur)</li>
+</ul>
+</li>
+<li><strong>Folie 12</strong> <ul>
+<li>Verschnitt entsteht durch Datenblöcke, die nicht komplett gefüllt sind wegen Dateiende</li>
+<li>Warum braucht es Blöcke?<ul>
+<li>Unterschiedliche Geschwindigkeiten zwischen Harddisk und Bus: Daten müssen gepuffert werden</li>
+<li>Fehlerkorrektur möglich pro Block</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Zusammenhängede Datenblöcke</strong><ul>
+<li>Gibt externe Fragmentierung zwischen den Dateien</li>
+<li>Wird z.B. bei CD/DVD eingesetzt</li>
+</ul>
+</li>
+<li><strong>Belegungstabelle (FAT)</strong><ul>
+<li>Wie verkettete Liste, aber Blocknummer wird in seppareter Tabelle geführt</li>
+<li>Die erste Nummer muss bekannt sein (bei FAT in Filesystem-Eintrag)</li>
+</ul>
+</li>
+<li><strong>I-Node</strong><ul>
+<li>Jede Datei hat eine I-Node</li>
+<li>I-Node enthält alle Blocknummern, die zur Datei gehören</li>
+</ul>
+</li>
+<li><strong>Fragmentierung</strong><ul>
+<li>Fragmentierung des Dateisystems: Datenblöcke sind auseinander, der Kopf muss oft bewegt werden -&gt; Zugriff wird langsam</li>
+</ul>
+</li>
+<li><strong>ext2</strong><ul>
+<li>Hat keine Zugriffsprotokolierung -&gt; Gefahr von Inkosistenz bei unordentlichem abschalten!</li>
+<li>Jeder Block hat Kopie des Super-Block</li>
+<li>Wenn I-Node-Tabelle nicht reicht, wird verwiesen auf weitere Inode-Tabelle</li>
+<li>Verzeichnisse brauchen auch Inode struktur (Flag bi Filetype)</li>
+<li>Hard-Link verweist auf gleichen Inode wie Original-Datei</li>
+<li>Soft-Link ist eigene Datei, im Datenblock steht Pfad der Zieldatei</li>
+</ul>
+</li>
+<li><strong>FAT</strong><ul>
+<li>FAT-X: Einträge sind X Bit gross</li>
+<li>exFAT ist proprietär und nicht mit anderen FAT-FS kompatibel</li>
+<li>FAT FS kennen keine Zugriffsrechte</li>
+<li>Keine Protokollierung, nur boot-block wird doppelt geführt</li>
+<li>Clusternummer beginnt erst bei Data Region (mit 2)</li>
+<li>FAT verwendet Little-Endian</li>
+<li>Dateien / Verzeichnisse als verkettete Listen abgelegt in Tabelle</li>
+<li>Ursprünglich 8 Zeichen für Name und 3 für Endung<ul>
+<li>Mit VFAT bis 255 Zeichen</li>
+<li>Ist Kompatibel zum alten Schema</li>
+</ul>
+</li>
+<li>Ein Verzeichnis enthählt Verzeichniseinträge für beinhaltende Dateien und Unterverzeichnisse</li>
+</ul>
+</li>
+<li><strong>NTFS</strong><ul>
+<li>Partitionen sind "Volumes"</li>
+<li>"Alles ist eine Datei"</li>
+<li>Kleine Dateien werden direkt in File Table gespeichert</li>
+<li>Grosse Verzeichnisdaten werden in B-Trees gespeichert</li>
 </ul>
 </li>
 </ul>
