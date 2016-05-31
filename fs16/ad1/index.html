@@ -104,6 +104,8 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-13-maps-hash-tables">Vorlesung 13 - Maps &amp; Hash-Tables</a></li>
                 
+                    <li><a class="toctree-l4" href="#vorlesung-13-skip-lists-sets">Vorlesung 13 - Skip-Lists &amp; Sets</a></li>
+                
             
             </ul>
         
@@ -671,6 +673,54 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
 </li>
 <li>geschlossene Adressierung: Separte Datenstruktur für Kollisionen (z.B. linked list)</li>
 <li>doppeltes Hashing: Zusätzliche Hash-Funktion verwenden</li>
+<li>Performance: Schlimmster Fall O(n) (wenn alle Elemente zu Kollissionen führt), erwarter Fall O(1) wenn Auslastungsfaktor n/N nicht zu hoch</li>
+</ul>
+<hr />
+<h2 id="vorlesung-13-skip-lists-sets">Vorlesung 13 - Skip-Lists &amp; Sets</h2>
+<h3 id="skip-list">Skip-List</h3>
+<ul>
+<li>Die Liste hat zwei künstliche Endknoten +Infinty und -Infinity</li>
+<li>Key-Value-Elemente aufsteigend sortiert</li>
+<li>Perfekte Skip-List:<ul>
+<li>Der erste Knoten ist der Median</li>
+<li>Die zwei nächsten Knoten die Mittelwerte auf beiden Seiten</li>
+<li>usw..</li>
+<li>Beim Suchen wie ein Tree (Binary Search)</li>
+<li>Problem: Bei jedem Einfügen muss die komplette Liste neu organisiert werden</li>
+</ul>
+</li>
+<li>Randomisierte Skip-List:<ul>
+<li>Es wird zufällig versucht, die Werte gleichmässig zu verteilen</li>
+<li>Beim einfügen wird eine zufällige Höhe gewählt und das neue Element in alle Ebenen dieser Höhe eingefügt</li>
+</ul>
+</li>
+<li>Suchen<ul>
+<li>scan forward: Auf selber Höhe bleiben und nach rechts</li>
+<li>Drop down: Eine Ebene nach unten</li>
+<li>Bsp: Wenn wir 12 suchen, wird auf -Infinity bis auf S0 "gedroppt"</li>
+</ul>
+</li>
+<li>Speicherplatz: O(n), aber im Schnitt 2n</li>
+<li>Höhe ist mit grosser Wahrscheinlichkeit sehr klein</li>
+<li>Suchen mit O(n) (<em>erwartet</em>)</li>
+<li>Ist in Java.util.concurrent, (normalerweise für multi-threading), da der Thread nicht wie beim Baum die ganze Struktur locken muss</li>
+</ul>
+<h3 id="sets-multisets-multilaps">Sets, Multisets &amp; Multilaps</h3>
+<ul>
+<li>Set: Unsortierte Collection ohne Duplikate</li>
+<li>Multiset: Set mit Duplikaten</li>
+<li>Multimap: Eine Map, wobei ein Key mehrere Values haben kann</li>
+<li><code>retain()</code> ist der Durchschnitt</li>
+<li><code>addAll()</code> ist die Vereinigung</li>
+<li><code>removeAll()</code> ist die Differenz</li>
+<li>Set-Operationen können mit generischem Mischen implementiert werden (mit O(n) Laufzeit)</li>
+<li>Dafür müssen Listen <strong>sortiert</strong> sein!</li>
+<li>Multimaps<ul>
+<li>früher Dictionaries genannt ("Ein Wort, mehrere Übersetzungen")</li>
+<li>Quasi das gleiche wie <code>Map&lt;K, List&lt;V&gt;&gt;</code></li>
+<li><code>entries()</code> statt <code>entrySet()</code>, da nun Duplikate vorkommen können</li>
+</ul>
+</li>
 </ul>
               
             </div>
