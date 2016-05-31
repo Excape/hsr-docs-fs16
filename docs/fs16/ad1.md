@@ -296,3 +296,41 @@ Eine Map ist eine durchsuchbare Collection von Key-Value Entries. Pro Key wird n
         * Lösung: Datensätze werden nicht gelöscht, sondern nur als gelöscht markiert (DEFUNCT Entry)
 * geschlossene Adressierung: Separte Datenstruktur für Kollisionen (z.B. linked list)
 * doppeltes Hashing: Zusätzliche Hash-Funktion verwenden
+* Performance: Schlimmster Fall O(n) (wenn alle Elemente zu Kollissionen führt), erwarter Fall O(1) wenn Auslastungsfaktor n/N nicht zu hoch
+
+---
+## Vorlesung 13 - Skip-Lists & Sets
+### Skip-List
+* Die Liste hat zwei künstliche Endknoten +Infinty und -Infinity
+* Key-Value-Elemente aufsteigend sortiert
+* Perfekte Skip-List:
+    * Der erste Knoten ist der Median
+    * Die zwei nächsten Knoten die Mittelwerte auf beiden Seiten
+    * usw..
+    * Beim Suchen wie ein Tree (Binary Search)
+    * Problem: Bei jedem Einfügen muss die komplette Liste neu organisiert werden
+* Randomisierte Skip-List:
+    * Es wird zufällig versucht, die Werte gleichmässig zu verteilen
+    * Beim einfügen wird eine zufällige Höhe gewählt und das neue Element in alle Ebenen dieser Höhe eingefügt
+* Suchen
+    * scan forward: Auf selber Höhe bleiben und nach rechts
+    * Drop down: Eine Ebene nach unten
+    * Bsp: Wenn wir 12 suchen, wird auf -Infinity bis auf S0 "gedroppt"
+* Speicherplatz: O(n), aber im Schnitt 2n
+* Höhe ist mit grosser Wahrscheinlichkeit sehr klein
+* Suchen mit O(n) (*erwartet*)
+* Ist in Java.util.concurrent, (normalerweise für multi-threading), da der Thread nicht wie beim Baum die ganze Struktur locken muss
+
+### Sets, Multisets & Multilaps
+* Set: Unsortierte Collection ohne Duplikate
+* Multiset: Set mit Duplikaten
+* Multimap: Eine Map, wobei ein Key mehrere Values haben kann
+* `retain()` ist der Durchschnitt
+* `addAll()` ist die Vereinigung
+* `removeAll()` ist die Differenz
+* Set-Operationen können mit generischem Mischen implementiert werden (mit O(n) Laufzeit)
+* Dafür müssen Listen **sortiert** sein!
+* Multimaps
+    * früher Dictionaries genannt ("Ein Wort, mehrere Übersetzungen")
+    * Quasi das gleiche wie `Map<K, List<V>>`
+    * `entries()` statt `entrySet()`, da nun Duplikate vorkommen können

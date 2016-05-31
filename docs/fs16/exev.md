@@ -1,7 +1,19 @@
 #Experimentieren und Evaluieren
 
-## Allgemein
+## Prüfung
+### Vorbereitung
+* Übungsaufgaben heraus suchen und auf Zeit lösen
+* Übungen aus Büchern
+* T-Verteilung nicht Prüfungsrelevant
+* Chi-Quadrat, Normalverteilung und diskrete Verteilung -> Rechnungen, von den anderen aber etwa kennen, wofür sie eingesetzt werden und wie sie aussehen
+* Keine Rechenaufgaben über DoE
 
+### Bedingungen
+* Formelsammlung / Zusammenfassung (kleine Beispiele erlaubt)
+* Keine Übungsaufgaben
+* Tabellen (Chi-Quadrat, Normalverteilung)
+* Taschenrechner
+* Multiple-Choice (+ "Sicher"- Option, +1, 0 - +2, -2) 
 ---
 ## Vorlesung 1 - Einführung Experimentplanung / Statistik
 
@@ -16,11 +28,11 @@
 * Falsches richtig implementiert -> Spezifikation falsch - nicht verifiziert
 
 * Folie 17  
-    Dieser Fehler ist zufällig  
-    Ein systematischer Fehler wäre zb. ein ungenaues Lineal
+    Dieser Fehler ist zufällig
+    Ein systematischer Fehler wäre zb. ein ungenaues Lineal, oder ein Messgerät falsch ablesen
 
 * Absoluter Fehler hat Masseinheit
-* Relativer Fehler ist der Bezug des Fehler auf den gemessenen Wert
+* Relativer Fehler ist der Bezug des Fehlers auf den gemessenen Wert
 
 ---
 ## Vorlesung 2 - Statistische Grundbegriffe und  Ablauf der statistischen Untersuchung

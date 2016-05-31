@@ -1,5 +1,21 @@
 # Informationssicherheit 1
-## Allgemein
+## Prüfungsinfo
+- Ohne Unterlagen, ohne Rechner
+- Stoff mit *Selbststudium*!
+- Praktischer Teil mit Notebook (Windows, Wireshark, Crypttool) 
+- Lernkontrolle-Account (Mobile-Quiz)
+- Eigenes Zertifikat
+
+### Vorgehen
+- Zeitplan erstellen
+- Skript durcharbeiten (mit Videos)
+- Beispielprüfungen lösen
+- Lernkontrollen
+- Vorbesprechung: 18.07.16 10:10-11:50, 3.008
+- Selbststudium:
+    - Whatsapp
+    - Kryptografische Verfahren (78 S.)
+
 ### Unterlagen
 * Ebooks
     * Wolfgang Ertel, Angewandte Kryptographie, Hanser, 2012
