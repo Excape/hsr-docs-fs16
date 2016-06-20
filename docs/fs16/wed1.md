@@ -1,5 +1,7 @@
 # Web Engineering + Design
-## Allgemein
+## Prüfung
+* Ähnlich wie erster Teil der letztjährigen Prüfung (dort wurde mehr Stoff behandelt)
+* Probeprüfung auf Skripteserver
 ---
 ## Vorlesung 1 - HTML p. 1
 * **Folie 12** - Encoding
@@ -427,3 +429,10 @@ AJAX ist gewöhnlicher HTTP-Request, Server kann also nicht unterscheiden
 Bei einem `POST` Request ist `Content-Type` zwingend
 
 *Same Origin Policy*: Mit AJAX darf nur auf gleicher Host mit gleichem Port zugegriffen werden, dies wird vom Browser enforced. Wenn der entfernte Server `Access-Control-Allow-Origin` header schickt, ist aber Cross-Origin erlaubt (*CORS*)
+ 
+---
+## Vorlesung 14 - Zusammenfassung
+Projekt: <https://github.com/wasabideveloper/HSR.WED1.Examples.BlogApp>
+
+* `{{{content}}}`, um "Raw"-Content einzusetzen (HTML nicht "escapen")
+* `article+article`: Jeder Artikel, der auf einen anderen folgt
