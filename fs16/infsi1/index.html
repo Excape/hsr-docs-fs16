@@ -115,6 +115,8 @@
                 
                     <li><a class="toctree-l4" href="#vorlesung-1-begriffe-risk-management">Vorlesung 1 - Begriffe / Risk-Management</a></li>
                 
+                    <li><a class="toctree-l4" href="#frac24cdot365textmtbf">* \frac{24\cdot365}{\text{MTBF}}</a></li>
+                
                     <li><a class="toctree-l4" href="#vorlesung-2-standards">Vorlesung 2 - Standards</a></li>
                 
                     <li><a class="toctree-l4" href="#vorlesung-3-gefahrdungen">Vorlesung 3 - Gefährdungen</a></li>
@@ -253,18 +255,17 @@
 <hr />
 <h2 id="vorlesung-1-begriffe-risk-management">Vorlesung 1 - Begriffe / Risk-Management</h2>
 <ul>
-<li>
-<p><strong>Folie 6</strong></p>
-<ul>
+<li><strong>Folie 6</strong><ul>
 <li>Confidentiality (auch Privacy)</li>
 <li>Integrity (Echtheit)</li>
 <li>Availability</li>
 <li>Kurz: CIA</li>
 </ul>
 </li>
-<li>
-<p><strong>Chat:</strong> Management - Welches sind die wichtigsten Aufgaben eines Managers</p>
+</ul>
+<p><img alt="cia" src="../img/infsi1_cia.png" /></p>
 <ul>
+<li><strong>Chat:</strong> Management - Welches sind die wichtigsten Aufgaben eines Managers<ul>
 <li>Planung</li>
 <li>Unterstützung der Realisierung</li>
 <li>Kontrolle</li>
@@ -272,11 +273,52 @@
 </ul>
 </li>
 </ul>
-<hr />
+<p><img alt="cia" src="../img/infsi1_threat_asset.png" /></p>
+<ul>
+<li>Bedrohung (Threat): Umstand, durch den ein Schaden entstehen kann</li>
+<li>Schwachstelle (Vulnerability): Eine Schwachstelle (organisatorisch oder technisch), die durch eine Bedrohung ausgenutzt werden kann, dann wird es eine Gefährdung</li>
+<li>
+<p>Gefährdung (Applied Threat): Eine Bedrohung, die durch eine Schwachstelle auf ein Objekt einwirkt</p>
+</li>
+<li>
+<p><strong>National Vulnerability Database (NVT)</strong></p>
+<ul>
+<li>Von NIST (National Institute of Standards and Technology)</li>
+<li>CPE (Common Platform Enumeration): Identifiziert Objekte</li>
+<li>CVSS (Common Vulnerability Scoring System): Schwachstellen bewerten</li>
+<li>CVE: Common Vulnerabilities and Exposures</li>
+<li>Exposure: Nicht eine universelle Schwachstelle in einem System, aber es können Informationen gesammelt werden, um einen Exploit zu vereinfachen</li>
+</ul>
+</li>
+<li>
+<p><strong>Annulaized Failure Rate (AFT)</strong></p>
+<h2 id="frac24cdot365textmtbf">* <script type="math/tex">\frac{24\cdot365}{\text{MTBF}}</script>
+</h2>
+</li>
+</ul>
 <h2 id="vorlesung-2-standards">Vorlesung 2 - Standards</h2>
 <ul>
 <li>
-<p><strong>Folie 2</strong>
+<p><strong>Standard Zusammenfassung</strong></p>
+<ul>
+<li>ISO: Kostenpflichtig, Glossar ist kurz</li>
+<li>NIST Glossary: 222 Seiten, Gratis, sehr formal</li>
+<li>RFC 4949 Internet Glossary: Gratis, sehr ausführlich (365 Seiten), sehr "open-source" Mentalität (bsp. Definition Hacker)</li>
+<li>RFCs und BSI-Standards sind kostenlos, ANSI, IEEE und ISO nicht</li>
+<li>Jeder kann RFCs einreichen, nur nationale Gremien können ISO einreichen</li>
+</ul>
+</li>
+<li>
+<p><strong>Gründe für Zertifizierungen</strong></p>
+<ul>
+<li>Auszeichnung (Gütesiegel)</li>
+<li>Best Practice Bestätigung</li>
+<li>Unabhängige Prüfung</li>
+<li>Internes Kontrollsystem</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 2</strong><br />
     De-facto Standards beispiele: ASCII (später ANSI standard), Ethernet (später IEEE-Standard), SQL</p>
 </li>
 <li>
@@ -294,12 +336,28 @@
 </ul>
 </li>
 <li>
-<p><strong>Folie 5</strong>
+<p><strong>Folie 5</strong><br />
 JTC: Joint Technical Committee</p>
+</li>
+<li>
+<p><strong>IEEE</strong></p>
+<ul>
+<li>Jedermann kann teilnehmen</li>
+<li>Wer an genug Sitzungen teilgenommen hat, ist stimmberechtigt</li>
+</ul>
+</li>
+<li>
+<p><strong>Begriffe</strong></p>
+<ul>
+<li><code>MUST</code>, <code>REQUIRED</code>, <code>SHALL</code> sind zwingend</li>
+<li><code>SHOULD</code>, <code>RECOMMEND</code> kann mit "guten Gründen" weggelassen werden</li>
+<li><code>MAY</code>, <code>OPTIONAL</code> ist Optional</li>
+</ul>
 </li>
 <li>
 <p><strong>Folie 25</strong></p>
 <ul>
+<li>27000 gibt eine Übersicht der ISMS Standards (26 Seiten)</li>
 <li>27001 gibt an, wie das ISMS aussehen soll</li>
 <li>27002 gibt best practises für die Umsetzung an</li>
 <li>27006: Diese Anforderungen müssen von Auditors erfüllt werden, damit sie andere mit 27001 zertifizieren können</li>
