@@ -35,17 +35,47 @@
     * Availability
     * Kurz: CIA
 
+![cia](img/infsi1_cia.png)
+
 * **Chat:** Management - Welches sind die wichtigsten Aufgaben eines Managers
     - Planung
     - Unterstützung der Realisierung
     - Kontrolle
     - Korrektur
 
+![cia](img/infsi1_threat_asset.png)
+
+* Bedrohung (Threat): Umstand, durch den ein Schaden entstehen kann
+* Schwachstelle (Vulnerability): Eine Schwachstelle (organisatorisch oder technisch), die durch eine Bedrohung ausgenutzt werden kann, dann wird es eine Gefährdung
+* Gefährdung (Applied Threat): Eine Bedrohung, die durch eine Schwachstelle auf ein Objekt einwirkt
+
+* **National Vulnerability Database (NVT)**
+    * Von NIST (National Institute of Standards and Technology)
+    * CPE (Common Platform Enumeration): Identifiziert Objekte
+    * CVSS (Common Vulnerability Scoring System): Schwachstellen bewerten
+    * CVE: Common Vulnerabilities and Exposures
+    * Exposure: Nicht eine universelle Schwachstelle in einem System, aber es können Informationen gesammelt werden, um einen Exploit zu vereinfachen
+
+* **Annulaized Failure Rate (AFT)**
+    * \(\frac{24\cdot365}{\text{MTBF}}\)
 ---
 
 ## Vorlesung 2 - Standards
 
-* **Folie 2**
+* **Standard Zusammenfassung**
+    * ISO: Kostenpflichtig, Glossar ist kurz
+    * NIST Glossary: 222 Seiten, Gratis, sehr formal
+    * RFC 4949 Internet Glossary: Gratis, sehr ausführlich (365 Seiten), sehr "open-source" Mentalität (bsp. Definition Hacker)
+    * RFCs und BSI-Standards sind kostenlos, ANSI, IEEE und ISO nicht
+    * Jeder kann RFCs einreichen, nur nationale Gremien können ISO einreichen
+
+* **Gründe für Zertifizierungen**
+    * Auszeichnung (Gütesiegel)
+    * Best Practice Bestätigung
+    * Unabhängige Prüfung
+    * Internes Kontrollsystem
+
+* **Folie 2**  
     De-facto Standards beispiele: ASCII (später ANSI standard), Ethernet (später IEEE-Standard), SQL
 
 * **Chat**: Wozu nutzen wir Standards?
@@ -57,10 +87,20 @@
     - Bessere Qualität
     - Auszeichnung (Gütesiegel)
 
-* **Folie 5**
+* **Folie 5**  
 JTC: Joint Technical Committee
 
+* **IEEE**
+    * Jedermann kann teilnehmen
+    * Wer an genug Sitzungen teilgenommen hat, ist stimmberechtigt
+
+* **Begriffe**
+    * `MUST`, `REQUIRED`, `SHALL` sind zwingend
+    * `SHOULD`, `RECOMMEND` kann mit "guten Gründen" weggelassen werden
+    * `MAY`, `OPTIONAL` ist Optional
+
 * **Folie 25**
+    * 27000 gibt eine Übersicht der ISMS Standards (26 Seiten)
     * 27001 gibt an, wie das ISMS aussehen soll
     * 27002 gibt best practises für die Umsetzung an
     * 27006: Diese Anforderungen müssen von Auditors erfüllt werden, damit sie andere mit 27001 zertifizieren können
