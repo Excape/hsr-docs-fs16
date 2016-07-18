@@ -113,9 +113,9 @@
                 
                     <li><a class="toctree-l4" href="#prufungsinfo">Prüfungsinfo</a></li>
                 
-                    <li><a class="toctree-l4" href="#vorlesung-1-begriffe-risk-management">Vorlesung 1 - Begriffe / Risk-Management</a></li>
+                    <li><a class="toctree-l4" href="#vorbesprechung-190716">Vorbesprechung 19.07.16</a></li>
                 
-                    <li><a class="toctree-l4" href="#frac24cdot365textmtbf">* \frac{24\cdot365}{\text{MTBF}}</a></li>
+                    <li><a class="toctree-l4" href="#vorlesung-1-begriffe-risk-management">Vorlesung 1 - Begriffe / Risk-Management</a></li>
                 
                     <li><a class="toctree-l4" href="#vorlesung-2-standards">Vorlesung 2 - Standards</a></li>
                 
@@ -253,6 +253,38 @@
 <li><a href="https://www.khanacademy.org/computing/computerscience/cryptography">Kahn Academy Computer Science, Journey into cryptography</a></li>
 </ul>
 <hr />
+<h2 id="vorbesprechung-190716">Vorbesprechung 19.07.16</h2>
+<p>Problematik Root CA: Root-Zertifikate sind Self-signed (signiert von sich selbst).
+Es dürfen nicht irgendwelche Root-CA importiert werden. Der "zweite" Kanal basiert auf Vertrauen, z.B. dass Microsoft gültige Zertifikate in Windows mitliefert</p>
+<p>Wie Entscheided der Browser, wo Zertifikate abgelegt werden? (Zertifizierungsstellen, Personen, Server)
+- Wenn self-signed, ist es CA
+- Extension Basic-Constraints: CA auf "true"</p>
+<p>Public-Key Pinning
+Browser speichert Public-Key einer Domain. Bei einem gefälschten Zertifikat (z.B. Phishing-Seite) wird es nicht angenommen
+Problem, wenn Website Zertifikat ändern. Lösung: Zusätzlich Public-Key einer Intermediate CA angeben, womit das neue Zertifikat signiert wird.</p>
+<p>Veracrypt-Passwort sollte 20 Zeichen lang sein, um 128bit zu erreichen. Dieses Passwort wird dann benutzt, um das eigentliche Passwort der Festplatten-Verschlüsselung symmetrisch zu verschlüsseln</p>
+<p>Arp-Spoofing fällt schon unter den Virentatbestand (ändern des ARP-Caches)</p>
+<p>Selbststudium BSI:
+- Man sollte die Fragen beantworten können, wenn "man den Bericht gelesen hat"
+- Kann grundsätzlich sein, wie z.B. "Wie viele Seiten (ca) hat das Dokument"
+- Einleitung und Management Summary sicher verstehen
+- Am wichtigsten: "Was steht da drin"</p>
+<p>Kerberos
+- Nicht im Detail kennen
+- Was ist speziell? "Challenge" ist die Zeit -&gt; Zeitsynchronisation
+- Schwachstelle: Der Master-Key ist "nur" ein Hash des Windows-Passworts
+    - Übertragung des Chiffres E(time, Masterkey) ist nicht verschlüsselt. Damit kann eine Offline Brute-Force-Attacke durchgeführt werden
+    - Sicherer: z.B. Smartcard</p>
+<p>PGP
+- Aufgabe zu PGP wird kommen (Danke Patrick!)
+- Unterschied zu CA: Schlüssel werden von anderen Teilnehmern unterschrieben</p>
+<p>Null-Encryption (TLS)
+- Schlüsselaustausch wird gemacht, aber die Datenpakete werden im Klartext übertragen
+- Gut zum testen, aber Gefahr, wenn ein Attacker ein Downgrade auf Null-Encryption machen kann</p>
+<p>Praxis-Teil
+- Kommt wahrscheinlich Aufgabe zu Proxy, Stichwort TLS-Traffic sniffen (zumindest konzeptionell)
+- Mit eigenem Zertifikat muss signiert und verschlüsselt werden können</p>
+<hr />
 <h2 id="vorlesung-1-begriffe-risk-management">Vorlesung 1 - Begriffe / Risk-Management</h2>
 <ul>
 <li><strong>Folie 6</strong><ul>
@@ -292,10 +324,14 @@
 </li>
 <li>
 <p><strong>Annulaized Failure Rate (AFT)</strong></p>
-<h2 id="frac24cdot365textmtbf">* <script type="math/tex">\frac{24\cdot365}{\text{MTBF}}</script>
-</h2>
+<ul>
+<li>
+<script type="math/tex">\frac{24\cdot365}{\text{MTBF}}</script>
 </li>
 </ul>
+</li>
+</ul>
+<hr />
 <h2 id="vorlesung-2-standards">Vorlesung 2 - Standards</h2>
 <ul>
 <li>
