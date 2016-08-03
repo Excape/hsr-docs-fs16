@@ -468,9 +468,10 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
 <li>
 <p><code>validate()</code> stellt sicher, dass die Position eine Node ist und noch in der Liste ist (noch ein <code>next</code> hat). Voraussetzung ist, dass die Referenzen bei remove() aus der Liste auf null gesetzt werden.</p>
 </li>
-<li>
-<p><strong>Folie 61</strong></p>
+</ul>
+<p><img alt="Array vs. List" src="../../images/2016/08/performance_array_list.png" /></p>
 <ul>
+<li><strong>Folie 61</strong><ul>
 <li>Hier ist die Liste "zirkulär", d.h wenn mit header.getNext() durchiteriert wird, landet man irgendwann wieder auf dem header (darum der for-loop dementsprechend)</li>
 </ul>
 </li>
@@ -588,6 +589,28 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
 </li>
 <li><strong>Folie 8</strong><ul>
 <li>Hier wird nur der Key verwendet, Values bleiben immer null.</li>
+</ul>
+</li>
+<li><strong>Selection Sort</strong><ul>
+<li>Implementierung mit unsortierter Liste</li>
+<li><code>insert</code> benötigt <script type="math/tex">O(n)</script>, <code>removeMin</code> benötigt <script type="math/tex">O(n)</script>
+</li>
+<li>Das Entfernen von n Elementen braucht <script type="math/tex">n + (n-1) + ... + 1 = \frac{n(n+1)}{2}, \text{also} O(n^2)</script>
+</li>
+</ul>
+</li>
+<li><strong>Insertion Sort</strong><ul>
+<li>Die Sequence ist immer sortiert</li>
+<li>Beim Einfügen muss sortiert werden, also <script type="math/tex">O(n)</script>
+</li>
+<li>Das Entfernen braucht <script type="math/tex">O(1)</script>
+</li>
+</ul>
+</li>
+<li><strong>In-Place Insertion Sort</strong><ul>
+<li><code>In-Place</code> heisst, dass die Sortierung direkt in der Sequence, ohne zusätzliche Datenstruktur sortiert wird</li>
+<li>Das neue Element vorne anfügen und mit Swaps nach hinten bis an die richtige Position schieben, Laufzeit <script type="math/tex">O(n)</script>
+</li>
 </ul>
 </li>
 </ul>
