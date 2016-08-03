@@ -165,7 +165,7 @@ $$ 2^{\log(n)+1} = 2^{\log(n)}*2^1 = n\cdot2 $$
 
 * `validate()` stellt sicher, dass die Position eine Node ist und noch in der Liste ist (noch ein `next` hat). Voraussetzung ist, dass die Referenzen bei remove() aus der Liste auf null gesetzt werden.
 
-![Array vs. List](/images/2016/08/performance_array_list.png)
+![Array vs. List](img/performance_array_list.png)
 
 * **Folie 61**
     * Hier ist die Liste "zirkulär", d.h wenn mit header.getNext() durchiteriert wird, landet man irgendwann wieder auf dem header (darum der for-loop dementsprechend)
