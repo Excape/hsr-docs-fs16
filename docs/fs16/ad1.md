@@ -165,6 +165,8 @@ $$ 2^{\log(n)+1} = 2^{\log(n)}*2^1 = n\cdot2 $$
 
 * `validate()` stellt sicher, dass die Position eine Node ist und noch in der Liste ist (noch ein `next` hat). Voraussetzung ist, dass die Referenzen bei remove() aus der Liste auf null gesetzt werden.
 
+![Array vs. List](/images/2016/08/performance_array_list.png)
+
 * **Folie 61**
     * Hier ist die Liste "zirkulär", d.h wenn mit header.getNext() durchiteriert wird, landet man irgendwann wieder auf dem header (darum der for-loop dementsprechend)
 * **Folie 63**
@@ -237,6 +239,17 @@ Tress sind abstrakte, hierarchische Strukturen bestehend aus Knoten in Eltern-Ki
     * allgemein: `compare(a, b) {return a - b;}`
 * **Folie 8**
     * Hier wird nur der Key verwendet, Values bleiben immer null.
+* **Selection Sort**
+    * Implementierung mit unsortierter Liste
+    * `insert` benötigt \(O(n)\), `removeMin` benötigt \(O(n)\)
+    * Das Entfernen von n Elementen braucht \(n + (n-1) + ... + 1 = \frac{n(n+1)}{2}, \text{also} O(n^2)\)
+* **Insertion Sort**
+    * Die Sequence ist immer sortiert
+    * Beim Einfügen muss sortiert werden, also \(O(n)\)
+    * Das Entfernen braucht \(O(1)\)
+* **In-Place Insertion Sort**
+    * `In-Place` heisst, dass die Sortierung direkt in der Sequence, ohne zusätzliche Datenstruktur sortiert wird
+    * Das neue Element vorne anfügen und mit Swaps nach hinten bis an die richtige Position schieben, Laufzeit \(O(n)\)
 
 ---
 ## Vorlesung 12 - Heaps & Adaptable PQ
