@@ -1,5 +1,9 @@
 # Betriebssysteme 2
-## Allgemein
+## Prüfung
+
+- Keine Prüfungsaufgabe über physische Plattenspeicher!
+
+
 
 ---
 ## Vorlesung 1 - MS Windows GUI

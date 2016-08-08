@@ -1,4 +1,4 @@
-#Tec meets BEC
+# Tec meets BEC
 
 ## Presentation notes
 * Quantum Teleportation: <http://www.iflscience.com/physics/scientists-achieve-quantum-teleportation>
@@ -18,3 +18,23 @@ Book Summary:
 * Electricity / magnetism
 * ETH
 * Star Wars
+
+## Preparation Session
+
+- Extra listening comprehension tests on the script server
+- Grammar
+    - Gerunds / Infinitives
+    - Adverbial Clauses
+    - Participle Clauses (-ing phrases)
+        - "Not knowing ..., ..."
+        - "It being ..., ..."
+    - Phrasal Verbs (hard to pratice)
+- Project Management (Script Page 25)
+- Intercultural Communication (Script Page 20, 28/29)
+- Audiovisuals (TedTalks: Lonsdale, Picketty, Rosling (3x) / Silicon Valley / Tall Buildings / Bird’s Nest / Petronas / Rudrapur)
+    - Bird's Nest only first 25 min
+    - TED Talks According to the script
+    - Solutions on the script server (Dieter Ehrismann/BecTEC classroomFS16.docx)
+- Book with no Epilogue
+- Writing Task about the book
+    - 50% content, 50% writing and grammar
