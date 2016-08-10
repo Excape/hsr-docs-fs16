@@ -9,7 +9,9 @@ theme: readthedocs
 pages:
   - Home: 'index.md'
   - FS16:
-    - 'AD1': 'fs16/ad1.md'
+    - 'AD1':
+      - 'Notes': 'fs16/ad1.md'
+      - 'Formelsammlung': 'fs16/ad1_formeln.md'
     - 'An2': 'fs16/an2.md'
     - 'AutoSpr': 'fs16/autospr.md'
     - 'Bsys2': 'fs16/bsys2.md'

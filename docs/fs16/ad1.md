@@ -8,6 +8,17 @@
 * Stoff: Vorlesung + Übungen ohne JUnit
 * Einzelheiten: Siehe Titelblatt
 
+### Vorbereitung
+- "Index" erstellen (z.B. im Buch markieren), vorallem für den Übungsstoff
+- Arithmetische Folgen (Üb 01, 02)
+- Explizite Form Big-Oh (Üb 02, 03)
+- Induktion mit zwei Summenformeln (Üb 03)
+- O-Notation (Üb 04) - Konstanten heraus streichen
+- Binärbäume / Heap (Üb 09, 12)
+- Hashing (Linear Probing etc., Üb 13)
+- Skip-Lists (Üb 14)
+- Binary Search
+
 ---
 ## Vorlesung 1 - Intro / OO-Design
 * Error-Left  
@@ -37,6 +48,9 @@
 
 * Folie 31:  
     Asympotisch: Für sehr grosse zahlen
+    
+Vergleich Wachstum der Funktionen:
+<http://fooplot.com/plot/qit69ncs0u>
 
 ### Rekursion
 * Stack-Size ist in der JVM standardmässig 1MB, kann aber angepasst werden unter Run Configuration - Java-Argument: "-Xss2m" für 2 MB Stack-size
@@ -217,6 +231,8 @@ Tress sind abstrakte, hierarchische Strukturen bestehend aus Knoten in Eltern-Ki
         * Anwendung: Graphische Darstellung eines Baumes (x= inorder Rang, y=Tiefe)
         * Anwendung: Ausgabe arithmetischer Ausdrücke. Operanden sind in den Blattknoten, Operatoren in den internen Knoten. Über jeden Subtree werden Klammern gesetzt
     * Alle drei sind Spezialfälle der *Euler Tour* Traversierung. Darin wird jeder Knoten drei mal besucht. Von links (preoder), unten (inorder) und rechts (postorder)
+    * Breadth-First: Zuerst alle Knoten mit Tiefe *t* besuchen, bevor Knoten der Tiefe *t+1* besucht werden
+        * Anwendung: Entscheidungen für Spielzüge in AI
 * **Binäre Bäume**
     * Haben pro Knoten ein geordnetes Paar von children (left, right)
     * Jeder Knoten hat (in einem echten Binärbaum) ein Sibling (ausser root)
@@ -263,12 +279,30 @@ Tress sind abstrakte, hierarchische Strukturen bestehend aus Knoten in Eltern-Ki
     * Die letzte Ebene (tiefe h) wird von links her aufgefüllt
     * -> Der letzte Knoten ist der weiteste Rechts auf Tiefe h
     * -> h ist \(\log_2 (n)\) abgerundet
+* **Einfügen in Heap**
+    * Neues Element als letzter Knoten einfügen
+    * Mit *Upheap* jeweils mit dem Parent-Node vergleichen und tauschen, bis der Node < Parentnode ist (= Ordnung wieder hergestellt)
+    * Zeitaufwand: \(O(\log(n))\)
+* **Entfernen aus Heap**
+    * Root entfernen
+    * Der letzte Knoten (der grösste) wird root
+    * *DownHeap*: Vom Root aus den Knoten mit dem jeweils kleineren Child-Knoten vertauschen, bis keiner der Children grösser ist oder ein Blattknoten erreicht wurde
+    * Zeitaufwand: \(O(\log(n))\)
+
 * **Folie 9**
     * Die Bedingung für den Heap muss nur "upheap" geprüft werden, da Elemente immer von rechts eingefügt werden und der linke "Teilbaum" nie verändert werden muss
 * **Folie 11**
     * Es sind explizit \(2\cdot\log_2 (n)\) Vergleiche, da immer beide Children überprüft werden müssen
 * **Folie 12**
     * Die Priority-Queue mit einem Heap hat \(O(\log n)\) für insert() und removeMin(), was sie viel schneller macht als Insertion- bzw. Selection-Sort, die für jeweils eine Operation \(O(n^2)\) benötigen
+* **Heap-Sort**
+    * Mit einer Heap-basierten PQ kann man \(n\) Elemente in \(O(n\cdot\log(n))\) sortieren
+    * Ein Element einfügen braucht \(O(log(n))\), also brauchen \(n\) Elemente \(O(n\cdot\log(n))\)
+* **Heap mit Array realisieren**
+    * Für \(n\) Knoten braucht es ein Array mit Grösse \(n+1\), da man bei Index 1 beginnt
+    * Ein Knoten wird bei Index \(i\) gespeichert
+        * Der linke Child-Knoten bei Index \(2i\)
+        * Der rechte Child-Knoten bei Index \(2i + 1\)
 
 ### Adaptable PQs
 * `remove(e)`: Entfernt eine Entry aus und liefert sie zurück
@@ -292,6 +326,11 @@ Eine Map ist eine durchsuchbare Collection von Key-Value Entries. Pro Key wird n
         * Am Ende der Liste einen Eintrag mit gesuchtem Key eintragen
         * Man muss dann nicht jedes Mal fragen, ob man am Ende der Liste ist, sondern nur, ob der Key stimmt
         * Immer noch \(O(n)\), aber Schritte werden ca. halbiert
+* **Sentinel-Trick**
+    * Am Ende der Liste einen neuen Knoten (Sentinel) mit dem gesuchten Wert einfügen und kennzeichnen (z.B. Referenz darauf halten)
+    * Dann muss beim durchiterien nicht jedes Mal geprüft werden, ob das Ende erreicht wurde, denn der Knoten wird garantiert gefunden
+    * Am Ende prüfen, ob es der Sentinel-Knoten ist oder der Echte, gesuchte
+    * Damit wird die Anzahl Tests der Suche halbiert
 
 ### Hash-Table
 * Hash-Funktion bildet Keys auf Integer in bestimmten Intervall ab
@@ -302,12 +341,12 @@ Eine Map ist eine durchsuchbare Collection von Key-Value Entries. Pro Key wird n
     * Sonst mit Komponentensumme: Wert unterteilen in Komponenten fixer Länge und die Komponenten addieren (overflow ignorieren)
     * Polynom-Akkumulation: Komponenten als Koeffizienten eines Polynoms betrachten und mit einer konstanten Primzahl \(z\) ausrechnen. Wird z.B. bei Strings verwendet. Bsp: \("ab" \rightarrow 98 \cdot 31^0 + 97 \cdot 31^1 = 3105\)
 * Hashtable Grösse: Primzahl wählen (bessere Streuung)
-* offene Adressierung: Man bleibt bei Kollisionen in der Tabelle
+* **offene Adressierung**: Man bleibt bei Kollisionen in der Tabelle
     * Linear Probing: Wenn Kollision, suche nächster freier Platz
     * Löschen: 
         * Problem, weil get() dann evtl. nicht mehr funktioniert
-        * Lösung: Datensätze werden nicht gelöscht, sondern nur als gelöscht markiert (DEFUNCT Entry)
-* geschlossene Adressierung: Separte Datenstruktur für Kollisionen (z.B. linked list)
+        * Lösung: Datensätze werden nicht gelöscht, sondern nur als **gelöscht markiert** (DEFUNCT Entry)
+* **geschlossene Adressierung**: Separte Datenstruktur für Kollisionen (z.B. linked list)
 * doppeltes Hashing: Zusätzliche Hash-Funktion verwenden
 * Performance: Schlimmster Fall O(n) (wenn alle Elemente zu Kollissionen führt), erwarter Fall O(1) wenn Auslastungsfaktor n/N nicht zu hoch
 
