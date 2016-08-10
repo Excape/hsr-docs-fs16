@@ -8,7 +8,7 @@
   
   <meta name="author" content="Robin Suter">
   
-  <title>AD1 - HSR Notizen</title>
+  <title>Notes - HSR Notizen</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -24,7 +24,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "AD1";
+    var mkdocs_page_name = "Notes";
     var mkdocs_page_input_path = "fs16/ad1.md";
     var mkdocs_page_url = "/fs16/ad1/";
   </script>
@@ -69,8 +69,13 @@
 
         
             
+    <ul class="subnav">
+    <li><span>AD1</span></li>
+
+        
+            
     <li class="toctree-l1 current">
-        <a class="current" href="./">AD1</a>
+        <a class="current" href="./">Notes</a>
         
             <ul>
             
@@ -110,6 +115,16 @@
             </ul>
         
     </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ad1_formeln/">Formelsammlung</a>
+        
+    </li>
+
+        
+    </ul>
 
         
             
@@ -203,8 +218,12 @@
           <li>FS16 &raquo;</li>
         
       
+        
+          <li>AD1 &raquo;</li>
+        
+      
     
-    <li>AD1</li>
+    <li>Notes</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -226,6 +245,18 @@
 <li>90 Min</li>
 <li>Stoff: Vorlesung + Übungen ohne JUnit</li>
 <li>Einzelheiten: Siehe Titelblatt</li>
+</ul>
+<h3 id="vorbereitung">Vorbereitung</h3>
+<ul>
+<li>"Index" erstellen (z.B. im Buch markieren), vorallem für den Übungsstoff</li>
+<li>Arithmetische Folgen (Üb 01, 02)</li>
+<li>Explizite Form Big-Oh (Üb 02, 03)</li>
+<li>Induktion mit zwei Summenformeln (Üb 03)</li>
+<li>O-Notation (Üb 04) - Konstanten heraus streichen</li>
+<li>Binärbäume / Heap (Üb 09, 12)</li>
+<li>Hashing (Linear Probing etc., Üb 13)</li>
+<li>Skip-Lists (Üb 14)</li>
+<li>Binary Search</li>
 </ul>
 <hr />
 <h2 id="vorlesung-1-intro-oo-design">Vorlesung 1 - Intro / OO-Design</h2>
@@ -266,6 +297,8 @@
     Asympotisch: Für sehr grosse zahlen</p>
 </li>
 </ul>
+<p>Vergleich Wachstum der Funktionen:
+<a href="http://fooplot.com/plot/qit69ncs0u">http://fooplot.com/plot/qit69ncs0u</a></p>
 <h3 id="rekursion">Rekursion</h3>
 <ul>
 <li>
@@ -555,6 +588,10 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
 </ul>
 </li>
 <li>Alle drei sind Spezialfälle der <em>Euler Tour</em> Traversierung. Darin wird jeder Knoten drei mal besucht. Von links (preoder), unten (inorder) und rechts (postorder)</li>
+<li>Breadth-First: Zuerst alle Knoten mit Tiefe <em>t</em> besuchen, bevor Knoten der Tiefe <em>t+1</em> besucht werden<ul>
+<li>Anwendung: Entscheidungen für Spielzüge in AI</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><strong>Binäre Bäume</strong><ul>
@@ -631,7 +668,26 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
 <li>-&gt; h ist <script type="math/tex">\log_2 (n)</script> abgerundet</li>
 </ul>
 </li>
-<li><strong>Folie 9</strong><ul>
+<li><strong>Einfügen in Heap</strong><ul>
+<li>Neues Element als letzter Knoten einfügen</li>
+<li>Mit <em>Upheap</em> jeweils mit dem Parent-Node vergleichen und tauschen, bis der Node &lt; Parentnode ist (= Ordnung wieder hergestellt)</li>
+<li>Zeitaufwand: <script type="math/tex">O(\log(n))</script>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Entfernen aus Heap</strong></p>
+<ul>
+<li>Root entfernen</li>
+<li>Der letzte Knoten (der grösste) wird root</li>
+<li><em>DownHeap</em>: Vom Root aus den Knoten mit dem jeweils kleineren Child-Knoten vertauschen, bis keiner der Children grösser ist oder ein Blattknoten erreicht wurde</li>
+<li>Zeitaufwand: <script type="math/tex">O(\log(n))</script>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Folie 9</strong></p>
+<ul>
 <li>Die Bedingung für den Heap muss nur "upheap" geprüft werden, da Elemente immer von rechts eingefügt werden und der linke "Teilbaum" nie verändert werden muss</li>
 </ul>
 </li>
@@ -641,6 +697,23 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
 </li>
 <li><strong>Folie 12</strong><ul>
 <li>Die Priority-Queue mit einem Heap hat <script type="math/tex">O(\log n)</script> für insert() und removeMin(), was sie viel schneller macht als Insertion- bzw. Selection-Sort, die für jeweils eine Operation <script type="math/tex">O(n^2)</script> benötigen</li>
+</ul>
+</li>
+<li><strong>Heap-Sort</strong><ul>
+<li>Mit einer Heap-basierten PQ kann man <script type="math/tex">n</script> Elemente in <script type="math/tex">O(n\cdot\log(n))</script> sortieren</li>
+<li>Ein Element einfügen braucht <script type="math/tex">O(log(n))</script>, also brauchen <script type="math/tex">n</script> Elemente <script type="math/tex">O(n\cdot\log(n))</script>
+</li>
+</ul>
+</li>
+<li><strong>Heap mit Array realisieren</strong><ul>
+<li>Für <script type="math/tex">n</script> Knoten braucht es ein Array mit Grösse <script type="math/tex">n+1</script>, da man bei Index 1 beginnt</li>
+<li>Ein Knoten wird bei Index <script type="math/tex">i</script> gespeichert<ul>
+<li>Der linke Child-Knoten bei Index <script type="math/tex">2i</script>
+</li>
+<li>Der rechte Child-Knoten bei Index <script type="math/tex">2i + 1</script>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -671,6 +744,13 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
 </li>
 </ul>
 </li>
+<li><strong>Sentinel-Trick</strong><ul>
+<li>Am Ende der Liste einen neuen Knoten (Sentinel) mit dem gesuchten Wert einfügen und kennzeichnen (z.B. Referenz darauf halten)</li>
+<li>Dann muss beim durchiterien nicht jedes Mal geprüft werden, ob das Ende erreicht wurde, denn der Knoten wird garantiert gefunden</li>
+<li>Am Ende prüfen, ob es der Sentinel-Knoten ist oder der Echte, gesuchte</li>
+<li>Damit wird die Anzahl Tests der Suche halbiert</li>
+</ul>
+</li>
 </ul>
 <h3 id="hash-table">Hash-Table</h3>
 <ul>
@@ -685,16 +765,16 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
 </ul>
 </li>
 <li>Hashtable Grösse: Primzahl wählen (bessere Streuung)</li>
-<li>offene Adressierung: Man bleibt bei Kollisionen in der Tabelle<ul>
+<li><strong>offene Adressierung</strong>: Man bleibt bei Kollisionen in der Tabelle<ul>
 <li>Linear Probing: Wenn Kollision, suche nächster freier Platz</li>
 <li>Löschen: <ul>
 <li>Problem, weil get() dann evtl. nicht mehr funktioniert</li>
-<li>Lösung: Datensätze werden nicht gelöscht, sondern nur als gelöscht markiert (DEFUNCT Entry)</li>
+<li>Lösung: Datensätze werden nicht gelöscht, sondern nur als <strong>gelöscht markiert</strong> (DEFUNCT Entry)</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>geschlossene Adressierung: Separte Datenstruktur für Kollisionen (z.B. linked list)</li>
+<li><strong>geschlossene Adressierung</strong>: Separte Datenstruktur für Kollisionen (z.B. linked list)</li>
 <li>doppeltes Hashing: Zusätzliche Hash-Funktion verwenden</li>
 <li>Performance: Schlimmster Fall O(n) (wenn alle Elemente zu Kollissionen führt), erwarter Fall O(1) wenn Auslastungsfaktor n/N nicht zu hoch</li>
 </ul>
@@ -752,7 +832,7 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../an2/" class="btn btn-neutral float-right" title="An2">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../ad1_formeln/" class="btn btn-neutral float-right" title="Formelsammlung">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../.." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -786,7 +866,7 @@ Dies ist <strong>keine</strong> Endrekursion!</p>
         <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../an2/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../ad1_formeln/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
