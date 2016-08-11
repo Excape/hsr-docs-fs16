@@ -2,6 +2,78 @@
 ## Prüfung
 * Ähnlich wie erster Teil der letztjährigen Prüfung (dort wurde mehr Stoff behandelt)
 * Probeprüfung auf Skripteserver
+
+### Zusammenfassung - 1 A4 Seite
+- Gerüst einer "sauberen" HTML-Struktur
+```html
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <meta name="description" content="">
+        <link rel="icon" href="ic.png" type="image/png" />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        <header>
+        <nav>
+        <aside>
+        <section>
+            <article>
+        </section>
+        <footer>
+    </body>
+</html>
+```
+
+- CSS-Selektoren
+
+
+    Sel.            | Name           | Descr                                     |
+    ----------------|----------------|-------------------------------------------|--------------------------------------
+    `e > f`         | Kind           | Direktes Kind                             |
+    `e f`           | Nachfahre      | Child oder child of child (verschachtelt) |
+    `e + f`         | Nachbar        | Element f folgt direkt auf e              |
+    `e ~ f`         | Geschwister    | Element auf selber Ebene                  |
+    `*`             | Universal      | Jedes Element                             |
+    `e[attr]`       | Attribut       | Element mit Attribut                      |
+    `e[a=v]`        | Attribut       | a muss gleich v sein                      |
+    `e[a~=v]`       | Attribut       | a muss Wort v alleinst. beinhalten        |
+    `e[a=v]`        | Attribut       | a muss mit Wort v  alleinst. beginnen     |
+    `e[a^=v]`       | Attribut       | a muss mit v beginnen                     |
+    `e[a$=v]`       | Attribut       | a muss mit v enden                        |
+    `e[a*=v]`       | Attribut       | a muss v beinhalten                       |
+    `e::pseudo`     | Pseudo-Element | z.B. `::before`, `::after`                |
+    `e:pseudoclass` | Pseude-Klasse  | z.B. `:hover`, `:active`                  |
+
+  
+
+- Javascript
+    - Operatoren und Type-Casts
+        - `false`: `false, 0, "", null, undefined, NaN`
+        - Alles andere ist `true`
+        - `NaN == NaN` -> false
+        - Es wird immer von links nach rechts versucht, die Werte in den gleichen Datentyp zu wandeln
+    - jQuery: Häufige Funktionen
+    
+Fnkt                     | Descr
+-------------------------|-----------------------------------------------------------------
+`$().val()`              | Wert bei Form-Elementen
+`$().text()`             | Wert bei Nicht-Form-Elementen
+`$().html()`             | HTML des ersten Elements (get), HTML jedes Elementes (set)
+`$().attr()`             | Attributwert des ersten Elements (get), bzw. alle Elemente (set)
+`.click, .hover, .focus` | Direkte Event-Handler
+`.on("click", fn)`       | Allgemeine Event-handler
+            
+    - Handlebars
+    - Funktionsaufrufe
+    - Scope
+    - AJAX mit jQuery
+- UI-Design
+    ![](img/WED1-UX-Ebenen.png)
+
+
 ---
 ## Vorlesung 1 - HTML p. 1
 * **Folie 12** - Encoding
