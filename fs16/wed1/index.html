@@ -237,6 +237,188 @@
 <li>Ähnlich wie erster Teil der letztjährigen Prüfung (dort wurde mehr Stoff behandelt)</li>
 <li>Probeprüfung auf Skripteserver</li>
 </ul>
+<h3 id="zusammenfassung-1-a4-seite">Zusammenfassung - 1 A4 Seite</h3>
+<ul>
+<li>Gerüst einer "sauberen" HTML-Struktur</li>
+</ul>
+<pre><code class="html">&lt;!doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot; /&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+        &lt;link rel=&quot;icon&quot; href=&quot;ic.png&quot; type=&quot;image/png&quot; /&gt;
+        &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot; /&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;header&gt;
+        &lt;nav&gt;
+        &lt;aside&gt;
+        &lt;section&gt;
+            &lt;article&gt;
+        &lt;/section&gt;
+        &lt;footer&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<ul>
+<li>
+<p>CSS-Selektoren</p>
+<table>
+<thead>
+<tr>
+<th>Sel.</th>
+<th>Name</th>
+<th>Descr</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>e &gt; f</code></td>
+<td>Kind</td>
+<td>Direktes Kind</td>
+<td></td>
+</tr>
+<tr>
+<td><code>e f</code></td>
+<td>Nachfahre</td>
+<td>Child oder child of child (verschachtelt)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>e + f</code></td>
+<td>Nachbar</td>
+<td>Element f folgt direkt auf e</td>
+<td></td>
+</tr>
+<tr>
+<td><code>e ~ f</code></td>
+<td>Geschwister</td>
+<td>Element auf selber Ebene</td>
+<td></td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>Universal</td>
+<td>Jedes Element</td>
+<td></td>
+</tr>
+<tr>
+<td><code>e[attr]</code></td>
+<td>Attribut</td>
+<td>Element mit Attribut</td>
+<td></td>
+</tr>
+<tr>
+<td><code>e[a=v]</code></td>
+<td>Attribut</td>
+<td>a muss gleich v sein</td>
+<td></td>
+</tr>
+<tr>
+<td><code>e[a~=v]</code></td>
+<td>Attribut</td>
+<td>a muss Wort v alleinst. beinhalten</td>
+<td></td>
+</tr>
+<tr>
+<td><code>e[a=v]</code></td>
+<td>Attribut</td>
+<td>a muss mit Wort v  alleinst. beginnen</td>
+<td></td>
+</tr>
+<tr>
+<td><code>e[a^=v]</code></td>
+<td>Attribut</td>
+<td>a muss mit v beginnen</td>
+<td></td>
+</tr>
+<tr>
+<td><code>e[a$=v]</code></td>
+<td>Attribut</td>
+<td>a muss mit v enden</td>
+<td></td>
+</tr>
+<tr>
+<td><code>e[a*=v]</code></td>
+<td>Attribut</td>
+<td>a muss v beinhalten</td>
+<td></td>
+</tr>
+<tr>
+<td><code>e::pseudo</code></td>
+<td>Pseudo-Element</td>
+<td>z.B. <code>::before</code>, <code>::after</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>e:pseudoclass</code></td>
+<td>Pseude-Klasse</td>
+<td>z.B. <code>:hover</code>, <code>:active</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Javascript</p>
+<ul>
+<li>Operatoren und Type-Casts<ul>
+<li><code>false</code>: <code>false, 0, "", null, undefined, NaN</code></li>
+<li>Alles andere ist <code>true</code></li>
+<li><code>NaN == NaN</code> -&gt; false</li>
+<li>Es wird immer von links nach rechts versucht, die Werte in den gleichen Datentyp zu wandeln</li>
+</ul>
+</li>
+<li>jQuery: Häufige Funktionen</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Fnkt</th>
+<th>Descr</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$().val()</code></td>
+<td>Wert bei Form-Elementen</td>
+</tr>
+<tr>
+<td><code>$().text()</code></td>
+<td>Wert bei Nicht-Form-Elementen</td>
+</tr>
+<tr>
+<td><code>$().html()</code></td>
+<td>HTML des ersten Elements (get), HTML jedes Elementes (set)</td>
+</tr>
+<tr>
+<td><code>$().attr()</code></td>
+<td>Attributwert des ersten Elements (get), bzw. alle Elemente (set)</td>
+</tr>
+<tr>
+<td><code>.click, .hover, .focus</code></td>
+<td>Direkte Event-Handler</td>
+</tr>
+<tr>
+<td><code>.on("click", fn)</code></td>
+<td>Allgemeine Event-handler</td>
+</tr>
+</tbody>
+</table>
+<pre><code>- Handlebars
+- Funktionsaufrufe
+- Scope
+- AJAX mit jQuery
+</code></pre>
+<ul>
+<li>UI-Design
+    <img alt="" src="../img/WED1-UX-Ebenen.png" /></li>
+</ul>
 <hr />
 <h2 id="vorlesung-1-html-p-1">Vorlesung 1 - HTML p. 1</h2>
 <ul>
