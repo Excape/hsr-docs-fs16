@@ -271,7 +271,6 @@
 <th>Sel.</th>
 <th>Name</th>
 <th>Descr</th>
-<th></th>
 </tr>
 </thead>
 <tbody>
@@ -279,85 +278,71 @@
 <td><code>e &gt; f</code></td>
 <td>Kind</td>
 <td>Direktes Kind</td>
-<td></td>
 </tr>
 <tr>
 <td><code>e f</code></td>
 <td>Nachfahre</td>
 <td>Child oder child of child (verschachtelt)</td>
-<td></td>
 </tr>
 <tr>
 <td><code>e + f</code></td>
 <td>Nachbar</td>
 <td>Element f folgt direkt auf e</td>
-<td></td>
 </tr>
 <tr>
 <td><code>e ~ f</code></td>
 <td>Geschwister</td>
 <td>Element auf selber Ebene</td>
-<td></td>
 </tr>
 <tr>
 <td><code>*</code></td>
 <td>Universal</td>
 <td>Jedes Element</td>
-<td></td>
 </tr>
 <tr>
 <td><code>e[attr]</code></td>
 <td>Attribut</td>
 <td>Element mit Attribut</td>
-<td></td>
 </tr>
 <tr>
 <td><code>e[a=v]</code></td>
 <td>Attribut</td>
 <td>a muss gleich v sein</td>
-<td></td>
 </tr>
 <tr>
 <td><code>e[a~=v]</code></td>
 <td>Attribut</td>
 <td>a muss Wort v alleinst. beinhalten</td>
-<td></td>
 </tr>
 <tr>
 <td><code>e[a=v]</code></td>
 <td>Attribut</td>
 <td>a muss mit Wort v  alleinst. beginnen</td>
-<td></td>
 </tr>
 <tr>
 <td><code>e[a^=v]</code></td>
 <td>Attribut</td>
 <td>a muss mit v beginnen</td>
-<td></td>
 </tr>
 <tr>
 <td><code>e[a$=v]</code></td>
 <td>Attribut</td>
 <td>a muss mit v enden</td>
-<td></td>
 </tr>
 <tr>
 <td><code>e[a*=v]</code></td>
 <td>Attribut</td>
 <td>a muss v beinhalten</td>
-<td></td>
 </tr>
 <tr>
 <td><code>e::pseudo</code></td>
 <td>Pseudo-Element</td>
 <td>z.B. <code>::before</code>, <code>::after</code></td>
-<td></td>
 </tr>
 <tr>
 <td><code>e:pseudoclass</code></td>
 <td>Pseude-Klasse</td>
 <td>z.B. <code>:hover</code>, <code>:active</code></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -410,12 +395,30 @@
 </tr>
 </tbody>
 </table>
-<pre><code>- Handlebars
-- Funktionsaufrufe
-- Scope
-- AJAX mit jQuery
-</code></pre>
 <ul>
+<li>Handlebars<ul>
+<li>Template<ul>
+<li>In Script-Tag: <code>&lt;script id="templ" type="text/x-handlebars-template"&gt;</code></li>
+<li><code>{{var.property}}</code></li>
+<li>Schleifen: <code>{{#each array}} ... {{/each}}</code></li>
+<li>If: <code>{{#if bool}}...{{#/if}}</code></li>
+</ul>
+</li>
+<li>Compile: <code>var renderer= Handlebars.compile(templateHTML)</code></li>
+<li>Render: <code>var view = renderer({data: yourData})</code></li>
+<li>Append: <code>element.innerHTML = view</code></li>
+</ul>
+</li>
+<li>Funktionsaufrufe</li>
+<li>Scope</li>
+<li>AJAX mit jQuery<ul>
+<li><code>$.get(url, callbackfn(data))</code></li>
+<li>Gleiches mit <code>$.post()</code></li>
+<li><code>$.load()</code> ist ein shortcut für <code>get()</code> mit implizitem Callback, das die Daten direkt in das Element lädt</li>
+<li>Allgemein: <code>$.ajax({type, url, data, datatype, ...}).done(callback(data, status))</code></li>
+<li>AJAX geht nur mit same origin (Umwege über Proxy) oder HTTP-Header</li>
+</ul>
+</li>
 <li>UI-Design
     <img alt="" src="../img/WED1-UX-Ebenen.png" /></li>
 </ul>
