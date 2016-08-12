@@ -30,22 +30,22 @@
 - CSS-Selektoren
 
 
-    Sel.            | Name           | Descr                                     |
-    ----------------|----------------|-------------------------------------------|--------------------------------------
-    `e > f`         | Kind           | Direktes Kind                             |
-    `e f`           | Nachfahre      | Child oder child of child (verschachtelt) |
-    `e + f`         | Nachbar        | Element f folgt direkt auf e              |
-    `e ~ f`         | Geschwister    | Element auf selber Ebene                  |
-    `*`             | Universal      | Jedes Element                             |
-    `e[attr]`       | Attribut       | Element mit Attribut                      |
-    `e[a=v]`        | Attribut       | a muss gleich v sein                      |
-    `e[a~=v]`       | Attribut       | a muss Wort v alleinst. beinhalten        |
-    `e[a=v]`        | Attribut       | a muss mit Wort v  alleinst. beginnen     |
-    `e[a^=v]`       | Attribut       | a muss mit v beginnen                     |
-    `e[a$=v]`       | Attribut       | a muss mit v enden                        |
-    `e[a*=v]`       | Attribut       | a muss v beinhalten                       |
-    `e::pseudo`     | Pseudo-Element | z.B. `::before`, `::after`                |
-    `e:pseudoclass` | Pseude-Klasse  | z.B. `:hover`, `:active`                  |
+    Sel.            | Name           | Descr                                     
+    ----------------|----------------|-------------------------------------------
+    `e > f`         | Kind           | Direktes Kind                             
+    `e f`           | Nachfahre      | Child oder child of child (verschachtelt) 
+    `e + f`         | Nachbar        | Element f folgt direkt auf e              
+    `e ~ f`         | Geschwister    | Element auf selber Ebene                  
+    `*`             | Universal      | Jedes Element                             
+    `e[attr]`       | Attribut       | Element mit Attribut                      
+    `e[a=v]`        | Attribut       | a muss gleich v sein                      
+    `e[a~=v]`       | Attribut       | a muss Wort v alleinst. beinhalten        
+    `e[a=v]`        | Attribut       | a muss mit Wort v  alleinst. beginnen     
+    `e[a^=v]`       | Attribut       | a muss mit v beginnen                     
+    `e[a$=v]`       | Attribut       | a muss mit v enden                        
+    `e[a*=v]`       | Attribut       | a muss v beinhalten                       
+    `e::pseudo`     | Pseudo-Element | z.B. `::before`, `::after`                
+    `e:pseudoclass` | Pseude-Klasse  | z.B. `:hover`, `:active`                  
 
   
 
@@ -65,11 +65,25 @@ Fnkt                     | Descr
 `$().attr()`             | Attributwert des ersten Elements (get), bzw. alle Elemente (set)
 `.click, .hover, .focus` | Direkte Event-Handler
 `.on("click", fn)`       | Allgemeine Event-handler
-            
-    - Handlebars
-    - Funktionsaufrufe
-    - Scope
-    - AJAX mit jQuery
+
+
+- Handlebars
+    - Template
+        - In Script-Tag: `<script id="templ" type="text/x-handlebars-template">`
+        - `{{var.property}}`
+        - Schleifen: `{{#each array}} ... {{/each}}`
+        - If: `{{#if bool}}...{{#/if}}`
+    - Compile: `var renderer= Handlebars.compile(templateHTML)`
+    - Render: `var view = renderer({data: yourData})`
+    - Append: `element.innerHTML = view`
+- Funktionsaufrufe
+- Scope
+- AJAX mit jQuery
+    - `$.get(url, callbackfn(data))`
+    - Gleiches mit `$.post()`
+    - `$.load()` ist ein shortcut für `get()` mit implizitem Callback, das die Daten direkt in das Element lädt
+    - Allgemein: `$.ajax({type, url, data, datatype, ...}).done(callback(data, status))`
+    - AJAX geht nur mit same origin (Umwege über Proxy) oder HTTP-Header
 - UI-Design
     ![](img/WED1-UX-Ebenen.png)
 
