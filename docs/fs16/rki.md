@@ -48,8 +48,30 @@ Keine Zitate, "Ich, wir", persönliche Wertungen, Verweise auf andere Arbeiten
 - Lebensweisheiten, herunterspielen, nicht ernst nehmen
     - `"Ohne Fleiss kein Preis"`
 - Ausfragen
+- Ursachen aufzeigen, Hintergründe deuten
+    - `"Sie regen sich doch nur auf..."`
+- Vorwürfe machen, bewerten
+- Befehlen, warnen, drohen
 
+### Gesprächsförderer
+- Zuhören, Paraphrasieren
+- Aktiv Zuhören: Was wird wie gesagt
+- Zusammenfassen
+- Umschreiben
+    - `"Sie meinen, dass..."`
+- Klären, in Beziehung setzen
+- Wünsche herausarbeiten, Gefühle ansprechen
+- Fragen, Nachfragen
 
+## Feedback
+- **Kontext**
+    - Wird dem Leser klar gemacht, n welcher Weise er gemeint ist und wozu er den Text liest?
+- **Inhalt**
+    - Bekommt der leser das zu lesen, was er braucht?
+- **Organisation / Aufbau**
+    - Führt der Text den Leser?
+- **Sprache / Darstellung**
+    - Wird der Inhalt für den Leser verständlich formuliert?
 
 
 
