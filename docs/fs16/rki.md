@@ -1,3 +1,58 @@
+# Zusammenfassung
+## Abstract
+- Ausgangssituation
+- Aufgabenstellung - Hauptfrage
+- Vorgehen
+- Ergebnisse
+- Folgerungen
+
+Keine Zitate, "Ich, wir", persönliche Wertungen, Verweise auf andere Arbeiten
+
+## Gesprächsphasen
+- Eröffung: Small Talk, Ziel, Ausgangslage
+- Diskussion: Frage, Argument, Gemeinsamkeit
+- Ergebnis: Vereinbarung, Ausklang
+
+## Gesprächsanalyse
+### Vier Seiten
+- Sachebene
+- Beziehungsebene
+- Appellebene
+- Selbstoffenbahrung
+
+### Zuhören
+- "Ich-verstehe" Zuhören: Abtasten, selektiv, dem Partner ins Wort fallen
+- Aufnehmendes Zuhören: Ja, mhm, Kopfnicken
+- Umschreibendes Zuhören: Paraphrasieren, mit eigenen Worten wiedergeben
+- Aktives Zuhören: Verbalisieren, Gefühle ansprechen
+
+### Transaktionsanalyse
+- Eltern-Ich
+    - kritisch `ELk`: zurechtweisend, befiehlt
+    - unterstützend `ELu`: Hört zu, hat Verständnis
+- Erwachsenen-Ich `ER`: Sachlich, überlegt und wägt ab
+- Kind-Ich
+    - natürlich `Kn`: spontan und impulsiv, rebellisch, egozentrisch
+    - angepasst `Ka`: hilflos, orientiert sich an Normen, traut sich nicht
+    - kleiner Professor `Kkp`: intuitiv, schlau, listig, manipuliert
+
+### Grundpositionen
+- Ich bin okay, du bist okay
+- Ich bin okay, du bist nicht okay
+- ...
+
+### Gesprächsstörer
+- Von sich reden
+- Vorschläge, Lösungen anbieten, Überreden
+    - `"Versuchen Sie es doch einmal so..."`
+- Lebensweisheiten, herunterspielen, nicht ernst nehmen
+    - `"Ohne Fleiss kein Preis"`
+- Ausfragen
+
+
+
+
+
 # Testat 1 - Recherchearbeit
 
 ## Werkzeugkasten
